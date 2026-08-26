@@ -631,6 +631,119 @@ html.js .splash.done{transform:translateY(-101%)}
 .spec div{display:flex;gap:20px;padding:14px 4px;border-bottom:1px solid var(--hair);font-size:13.5px}
 .spec b{font-family:var(--disp);font-weight:700;font-size:12px;min-width:96px;color:var(--muted);letter-spacing:.1em;flex:none}
 
+/* ===== form ===== */
+.formwrap{max-width:820px;margin:0 auto}
+.fnote{background:var(--snow);border:1px solid var(--hair);border-radius:12px;padding:22px 24px;margin-bottom:34px}
+.fnote p{margin:0;font-size:13.5px;line-height:2.05;color:var(--ink-2)}
+.fnote .alt{display:grid;gap:10px;margin-top:16px}
+@media(min-width:600px){.fnote .alt{grid-template-columns:1fr 1fr}}
+.fnote .alt a{display:flex;align-items:center;justify-content:center;gap:9px;min-height:52px;border-radius:10px;
+  text-decoration:none;font-weight:700;font-size:14px;border:1px solid var(--hair);background:#fff;
+  transition:border-color .2s,transform .2s}
+.fnote .alt a:hover{border-color:var(--green);transform:translateY(-1px)}
+.fnote .alt svg{width:17px;height:17px;color:var(--green-ink)}
+.field{border-top:1px solid var(--hair);padding:22px 0}
+.field:last-of-type{border-bottom:1px solid var(--hair)}
+.field label,.field .lb{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:700;
+  font-size:14px;letter-spacing:.03em;margin-bottom:12px}
+.req{font-size:10px;font-weight:700;letter-spacing:.1em;color:#fff;background:var(--orange-deep);
+  padding:4px 9px;border-radius:3px}
+.opt{font-size:10px;font-weight:700;letter-spacing:.1em;color:var(--muted);border:1px solid var(--hair);
+  padding:3px 9px;border-radius:3px}
+.field .hint2{font-size:12px;color:var(--muted);margin:0 0 10px;line-height:1.9}
+input[type=text],input[type=tel],input[type=email],select,textarea{
+  width:100%;font-family:inherit;font-size:16px;line-height:1.7;color:var(--ink);
+  background:#fff;border:1px solid var(--hair);border-radius:9px;padding:14px 16px;min-height:52px;
+  transition:border-color .2s,box-shadow .2s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--green);
+  box-shadow:0 0 0 3px rgba(78,138,60,.14)}
+textarea{min-height:150px;resize:vertical}
+select{appearance:none;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2398A095' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 15px center;background-size:17px;padding-right:44px}
+.two-in{display:grid;gap:12px}
+@media(min-width:600px){.two-in{grid-template-columns:1fr 1fr}}
+.filebox{border:1px dashed var(--hair);border-radius:10px;padding:20px;text-align:center;background:var(--snow)}
+.filebox svg{width:24px;height:24px;color:var(--green);margin:0 auto 8px}
+.filebox p{margin:0 0 12px;font-size:12.5px;color:var(--ink-2);line-height:1.9}
+.filebox input[type=file]{font-size:13px;width:auto;min-height:auto;border:none;background:none;padding:0}
+.agree{display:flex;gap:12px;align-items:flex-start;background:var(--snow);border:1px solid var(--hair);
+  border-radius:10px;padding:18px 20px;margin:26px 0 0;font-size:13.5px;line-height:1.95}
+.agree input{width:20px;height:20px;min-height:auto;flex:none;margin-top:4px;accent-color:var(--green)}
+.agree a{color:var(--green-ink);font-weight:700}
+.submit{margin-top:26px}
+.submit button{width:100%;min-height:62px;border:none;border-radius:999px;background:var(--forest);color:#fff;
+  font-family:var(--disp);font-weight:700;font-size:16px;letter-spacing:.06em;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;gap:10px;transition:background .2s,transform .2s}
+.submit button:hover{background:var(--green-ink);transform:translateY(-2px)}
+.submit button svg{width:18px;height:18px}
+.submit p{margin:14px 0 0;font-size:11.5px;color:var(--muted);text-align:center;line-height:1.9}
+
+/* ===== legal ===== */
+.legal{max-width:760px;margin:0 auto}
+.legal section{border-top:1px solid var(--hair);padding:26px 0}
+.legal h2{font-family:var(--disp);font-size:15px;font-weight:900;letter-spacing:.04em;margin-bottom:14px;
+  display:flex;align-items:baseline;gap:12px}
+.legal h2 em{font-style:normal;font-family:var(--serif);font-size:20px;color:var(--green)}
+.legal p{margin:0 0 12px;font-size:14px;line-height:2.15;color:var(--ink-2)}
+.legal ul{margin:0 0 12px;padding-left:1.3em;font-size:14px;line-height:2.1;color:var(--ink-2)}
+.legal li{margin-bottom:4px}
+.legal .end{margin-top:32px;padding-top:20px;border-top:1px solid var(--hair);font-size:12.5px;color:var(--muted);text-align:right;line-height:2}
+
+/* ===== thanks / 404 ===== */
+.center{max-width:640px;margin:0 auto;text-align:center;padding:40px 0}
+.center .mark{width:74px;height:74px;border-radius:50%;background:var(--mist);color:var(--green-ink);
+  display:flex;align-items:center;justify-content:center;margin:0 auto 28px}
+.center .mark svg{width:34px;height:34px}
+.center h1{font-family:var(--serif);font-size:25px;font-weight:600;line-height:1.75;letter-spacing:.05em}
+@media(min-width:768px){.center h1{font-size:31px}}
+.center .msg{margin:22px 0 0;font-size:14.5px;line-height:2.2;color:var(--ink-2)}
+.center .box{margin-top:34px;border:1px solid var(--hair);border-radius:12px;padding:26px;background:var(--snow);text-align:left}
+.center .box b{display:block;font-family:var(--disp);font-size:13.5px;font-weight:900;margin-bottom:10px}
+.center .box p{margin:0;font-size:13px;line-height:2.05;color:var(--ink-2)}
+.center .acts{display:flex;flex-direction:column;gap:11px;margin-top:30px}
+@media(min-width:600px){.center .acts{flex-direction:row;justify-content:center}}
+
+/* ===== company ===== */
+.spec2{border-top:1px solid var(--hair);max-width:820px;margin:0 auto}
+.spec2 div{display:flex;gap:24px;padding:18px 4px;border-bottom:1px solid var(--hair);font-size:14px;line-height:2}
+.spec2 b{font-family:var(--disp);font-weight:700;font-size:12.5px;min-width:126px;color:var(--muted);
+  letter-spacing:.1em;flex:none;padding-top:4px}
+.spec2 .tbd{font-size:10.5px;color:var(--orange-deep);border:1px solid #EBD9C0;background:#FDF8F1;
+  padding:3px 10px;border-radius:3px;margin-left:8px;letter-spacing:.06em;white-space:nowrap}
+.grouptree{background:var(--snow);border:1px solid var(--hair);border-radius:12px;padding:26px 22px;
+  overflow-x:auto}
+.grouptree pre{margin:0;font-family:"IBM Plex Mono",monospace;font-size:12px;line-height:2;color:var(--ink-2)}
+
+/* ===== sign check ===== */
+.signs{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:700px){.signs{grid-template-columns:1fr 1fr}}
+.sign{border:1px solid var(--hair);border-radius:12px;padding:22px 24px;background:#fff;
+  display:flex;gap:16px;align-items:flex-start;transition:border-color .2s,transform .2s}
+.sign:hover{border-color:var(--green);transform:translateY(-2px)}
+.sign .n{width:34px;height:34px;flex:none;border-radius:50%;background:var(--mist);color:var(--green-ink);
+  display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:16px;font-weight:700}
+.sign b{display:block;font-family:var(--disp);font-weight:700;font-size:15.5px;line-height:1.6;letter-spacing:.02em}
+.sign p{margin:8px 0 0;font-size:12.5px;color:var(--ink-2);line-height:1.95}
+.freecheck{background:var(--forest);color:#fff;border-radius:14px;padding:34px 26px;text-align:center;margin-top:44px}
+@media(min-width:768px){.freecheck{padding:46px}}
+.freecheck small{display:inline-block;border:1px solid rgba(255,255,255,.4);font-size:11px;font-weight:700;
+  letter-spacing:.16em;padding:6px 16px;border-radius:3px}
+.freecheck h2{font-family:var(--serif);font-size:22px;font-weight:600;color:#fff;margin-top:18px;line-height:1.7;letter-spacing:.05em}
+@media(min-width:768px){.freecheck h2{font-size:28px}}
+.freecheck p{margin:16px auto 0;font-size:13.5px;opacity:.9;line-height:2.1;max-width:52ch}
+.freecheck .acts{display:flex;flex-direction:column;gap:11px;margin-top:28px;max-width:520px;margin-left:auto;margin-right:auto}
+@media(min-width:600px){.freecheck .acts{flex-direction:row}}
+
+/* ===== kabeyanen ===== */
+.kb-feat{display:grid;gap:16px;margin-top:8px}
+@media(min-width:768px){.kb-feat{grid-template-columns:repeat(3,1fr)}}
+.kb-feat div{border:1px solid var(--hair);border-radius:12px;padding:24px}
+.kb-feat .ic{width:42px;height:42px;border-radius:11px;background:var(--mist);color:var(--green-ink);
+  display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.kb-feat .ic svg{width:21px;height:21px}
+.kb-feat b{display:block;font-family:var(--disp);font-weight:900;font-size:16px;letter-spacing:.02em}
+.kb-feat p{margin:9px 0 0;font-size:12.5px;color:var(--ink-2);line-height:2}
+
 /* ===== router ===== */
 .page{display:none}
 .page.active{display:block}
@@ -654,15 +767,16 @@ html.js .page.active{animation:pageIn .55s cubic-bezier(.2,.65,.2,1) both}
 
 <header id="top">
   <div class="wrap hd">
-    <a class="logo" href="#top" aria-label="株式会社ホームエステ トップへ">
+    <a class="logo" href="#/" aria-label="株式会社ホームエステ トップへ">
       <span class="logomark" aria-hidden="true"></span>
       <span class="logotext">株式会社ホームエステ<small>HOME&nbsp;ESTE</small></span></a>
     <nav class="gnav" aria-label="グローバルナビゲーション">
-      <a href="#soudankai">相談会</a>
-      <a href="#sagasu">困りごとから探す</a>
-      <a href="#case">解決事例</a>
-      <a href="#service">サービス</a>
-      <a href="#access">アクセス</a>
+      <a href="#/soudankai">相談会</a>
+      <a href="#/@sagasu">困りごとから探す</a>
+      <a href="#/case">解決事例</a>
+      <a href="#/reform">リフォーム</a>
+      <a href="#/kabeyanen">かべやねん。</a>
+      <a href="#/company">会社案内</a>
     </nav>
     <div class="hd-cta">
       <a class="hd-tel" href="tel:0120304500"><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>0120-304-500</b><span>営業時間 9:00〜19:00</span></a>
@@ -675,25 +789,26 @@ html.js .page.active{animation:pageIn .55s cubic-bezier(.2,.65,.2,1) both}
 
 <div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="メニュー">
   <div class="drawer-hd">
-    <a class="logo" href="#top"><span class="logomark" aria-hidden="true"></span>
+    <a class="logo" href="#/"><span class="logomark" aria-hidden="true"></span>
       <span class="logotext">株式会社ホームエステ<small>HOME&nbsp;ESTE</small></span></a>
     <button class="drawer-x" type="button" aria-label="メニューを閉じる">×</button>
   </div>
   <nav>
-    <a href="#soudankai">住まいのお困りごと相談会</a>
-    <a href="#sagasu">住まいのお困りごとから探す</a>
-    <a href="#case">住まいのお困りごと解決事例</a>
-    <a href="#service">サービスから探す</a>
-    <a href="#setwari">セット割引制度</a>
-    <a href="#access">アクセス・かべやねん。</a>
+    <a href="#/">トップ</a>
+    <a href="#/soudankai">住まいのお困りごと相談会</a>
+    <a href="#/reform">リフォーム一覧</a>
+    <a href="#/case">住まいのお困りごと解決事例</a>
+    <a href="#/@service">サービスから探す</a>
+    <a href="#/kabeyanen">かべやねん。</a>
+    <a href="#/sign">住まいのサインチェック</a>
+    <a href="#/company">会社案内</a>
+    <a href="#/contact">お問い合わせ</a>
   </nav>
   <div class="drawer-foot">
-    <a class="btn btn-mail" href="#" style="border:1px solid var(--hair)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
+    <a class="btn btn-mail" href="#/contact" style="border:1px solid var(--hair)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
     <a class="btn btn-line" href="#" style="border:1px solid var(--hair)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 9 9 0 0 1-3.8-.8L3 21l1.9-5.6a8.2 8.2 0 0 1-.9-3.9A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg>LINEで無料相談</a>
   </div>
-</div>
-
-<div class="page" id="p/" data-title="トップ">
+</div><div class="page" id="p/" data-title="トップ">
 <!-- 01 FV -->
 <section class="fv" aria-label="メインビジュアル">
   <div class="fv-grid">
@@ -724,7 +839,7 @@ html.js .page.active{animation:pageIn .55s cubic-bezier(.2,.65,.2,1) both}
 <!-- 相談会 -->
 <section id="soudankai" style="padding-top:48px;padding-bottom:0">
   <div class="wrap">
-    <a class="soudan rv" href="#" data-note="/soudankai/">
+    <a class="soudan rv" href="#/soudankai">
       <span class="photo"><img data-i="1" width="900" height="600" loading="lazy"
         alt="ショールーム＆セルフカフェ かべやねん。の店内"></span>
       <span class="panel">
@@ -760,7 +875,7 @@ html.js .page.active{animation:pageIn .55s cubic-bezier(.2,.65,.2,1) both}
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 9-7 9 7"/><path d="M5 10v9h14v-9"/><path d="M9 19v-5h6v5"/></svg></span>
         <span class="tx"><b>外壁・屋根が気になる</b><span>外壁・屋根塗装専門店HP</span></span>
         <span class="arw" aria-hidden="true">→</span></a>
-<a class="row" href="#" data-note="リフォーム専用ページ">
+<a class="row" href="#/reform" data-note="リフォーム専用ページ">
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-3 3.6-5 6.2-5 9a5 5 0 0 0 10 0c0-2.8-2-5.4-5-9z"/><path d="M9.5 13.5a2.6 2.6 0 0 0 2.4 2.4"/></svg></span>
         <span class="tx"><b>水まわりなどリフォームしたい</b><span>リフォーム専用ページ</span></span>
         <span class="arw" aria-hidden="true">→</span></a>
@@ -787,7 +902,7 @@ html.js .page.active{animation:pageIn .55s cubic-bezier(.2,.65,.2,1) both}
     </div>
   </div>
   <div class="wrap" style="padding-top:0;padding-bottom:0">
-    <div class="case-scroll stagger"><a class="case" href="#">
+    <div class="case-scroll stagger"><a class="case" href="#/case/01">
       <span class="cap"><b>BEFORE</b><span>AFTER</span></span>
       <span class="imgs">
         <span class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h3l2-2h6l2 2h3v12H4z"/><circle cx="12" cy="13" r="3.4"/></svg><b>Before</b><small>実際の施工写真・支給</small></span>
@@ -796,7 +911,7 @@ html.js .page.active{animation:pageIn .55s cubic-bezier(.2,.65,.2,1) both}
       </span>
       <span class="bd"><span class="tag">給湯器</span><h3>突然お湯がでなくなった。すぐに対応してくれたので安心の暮らしに戻れた。</h3>
         <span class="meta"><span>枚方市</span><span>築20年</span><span>施工 2日</span></span></span></a>
-<a class="case" href="#">
+<a class="case" href="#/case/01">
       <span class="cap"><b>BEFORE</b><span>AFTER</span></span>
       <span class="imgs">
         <span class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h3l2-2h6l2 2h3v12H4z"/><circle cx="12" cy="13" r="3.4"/></svg><b>Before</b><small>実際の施工写真・支給</small></span>
@@ -805,7 +920,7 @@ html.js .page.active{animation:pageIn .55s cubic-bezier(.2,.65,.2,1) both}
       </span>
       <span class="bd"><span class="tag">外壁塗装</span><h3>色褪せた外壁も美しく塗り替えることで新たな輝きを取り戻した。</h3>
         <span class="meta"><span>枚方市</span><span>築18年</span><span>カラーシミュレーション対応</span></span></span></a>
-<a class="case" href="#">
+<a class="case" href="#/case/01">
       <span class="cap"><b>BEFORE</b><span>AFTER</span></span>
       <span class="imgs">
         <span class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h3l2-2h6l2 2h3v12H4z"/><circle cx="12" cy="13" r="3.4"/></svg><b>Before</b><small>実際の施工写真・支給</small></span>
@@ -816,7 +931,7 @@ html.js .page.active{animation:pageIn .55s cubic-bezier(.2,.65,.2,1) both}
         <span class="meta"><span>─</span></span></span></a></div>
   </div>
   <div class="wrap" style="margin-top:22px">
-    <a class="more" href="#">解決事例をもっと見る<i>→</i></a>
+    <a class="more" href="#/case">解決事例をもっと見る<i>→</i></a>
   </div>
 </section>
 
@@ -831,7 +946,7 @@ html.js .page.active{animation:pageIn .55s cubic-bezier(.2,.65,.2,1) both}
     <div class="r rv">
       <p class="g">メール・LINEからでもお気軽にお問合せください。</p>
       <div class="btns">
-        <a class="btn btn-mail" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
+        <a class="btn btn-mail" href="#/contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
         <a class="btn btn-line" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 9 9 0 0 1-3.8-.8L3 21l1.9-5.6a8.2 8.2 0 0 1-.9-3.9A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg>LINEで無料相談</a>
       </div>
       <p class="hint"><b>給湯器の品番シールを撮って送るだけ</b>で、概算のお見積をご案内します。</p>
@@ -881,7 +996,7 @@ html.js .page.active{animation:pageIn .55s cubic-bezier(.2,.65,.2,1) both}
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 9-7 9 7"/><path d="M5 10v9h14v-9"/><path d="M9 19v-5h6v5"/></svg></span>
         <span class="tx"><b>外壁・屋根塗装</b><span>外壁・屋根塗装専門店HP</span></span>
         <span class="arw" aria-hidden="true">→</span></a>
-<a class="row" href="#" data-note="キッチン・洗面・浴室・トイレ・内外装">
+<a class="row" href="#/reform" data-note="キッチン・洗面・浴室・トイレ・内外装">
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-3 3.6-5 6.2-5 9a5 5 0 0 0 10 0c0-2.8-2-5.4-5-9z"/><path d="M9.5 13.5a2.6 2.6 0 0 0 2.4 2.4"/></svg></span>
         <span class="tx"><b>リフォーム</b><span>キッチン・洗面・浴室・トイレ・内外装</span></span>
         <span class="arw" aria-hidden="true">→</span></a>
@@ -991,7 +1106,7 @@ html.js .page.active{animation:pageIn .55s cubic-bezier(.2,.65,.2,1) both}
     <div class="r rv">
       <p class="g">メール・LINEからでもお気軽にお問合せください。</p>
       <div class="btns">
-        <a class="btn btn-mail" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
+        <a class="btn btn-mail" href="#/contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
         <a class="btn btn-line" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 9 9 0 0 1-3.8-.8L3 21l1.9-5.6a8.2 8.2 0 0 1-.9-3.9A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg>LINEで無料相談</a>
       </div>
       <p class="hint"><b>給湯器の品番シールを撮って送るだけ</b>で、概算のお見積をご案内します。</p>
@@ -1026,7 +1141,7 @@ html.js .page.active{animation:pageIn .55s cubic-bezier(.2,.65,.2,1) both}
     <div class="r rv">
       <p class="g">メール・LINEからでもお気軽にお問合せください。</p>
       <div class="btns">
-        <a class="btn btn-mail" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
+        <a class="btn btn-mail" href="#/contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
         <a class="btn btn-line" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 9 9 0 0 1-3.8-.8L3 21l1.9-5.6a8.2 8.2 0 0 1-.9-3.9A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg>LINEで無料相談</a>
       </div>
       <p class="hint"><b>給湯器の品番シールを撮って送るだけ</b>で、概算のお見積をご案内します。</p>
@@ -1072,7 +1187,7 @@ html.js .page.active{animation:pageIn .55s cubic-bezier(.2,.65,.2,1) both}
     <div class="r rv">
       <p class="g">メール・LINEからでもお気軽にお問合せください。</p>
       <div class="btns">
-        <a class="btn btn-mail" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
+        <a class="btn btn-mail" href="#/contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
         <a class="btn btn-line" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 9 9 0 0 1-3.8-.8L3 21l1.9-5.6a8.2 8.2 0 0 1-.9-3.9A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg>LINEで無料相談</a>
       </div>
       <p class="hint"><b>給湯器の品番シールを撮って送るだけ</b>で、概算のお見積をご案内します。</p>
@@ -1127,7 +1242,7 @@ html.js .page.active{animation:pageIn .55s cubic-bezier(.2,.65,.2,1) both}
     <div class="r rv">
       <p class="g">メール・LINEからでもお気軽にお問合せください。</p>
       <div class="btns">
-        <a class="btn btn-mail" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
+        <a class="btn btn-mail" href="#/contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
         <a class="btn btn-line" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 9 9 0 0 1-3.8-.8L3 21l1.9-5.6a8.2 8.2 0 0 1-.9-3.9A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg>LINEで無料相談</a>
       </div>
       <p class="hint"><b>給湯器の品番シールを撮って送るだけ</b>で、概算のお見積をご案内します。</p>
@@ -1182,7 +1297,7 @@ html.js .page.active{animation:pageIn .55s cubic-bezier(.2,.65,.2,1) both}
     <div class="r rv">
       <p class="g">メール・LINEからでもお気軽にお問合せください。</p>
       <div class="btns">
-        <a class="btn btn-mail" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
+        <a class="btn btn-mail" href="#/contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
         <a class="btn btn-line" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 9 9 0 0 1-3.8-.8L3 21l1.9-5.6a8.2 8.2 0 0 1-.9-3.9A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg>LINEで無料相談</a>
       </div>
       <p class="hint"><b>給湯器の品番シールを撮って送るだけ</b>で、概算のお見積をご案内します。</p>
@@ -1237,7 +1352,7 @@ html.js .page.active{animation:pageIn .55s cubic-bezier(.2,.65,.2,1) both}
     <div class="r rv">
       <p class="g">メール・LINEからでもお気軽にお問合せください。</p>
       <div class="btns">
-        <a class="btn btn-mail" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
+        <a class="btn btn-mail" href="#/contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
         <a class="btn btn-line" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 9 9 0 0 1-3.8-.8L3 21l1.9-5.6a8.2 8.2 0 0 1-.9-3.9A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg>LINEで無料相談</a>
       </div>
       <p class="hint"><b>給湯器の品番シールを撮って送るだけ</b>で、概算のお見積をご案内します。</p>
@@ -1290,7 +1405,7 @@ html.js .page.active{animation:pageIn .55s cubic-bezier(.2,.65,.2,1) both}
     <div class="r rv">
       <p class="g">メール・LINEからでもお気軽にお問合せください。</p>
       <div class="btns">
-        <a class="btn btn-mail" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
+        <a class="btn btn-mail" href="#/contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
         <a class="btn btn-line" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 9 9 0 0 1-3.8-.8L3 21l1.9-5.6a8.2 8.2 0 0 1-.9-3.9A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg>LINEで無料相談</a>
       </div>
       <p class="hint"><b>給湯器の品番シールを撮って送るだけ</b>で、概算のお見積をご案内します。</p>
@@ -1343,7 +1458,7 @@ html.js .page.active{animation:pageIn .55s cubic-bezier(.2,.65,.2,1) both}
     <div class="r rv">
       <p class="g">メール・LINEからでもお気軽にお問合せください。</p>
       <div class="btns">
-        <a class="btn btn-mail" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
+        <a class="btn btn-mail" href="#/contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
         <a class="btn btn-line" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 9 9 0 0 1-3.8-.8L3 21l1.9-5.6a8.2 8.2 0 0 1-.9-3.9A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg>LINEで無料相談</a>
       </div>
       <p class="hint"><b>給湯器の品番シールを撮って送るだけ</b>で、概算のお見積をご案内します。</p>
@@ -1450,7 +1565,7 @@ html.js .page.active{animation:pageIn .55s cubic-bezier(.2,.65,.2,1) both}
     <div class="r rv">
       <p class="g">メール・LINEからでもお気軽にお問合せください。</p>
       <div class="btns">
-        <a class="btn btn-mail" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
+        <a class="btn btn-mail" href="#/contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
         <a class="btn btn-line" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 9 9 0 0 1-3.8-.8L3 21l1.9-5.6a8.2 8.2 0 0 1-.9-3.9A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg>LINEで無料相談</a>
       </div>
       <p class="hint"><b>給湯器の品番シールを撮って送るだけ</b>で、概算のお見積をご案内します。</p>
@@ -1517,7 +1632,7 @@ html.js .page.active{animation:pageIn .55s cubic-bezier(.2,.65,.2,1) both}
     <div class="r rv">
       <p class="g">メール・LINEからでもお気軽にお問合せください。</p>
       <div class="btns">
-        <a class="btn btn-mail" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
+        <a class="btn btn-mail" href="#/contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
         <a class="btn btn-line" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 9 9 0 0 1-3.8-.8L3 21l1.9-5.6a8.2 8.2 0 0 1-.9-3.9A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg>LINEで無料相談</a>
       </div>
       <p class="hint"><b>給湯器の品番シールを撮って送るだけ</b>で、概算のお見積をご案内します。</p>
@@ -1574,7 +1689,7 @@ html.js .page.active{animation:pageIn .55s cubic-bezier(.2,.65,.2,1) both}
     <div class="r rv">
       <p class="g">メール・LINEからでもお気軽にお問合せください。</p>
       <div class="btns">
-        <a class="btn btn-mail" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
+        <a class="btn btn-mail" href="#/contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
         <a class="btn btn-line" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 9 9 0 0 1-3.8-.8L3 21l1.9-5.6a8.2 8.2 0 0 1-.9-3.9A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg>LINEで無料相談</a>
       </div>
       <p class="hint"><b>給湯器の品番シールを撮って送るだけ</b>で、概算のお見積をご案内します。</p>
@@ -1611,6 +1726,322 @@ html.js .page.active{animation:pageIn .55s cubic-bezier(.2,.65,.2,1) both}
   </div>
 </div></section>
 </div>
+<div class="page" id="p/sign" data-title="住まいのサインチェック">
+<div class="wrap"><p class="crumb"><a href="#/">トップ</a><span>›</span>住まいのサインチェック</p></div>
+<div class="wrap"><div class="phead rv">
+      <div class="no"><i>01</i><span>Warning Signs</span></div>
+      <h1>その不調、<br>住まいからのサインかもしれません。</h1>
+      <p>設備や外壁は、壊れる前に必ず「サイン」を出しています。早めに気づいて手を打てば、費用も工期も小さく済みます。ショールーム「かべやねん。」に掲示している内容を、そのままご覧いただけるようまとめました。</p>
+    </div></div>
+<section style="padding-top:0"><div class="wrap">
+  <div class="shead rv"><div class="l"><div class="no"><i>02</i><span>Water Heater</span></div>
+    <h2>給湯器の交換時期サイン</h2></div>
+    <p class="r">一般的に給湯器の寿命は10年前後といわれています。次のような症状が出たら、交換を検討する時期です。</p></div>
+  <div class="signs stagger">
+    <div class="sign"><span class="n">1</span><span><b>設定温度からズレが出てきた</b><p>設定した温度どおりのお湯が出ない、途中でぬるくなる。内部の部品が劣化しているサインです。</p></span></div>
+    <div class="sign"><span class="n">2</span><span><b>リモコンの反応が悪くなった</b><p>ボタンを押しても反応しない、表示が点滅する。基板や配線の不具合が考えられます。</p></span></div>
+    <div class="sign"><span class="n">3</span><span><b>異常な音がするようになった</b><p>「ボン」という着火音、うなるような運転音。不完全燃焼につながる恐れがあります。</p></span></div>
+    <div class="sign"><span class="n">4</span><span><b>液晶の表示がおかしくなった</b><p>エラーコードが頻繁に出る、表示が欠ける。放置すると突然使えなくなることがあります。</p></span></div>
+  </div>
+  <p class="closer rv" style="margin-top:28px">サインを見つけたら、まずはお気軽にご連絡ください。</p>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="shead rv"><div class="l"><div class="no"><i>03</i><span>Exterior Wall</span></div>
+    <h2>外壁の塗り替えサイン</h2></div>
+    <p class="r">外壁塗装の目安は10〜15年。塗膜が劣化すると、雨水が壁の内部に入り込み、건물の傷みにつながります。</p></div>
+  <div class="signs stagger">
+    <div class="sign"><span class="n">1</span><span><b>触ると白い粉がつく（チョーキング）</b><p>塗膜が紫外線で劣化し、粉状になった状態。防水性能が落ちはじめています。</p></span></div>
+    <div class="sign"><span class="n">2</span><span><b>ひび割れが見られる</b><p>ヘアクラックから構造的なひび割れまで。幅0.3mmを超えると雨水が侵入する恐れがあります。</p></span></div>
+    <div class="sign"><span class="n">3</span><span><b>苔・カビ・藻が生えている</b><p>湿気がこもり、水はけが悪くなっている証拠。north側や日陰の面に出やすい症状です。</p></span></div>
+    <div class="sign"><span class="n">4</span><span><b>色褪せ・汚れが目立つ</b><p>美観の問題だけでなく、塗膜が寿命を迎えているサインでもあります。</p></span></div>
+  </div>
+  <p class="closer rv" style="margin-top:28px">一つでも当てはまる場合は、無償点検をご利用ください。</p>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="freecheck rv">
+    <small>外壁・屋根</small>
+    <h2>無償点検を承っています。</h2>
+    <p>専門スタッフが現地に伺い、外壁・屋根の状態を確認してご報告します。点検は無料です。
+      すぐに工事をご検討でなくても構いません。まずは今の状態を知っていただくことが、住まいを長持ちさせる第一歩です。</p>
+    <div class="acts">
+      <a class="btn btn-mail" href="tel:0120304500"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>0120-304-500 に電話する</a>
+      <a class="btn btn-line" href="#/contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>フォームから申し込む</a>
+    </div>
+  </div>
+  <p class="sysnote" style="margin-top:20px">本ページは店内掲示パネルの内容をもとにした追加提案です。正確な文言はパネルの元データをご提供いただき次第、差し替えます。</p>
+</div></section>
+</div>
+<div class="page" id="p/kabeyanen" data-title="かべやねん。">
+<div class="wrap"><p class="crumb"><a href="#/">トップ</a><span>›</span>かべやねん。</p></div>
+<div class="wrap"><div class="phead rv">
+      <div class="no"><i>01</i><span>Showroom</span></div>
+      <h1>かべやねん。</h1>
+      <p>ショールーム＆セルフカフェ「かべやねん。」は、住まいのことを気軽に相談できる場所です。コーヒーを飲みながら、外壁の塗り替えサインや給湯器の交換時期など、暮らしに役立つ情報をご覧いただけます。毎月第4土曜日・日曜日の「住まいのお困りごと相談会」の会場でもあります。</p>
+    </div></div>
+<div class="wrap"><img class="hero rv" data-i="10" alt="ショールーム＆セルフカフェ かべやねん。の店内" width="1100" height="734"></div>
+
+<section><div class="wrap">
+  <div class="shead rv"><div class="l"><div class="no"><i>02</i><span>Features</span></div>
+    <h2>気軽に立ち寄れる、住まいの相談室</h2></div>
+    <p class="r">売り込みは一切いたしません。「見に来ただけ」でも大歓迎です。</p></div>
+  <div class="kb-feat stagger">
+    <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 9h1.6a2.4 2.4 0 0 1 0 4.8H17"/><path d="M7 2v2.5M11 2v2.5"/></svg></span><b>セルフカフェ</b>
+      <p>ドリップコーヒーのサーバーをご用意しています。ゆっくりお過ごしください。</p></div>
+    <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M12 17v4M8 21h8"/><path d="M7 8h6M7 12h4"/></svg></span><b>暮らしの掲示コーナー</b>
+      <p>外壁の塗り替えサイン、給湯器の交換時期サイン、施工事例、塗料のサンプルなどを掲示しています。</p></div>
+    <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h2a2 2 0 0 1 2 2v11l-3.5-3H10a2 2 0 0 1-2-2v-1"/><path d="M15 3H4a2 2 0 0 0-2 2v8l3.5-3H15a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/></svg></span><b>その場でお見積</b>
+      <p>給湯器の品番シールの写真をお持ちいただければ、その場で概算のお見積をご案内できます。</p></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="shead rv"><div class="l"><div class="no"><i>03</i><span>Consultation</span></div>
+    <h2>住まいのお困りごと相談会</h2></div>
+    <p class="r">毎月第4土曜日・日曜日 10:00〜15:00 に開催しています。</p></div>
+  <div class="two rv">
+    <div class="tile"><div class="ph" style="height:260px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h3l2-2h6l2 2h3v12H4z"/><circle cx="12" cy="13" r="3.4"/></svg><b>相談会の様子の写真が入ります</b>
+      横900×560px<small>先方から支給（当日撮影）</small></div>
+      <div class="cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h2a2 2 0 0 1 2 2v11l-3.5-3H10a2 2 0 0 1-2-2v-1"/><path d="M15 3H4a2 2 0 0 0-2 2v8l3.5-3H15a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/></svg>給湯器・ガスコンロ・レンジフード・外壁塗装</div></div>
+    <div class="tile" style="display:flex;align-items:center;padding:30px 32px">
+      <div><p style="margin:0;font-size:14px;line-height:2.15">来場者全組へのプレゼントや、先着限定の特価もご用意しています。<br>
+        次回の開催日と今月のチラシは、相談会ページでご確認いただけます。</p>
+        <a class="pill pill-green" href="#/soudankai" style="margin-top:22px">開催日を見る</a></div></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="shead rv"><div class="l"><div class="no"><i>04</i><span>Access</span></div>
+    <h2>アクセス</h2></div><p class="r">京阪本線 光善寺駅より徒歩圏内。専用駐車場はございません。</p></div>
+  <div class="access rv">
+    <div><div class="addr">
+      <div><b>所在地</b>〒573-0064 大阪府枚方市北中振3-45-23</div>
+      <div><b>最寄駅</b>京阪本線 光善寺駅</div>
+      <div><b>カーナビ</b>枚方市北中振3-45-23</div>
+      <div><b>営業時間</b>9:00〜19:00</div>
+    </div>
+    <div class="parks">
+      <span><i>P1</i>タイムズ光善寺駅前第3</span><span><i>P2</i>タイムズ光善寺駅前西</span>
+      <span><i>P3</i>D-Parking北中振3丁目第1</span><span><i>P4</i>エイブルパーキング北中振3丁目</span>
+    </div></div>
+    <div class="tile"><div class="ph" style="height:100%;min-height:300px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><b>Googleマップを埋め込みます</b>
+      〒573-0064 大阪府枚方市北中振3-45-23<small>実装時に設定・素材不要</small></div></div>
+  </div>
+</div></section>
+</div>
+<div class="page" id="p/contact" data-title="お問い合わせ">
+<div class="wrap"><p class="crumb"><a href="#/">トップ</a><span>›</span>お問い合わせ</p></div>
+<div class="wrap"><div class="phead rv">
+      <div class="no"><i>01</i><span>Contact</span></div>
+      <h1>お問い合わせ</h1>
+      <p>住まいのことなら、どんな小さなことでもお気軽にご相談ください。お見積・現地調査は無料です。内容を確認のうえ、担当者より2営業日以内にご連絡いたします。</p>
+    </div></div>
+<section style="padding-top:0"><div class="wrap"><div class="formwrap">
+
+  <div class="fnote rv">
+    <p><b style="color:var(--ink)">お急ぎの場合は、お電話が確実です。</b><br>
+      給湯器の故障など、すぐに対応が必要なご相談はお電話ください。<br>
+      給湯器の品番が分かる場合は、LINEで品番シールの写真を送っていただくだけで概算のお見積をご案内できます。</p>
+    <div class="alt">
+      <a href="tel:0120304500"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>0120-304-500（9:00〜19:00）</a>
+      <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 9 9 0 0 1-3.8-.8L3 21l1.9-5.6a8.2 8.2 0 0 1-.9-3.9A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg>LINEで相談する</a>
+    </div>
+  </div>
+
+  <form class="rv" onsubmit="return false">
+    <div class="field"><span class="lb">お名前<span class="req">必須</span></span><input type="text" name="name" autocomplete="name" placeholder="山田 太郎"></div>
+<div class="field"><span class="lb">フリガナ<span class="opt">任意</span></span><input type="text" name="kana" placeholder="ヤマダ タロウ"></div>
+<div class="field"><span class="lb">電話番号<span class="req">必須</span></span><p class="hint2">日中つながりやすい番号をご記入ください。</p><input type="tel" name="tel" inputmode="numeric" autocomplete="tel" placeholder="072-000-0000"></div>
+<div class="field"><span class="lb">メールアドレス<span class="req">必須</span></span><input type="email" name="email" autocomplete="email" placeholder="example@example.com"></div>
+<div class="field"><span class="lb">お住まいの地域<span class="opt">任意</span></span><div class="two-in">
+      <input type="text" name="zip" inputmode="numeric" autocomplete="postal-code" placeholder="郵便番号 573-0000">
+      <input type="text" name="addr" autocomplete="address-level2" placeholder="市区町村（例：枚方市）"></div></div>
+<div class="field"><span class="lb">ご相談内容<span class="req">必須</span></span><select name="category">
+      <option value="">選択してください</option>
+      <option>給湯器の交換・修理</option><option>エコキュートの交換</option>
+      <option>ガスコンロ・レンジフード</option><option>外壁・屋根の塗装</option>
+      <option>キッチンのリフォーム</option><option>浴室のリフォーム</option>
+      <option>洗面化粧台のリフォーム</option><option>トイレのリフォーム</option>
+      <option>内装工事</option><option>外構工事</option>
+      <option>抗菌・防臭</option><option>空き家の管理</option>
+      <option>住まいの主治医（住宅健康診断）</option>
+      <option>お困りごと相談会について</option><option>その他・まだ決まっていない</option>
+    </select></div>
+<div class="field"><span class="lb">詳しい内容<span class="opt">任意</span></span><p class="hint2">「まだ何も決まっていない」という段階でも構いません。分かる範囲でお書きください。</p><textarea name="body" placeholder="例）10年ほど使っている給湯器の調子が悪く、お湯の温度が安定しません。交換の目安と費用を知りたいです。"></textarea></div>
+<div class="field"><span class="lb">写真の添付<span class="opt">任意</span></span><div class="filebox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.5 12.9 20.6a5 5 0 0 1-7.1-7.1l8.5-8.5a3.4 3.4 0 0 1 4.8 4.8l-8.5 8.5a1.7 1.7 0 0 1-2.4-2.4l7.8-7.8"/></svg>
+      <p>設備の品番シールや、気になる箇所の写真を添付できます。<br>
+        写真があると、より正確なご案内ができます。（3枚まで／1枚10MBまで）</p>
+      <input type="file" name="photo" accept="image/*" capture="environment" multiple></div></div>
+
+    <label class="agree"><input type="checkbox" name="agree">
+      <span><a href="#/privacy">プライバシーポリシー</a>に同意のうえ送信します。
+      ご記入いただいた情報は、お問い合わせへの回答以外の目的では使用いたしません。</span></label>
+
+    <div class="submit">
+      <button type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg>この内容で送信する</button>
+      <p>送信後、確認画面は表示されず直接送信されます。<br>
+        ※ 本ページは叩き台のため、実際には送信されません。</p>
+    </div>
+  </form>
+
+  <p class="sysnote" style="margin-top:30px">実装時は、送信先メールアドレス・自動返信メールの文面・スパム対策（reCAPTCHA等）の設定が必要です。</p>
+</div></div></section>
+</div>
+<div class="page" id="p/thanks" data-title="送信完了">
+<section><div class="wrap"><div class="center rv">
+  <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+  <h1>お問い合わせ<br>ありがとうございました。</h1>
+  <p class="msg">送信が完了いたしました。<br>
+    内容を確認のうえ、担当者より<b style="color:var(--ink)">2営業日以内</b>にご連絡いたします。<br>
+    ご記入いただいたメールアドレス宛に、自動返信メールをお送りしています。</p>
+
+  <div class="box">
+    <b>メールが届かない場合</b>
+    <p>迷惑メールフォルダに振り分けられている可能性があります。<br>
+      それでも見当たらない場合は、メールアドレスの入力に誤りがあったかもしれません。
+      お手数ですが、お電話（0120-304-500）にてお問い合わせください。</p>
+  </div>
+
+  <div class="box" style="margin-top:14px">
+    <b>お急ぎの場合</b>
+    <p>お湯が出ない、水が止まらないなど、すぐに対応が必要な場合は<br>
+      お電話をご利用ください。9:00〜19:00、土・日・祝日も受付しております。</p>
+  </div>
+
+  <div class="acts">
+    <a class="pill pill-green" href="tel:0120304500"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>0120-304-500 に電話する</a>
+    <a class="pill pill-ghost" href="#/">トップページへ戻る</a>
+  </div>
+</div></div></section>
+</div>
+<div class="page" id="p/company" data-title="会社案内">
+<div class="wrap"><p class="crumb"><a href="#/">トップ</a><span>›</span>会社案内</p></div>
+<div class="wrap"><div class="phead rv">
+      <div class="no"><i>01</i><span>About Us</span></div>
+      <h1>会社案内</h1>
+      <p>株式会社ホームエステは、大阪府枚方市を拠点に、給湯器の交換から外壁塗装、リフォーム、空き家管理まで、住まいに関するさまざまなサービスを提供しています。</p>
+    </div></div>
+<section style="padding-top:0"><div class="wrap">
+  <div class="shead rv"><div class="l"><div class="no"><i>02</i><span>Company Profile</span></div>
+    <h2>会社概要</h2></div><p class="r">「確認中」の項目は、正式な情報をいただき次第、差し替えます。</p></div>
+  <div class="spec2 rv">
+    <div><b>商号</b><span>株式会社ホームエステ</span></div>
+    <div><b>所在地</b><span>〒573-0064 大阪府枚方市北中振3-45-23</span></div>
+    <div><b>代表者</b><span><span class="tbd">確認中</span></span></div>
+    <div><b>設立</b><span><span class="tbd">確認中</span></span></div>
+    <div><b>資本金</b><span><span class="tbd">確認中</span></span></div>
+    <div><b>電話番号</b><span><a href="tel:0120304500" style="font-weight:700">0120-304-500</a>（受付 9:00〜19:00／土・日・祝日も受付）</span></div>
+    <div><b>定休日</b><span><span class="tbd">確認中</span></span></div>
+    <div><b>建設業許可番号</b><span><span class="tbd">確認中</span></span></div>
+    <div><b>事業内容</b><span>給湯器・ガスコンロ・レンジフードの販売および交換工事<br>外壁・屋根塗装工事<br>住宅リフォーム工事（キッチン・浴室・洗面化粧台・トイレ・内装・外構）<br>抗菌・防臭サービス<br>空き家管理サービス<br>住宅健康診断「住まいの主治医」</span></div>
+    <div><b>運営店舗</b><span>正直屋 枚方店<br>ショールーム＆セルフカフェ「かべやねん。」</span></div>
+    <div><b>加盟</b><span>給湯器・ガスコンロ・レンジフード交換専門店「正直屋」加盟店</span></div>
+    <div><b>所属グループ</b><span>ハウスゲートグループ</span></div>
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="shead rv"><div class="l"><div class="no"><i>03</i><span>Group</span></div>
+    <h2>ハウスゲートグループ</h2></div>
+    <p class="r">住まいと暮らしにかかわる各分野の専門店が、グループとして連携しています。</p></div>
+  <div class="grouptree rv"><pre>ハウスゲートグループ
+├─ 株式会社ホームエステ ─── 住まいの総合窓口（当社）
+│    ├─ 正直屋 枚方店 ─────── 給湯器・ガスコンロ・レンジフード
+│    ├─ 外壁・屋根塗装専門店 ── 枚方市の地域密着 塗装事業
+│    └─ かべやねん。 ───────── ショールーム＆セルフカフェ
+├─ やまと屋 ────────────── エコキュート専門店
+├─ ラーフエイド ───────────── 環境衛生事業（抗菌・防臭）
+├─ 空き家サポート ─────────── 空き家管理事業
+├─ 不動産売却サイト ───────── 不動産仲介・買取・販売事業
+└─ バイクイック ───────────── 総合買取事業</pre></div>
+  <p class="sysnote" style="margin-top:16px">グループ構成は構成イメージの外部リンクバナーから読み取ったものです。正式な関係性は要確認です。</p>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="shead rv"><div class="l"><div class="no"><i>04</i><span>Access</span></div>
+    <h2>アクセス</h2></div>
+    <p class="r">専用駐車場はございません。近隣のコインパーキングをご利用ください。</p></div>
+  <div class="access rv">
+    <div><div class="addr">
+      <div><b>所在地</b>〒573-0064<br>大阪府枚方市北中振3-45-23</div>
+      <div><b>最寄駅</b>京阪本線 光善寺駅</div>
+      <div><b>カーナビ</b>枚方市北中振3-45-23</div>
+      <div><b>営業時間</b>9:00〜19:00（土・日・祝日も受付）</div>
+    </div>
+    <div class="parks">
+      <span><i>P1</i>タイムズ光善寺駅前第3</span><span><i>P2</i>タイムズ光善寺駅前西</span>
+      <span><i>P3</i>D-Parking北中振3丁目第1</span><span><i>P4</i>エイブルパーキング北中振3丁目</span>
+    </div></div>
+    <div class="tile"><div class="ph" style="height:100%;min-height:300px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><b>Googleマップを埋め込みます</b>
+      〒573-0064 大阪府枚方市北中振3-45-23<small>実装時に設定・素材不要</small></div></div>
+  </div>
+</div></section>
+</div>
+<div class="page" id="p/privacy" data-title="プライバシーポリシー">
+<div class="wrap"><p class="crumb"><a href="#/">トップ</a><span>›</span>プライバシーポリシー</p></div>
+<div class="wrap"><div class="phead rv">
+      <div class="no"><i>—</i><span>Privacy Policy</span></div>
+      <h1>プライバシーポリシー</h1>
+      <p>株式会社ホームエステ（以下「当社」）は、お客様の個人情報の重要性を認識し、その保護の徹底を図るため、以下のとおり個人情報保護方針を定め、これを遵守いたします。</p>
+    </div></div>
+<section style="padding-top:0"><div class="wrap"><div class="legal">
+  <div class="fnote rv" style="border-color:#EBD9C0;background:#FDF8F1">
+    <p style="display:flex;gap:12px;align-items:flex-start"><span style="color:var(--orange-deep);flex:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4.5M12 17h.01"/><path d="M10.3 3.9 1.9 18.3A2 2 0 0 0 3.6 21.3h16.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></span>
+      <span><b style="color:var(--ink)">本ページは雛形です。</b><br>
+      公開前に、実際の運用（取得する情報の範囲、委託先の有無、アクセス解析ツールの使用状況など）に合わせて内容をご確認ください。事業者情報も確定値への差し替えが必要です。</span></p>
+  </div><section class="rv"><h2><em>01</em>個人情報の定義</h2><p>本方針における「個人情報」とは、個人情報の保護に関する法律に定める個人情報を指し、生存する個人に関する情報であって、氏名、生年月日、住所、電話番号、メールアドレスなどにより特定の個人を識別できる情報をいいます。</p></section>
+<section class="rv"><h2><em>02</em>個人情報の取得</h2><p>当社は、以下の場合に個人情報を取得いたします。</p>
+    <ul><li>お問い合わせフォーム、電話、メール、LINE等によるお問い合わせの際</li>
+    <li>お見積のご依頼、現地調査のお申し込みの際</li>
+    <li>工事のご契約およびアフターサービスの提供の際</li>
+    <li>「住まいのお困りごと相談会」へのご来場・アンケートご記入の際</li>
+    <li>「住まいの主治医」会員へのご登録の際</li></ul></section>
+<section class="rv"><h2><em>03</em>利用目的</h2><p>取得した個人情報は、以下の目的で利用いたします。</p>
+    <ul><li>お問い合わせ・ご相談への回答、お見積のご案内</li>
+    <li>現地調査、工事の実施およびアフターサービスの提供</li>
+    <li>定期点検のご案内、メンテナンス時期のお知らせ</li>
+    <li>当社および当社グループのサービスに関する情報のご案内</li>
+    <li>お客様満足度の把握、サービス品質の向上</li></ul>
+    <p>上記以外の目的で利用する場合は、あらかじめお客様の同意をいただきます。</p></section>
+<section class="rv"><h2><em>04</em>第三者への提供</h2><p>当社は、以下の場合を除き、お客様の同意なく個人情報を第三者に提供いたしません。</p>
+    <ul><li>法令に基づく場合</li>
+    <li>人の生命、身体または財産の保護のために必要があり、本人の同意を得ることが困難な場合</li>
+    <li>工事の施工に必要な範囲で、協力会社・メーカーへ提供する場合（この場合、当社は提供先に対し適切な管理を求めます）</li></ul></section>
+<section class="rv"><h2><em>05</em>施工事例等の掲載</h2><p>当社ウェブサイトに掲載する施工事例、お客様の声、Before・Afterの写真については、<b>あらかじめお客様のご同意をいただいたもののみ</b>を掲載しております。掲載後であっても、削除をご希望の場合は下記お問い合わせ窓口までご連絡ください。速やかに対応いたします。</p></section>
+<section class="rv"><h2><em>06</em>安全管理措置</h2><p>当社は、個人情報の漏えい、滅失またはき損の防止その他の個人情報の安全管理のために、必要かつ適切な措置を講じます。また、個人情報を取り扱う従業者に対し、必要かつ適切な監督を行います。</p></section>
+<section class="rv"><h2><em>07</em>アクセス解析・Cookieについて</h2><p>当社ウェブサイトでは、サービス向上のためアクセス解析ツールを使用する場合があります。これらのツールはCookieを使用して情報を収集しますが、個人を特定する情報は含まれません。</p>
+    <p>Cookieの使用は、ブラウザの設定により無効にすることができます。無効にした場合、当ウェブサイトの一部機能がご利用いただけない場合があります。</p></section>
+<section class="rv"><h2><em>08</em>開示・訂正・削除等のご請求</h2><p>お客様ご本人から、個人情報の開示、訂正、追加、削除、利用停止のご請求があった場合には、ご本人であることを確認させていただいたうえで、法令に従い速やかに対応いたします。</p></section>
+<section class="rv"><h2><em>09</em>お問い合わせ窓口</h2><p>個人情報の取り扱いに関するお問い合わせは、下記までご連絡ください。</p>
+    <ul><li>株式会社ホームエステ</li>
+    <li>〒573-0064 大阪府枚方市北中振3-45-23</li>
+    <li>電話：0120-304-500（受付時間 9:00〜19:00）</li></ul></section>
+<section class="rv"><h2><em>10</em>本方針の変更</h2><p>当社は、法令の改正や事業内容の変更等に応じて、本方針を変更することがあります。変更後の本方針は、当ウェブサイトに掲載した時点から効力を生じるものとします。</p></section>
+  <p class="end">制定日：　　年　　月　　日<br>株式会社ホームエステ</p>
+</div></div></section>
+</div>
+<div class="page" id="p/404" data-title="ページが見つかりません">
+<section><div class="wrap"><div class="center rv">
+  <span class="mark" style="background:#FDF8F1;color:var(--orange-deep)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4.5M12 17h.01"/><path d="M10.3 3.9 1.9 18.3A2 2 0 0 0 3.6 21.3h16.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></span>
+  <h1>お探しのページが<br>見つかりませんでした。</h1>
+  <p class="msg">URLが変更されたか、削除された可能性があります。<br>
+    お手数ですが、下記からお探しください。</p>
+  <div class="box">
+    <b>よく見られているページ</b>
+    <p style="display:flex;flex-direction:column;gap:8px;margin-top:4px">
+      <a href="#/soudankai" style="color:var(--green-ink);font-weight:700;text-decoration:none">→ 住まいのお困りごと相談会</a>
+      <a href="#/reform" style="color:var(--green-ink);font-weight:700;text-decoration:none">→ リフォーム一覧</a>
+      <a href="#/case" style="color:var(--green-ink);font-weight:700;text-decoration:none">→ 住まいのお困りごと解決事例</a>
+      <a href="#/contact" style="color:var(--green-ink);font-weight:700;text-decoration:none">→ お問い合わせ</a>
+    </p>
+  </div>
+  <div class="acts">
+    <a class="pill pill-green" href="#/">トップページへ戻る</a>
+    <a class="pill pill-ghost" href="tel:0120304500"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>電話で相談する</a>
+  </div>
+</div></div></section>
+</div>
 <footer>
   <div class="ft-state rv"><div class="wrap">
     <p>住まいのことなら、まずはホームエステへ。</p>
@@ -1619,7 +2050,7 @@ html.js .page.active{animation:pageIn .55s cubic-bezier(.2,.65,.2,1) both}
   <div class="ft-main"><div class="wrap">
     <div class="ft">
       <div>
-        <a class="logo" href="#top"><span class="logomark" aria-hidden="true"></span>
+        <a class="logo" href="#/"><span class="logomark" aria-hidden="true"></span>
           <span class="logotext" style="color:#fff">株式会社ホームエステ<small style="color:#9FC98A">HOME&nbsp;ESTE</small></span></a>
         <address>
           正直屋 枚方店／ショールーム＆セルフカフェ「かべやねん。」<br>
@@ -1627,30 +2058,18 @@ html.js .page.active{animation:pageIn .55s cubic-bezier(.2,.65,.2,1) both}
           TEL <a href="tel:0120304500" style="opacity:1;font-weight:700">0120-304-500</a>（営業時間 9:00〜19:00）
         </address>
       </div>
-      <div>
-        <h4>サービス</h4>
-        <ul>
-          <li><a href="#">給湯器（正直屋 枚方店）</a></li>
-          <li><a href="#">エコキュート（やまと屋）</a></li>
-          <li><a href="#">外壁・屋根塗装専門店</a></li>
-          <li><a href="#">リフォーム</a></li>
-          <li><a href="#">抗菌・防臭（ラーフエイド）</a></li>
-          <li><a href="#">空き家管理</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>サイト内</h4>
-        <ul>
-          <li><a href="#soudankai">住まいのお困りごと相談会</a></li>
-          <li><a href="#case">住まいのお困りごと解決事例</a></li>
-          <li><a href="#">住まいの主治医</a></li>
-          <li><a href="#access">かべやねん。／アクセス</a></li>
-          <li><a href="#">お問い合わせ</a></li>
-          <li><a href="#">プライバシーポリシー</a></li>
-        </ul>
-      </div>
+      <div><h4>リフォーム</h4><ul>
+        <li><a href="#/kitchen">キッチン</a></li><li><a href="#/bath">浴室</a></li>
+        <li><a href="#/washstand">洗面化粧台</a></li><li><a href="#/toilet">トイレ</a></li>
+        <li><a href="#/interior">内装工事</a></li><li><a href="#/exterior">外構工事</a></li></ul></div>
+      <div><h4>サイト内</h4><ul>
+        <li><a href="#/soudankai">住まいのお困りごと相談会</a></li>
+        <li><a href="#/case">住まいのお困りごと解決事例</a></li>
+        <li><a href="#/sign">住まいのサインチェック</a></li>
+        <li><a href="#/@access">かべやねん。／アクセス</a></li>
+        <li><a href="#/contact">お問い合わせ</a></li><li><a href="#/privacy">プライバシーポリシー</a></li></ul></div>
     </div>
-    <p class="copyright">© 株式会社ホームエステ　※ 本ページは構成確認用の叩き台です。画像・文言・リンク先・割引内容は仮のものを含みます。</p>
+    <p class="copyright">© 株式会社ホームエステ　※ 本ページは構成確認用の叩き台です。画像・文言・リンク先は仮のものを含みます。</p>
   </div></div>
 </footer>
 
@@ -1658,11 +2077,9 @@ html.js .page.active{animation:pageIn .55s cubic-bezier(.2,.65,.2,1) both}
 
 <nav class="spbar" aria-label="お問い合わせ">
   <a class="b1" href="tel:0120304500"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>電話で相談</a>
-  <a class="b2" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メール相談</a>
+  <a class="b2" href="#/contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メール相談</a>
   <a class="b3" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 9 9 0 0 1-3.8-.8L3 21l1.9-5.6a8.2 8.2 0 0 1-.9-3.9A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg>LINE相談</a>
 </nav>
-
-
 <script>
 (function(){
   var reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
