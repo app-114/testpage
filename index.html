@@ -1413,6 +1413,16 @@ header .logo,.drawer .logo{min-height:48px}
 /* SCROLL 表示はPC幅のみ（タブレットでは情報帯と重なるため） */
 @media(max-width:1023px){.fv-note{display:none!important}}
 
+/* グループ一覧：URL未定のタイルは「準備中」と明示する（行の表示に合わせる） */
+.ext a[href="#"]::after{content:"準備中";font-family:var(--disp);font-weight:700;font-size:.875rem;
+  letter-spacing:.06em;color:#5A655B;background:#F4F4EF;border:1px dashed var(--hair);
+  border-radius:4px;padding:2px 9px;right:14px;bottom:14px}
+@media(min-width:768px){.ext a[href="#"]::after{right:18px;bottom:18px}}
+.ext a[href="#"]{padding-right:16px;padding-bottom:46px}
+@media(min-width:768px){.ext a[href="#"]{padding-right:22px;padding-bottom:52px}}
+.ext a[href="#"].blue-tile::after{color:#fff;background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.45)}
+.ext a[href="#"]:hover::after{transform:none}
+
 /* ===== ブランドロゴ（原画をSVGで再現） ===== */
 .logo{gap:11px;align-items:center}
 .logomark{display:none}
@@ -1516,7 +1526,7 @@ footer .logotext small{color:#CBDCC4}
         そんなとき、最初に相談できる存在を目指します。</p>
       <div class="fv-cta">
         <a class="pill pill-green" href="tel:0120304500"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>電話で相談する</a>
-        <a class="pill pill-ghost" href="#sagasu">困りごとから探す</a>
+        <a class="pill pill-ghost" href="#/@sagasu">困りごとから探す</a>
       </div>
     </div></div>
     <span class="fv-vert" aria-hidden="true">住まいにも、かかりつけの安心を。</span>
@@ -1701,7 +1711,7 @@ footer .logotext small{color:#CBDCC4}
         <span class="tx"><b>空き家管理</b><span class="sub"><span>空き家サポート</span><em class="lk ext">外部サイト</em></span></span>
         <span class="arw" aria-hidden="true">→</span></a></div>
     <div class="bigs stagger">
-      <a class="big" href="#access">
+      <a class="big" href="#/kabeyanen">
         <span class="thumb"><img data-i="1" width="900" height="600" loading="lazy"
           alt="ショールーム＆セルフカフェ かべやねん。の店内">
           <span class="ov"><small>SHOWROOM&nbsp;&amp;&nbsp;SELF&nbsp;CAFE</small><b>かべやねん。</b></span></span>
