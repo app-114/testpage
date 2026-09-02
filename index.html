@@ -1058,8 +1058,9 @@ html.js .ln{transition-duration:.75s}
 .tag{font-size:.9375rem;padding:5px 12px}
 .case h3{font-size:1.0625rem;line-height:1.8;margin-top:12px}
 .case .meta{font-size:.9375rem;color:var(--ink-2);gap:6px 14px;margin-top:12px;padding-top:12px}
-/* 縦位置：外壁の事例は縦長写真なので、屋根と外壁が残る位置で切る */
-.case-scroll .case:nth-child(2) img,.caselist [data-cat="gaiheki"] img{object-position:50% 28%}
+/* 事例写真は横型の枠に収める。縦長の写真は切らずに余白を入れる */
+.case .imgs img{aspect-ratio:4/3;object-fit:contain;background:#F2F4EF}
+.case .imgs .ph{aspect-ratio:4/3}
 
 /* ---------- 相談 CTA バンド ---------- */
 .band{padding:64px 0}
@@ -1450,6 +1451,58 @@ html.js .fv-video{transform:scale(1.06);
 body.loaded .fv-video{transform:scale(1)}
 @media(prefers-reduced-motion:reduce){html.js .fv-video{transform:none;transition:none}}
 
+/* 解決事例 詳細：Before/After も横型の枠に収め、縦長写真は余白で調整する */
+.ba figure img{aspect-ratio:4/3!important;object-fit:contain!important;background:#F2F4EF}
+
+/* 大型バナー：説明文の行数が揃わなくてもカード内の位置がずれないようにする */
+.bigs{align-items:stretch}
+.big{height:100%}
+.big .bd{display:flex;flex-direction:column;flex:1}
+.big .bd span{min-height:calc(1.85em * 2)}
+@media(max-width:767px){.big .bd span{min-height:0}}
+
+/* ---------- セクション見出し右のリード文 ----------
+   幅が潰れて行数が増え、行の長さがばらつくのを防ぐ。
+   flex-basis を固定し、text-wrap:balance で行長を均す。 */
+.shead .r{text-wrap:balance;max-width:none}
+@media(min-width:900px){
+  .shead{gap:48px}
+  .shead .l{flex:1 1 auto;min-width:0}
+  .shead .r{flex:0 0 clamp(300px,34%,420px);padding-bottom:8px}
+}
+@media(min-width:1280px){.shead .r{flex-basis:clamp(340px,32%,440px)}}
+/* 900px 未満は見出しの下に回り込む。読み幅を上限で抑える */
+@media(max-width:899px){.shead .r{max-width:38em}}
+
+/* ---------- 折り返しの方針を分ける ----------
+   見出し・ラベル・短い項目 → 語句単位（auto-phrase）で意味の切れ目を守る
+   流れる本文             → 通常の折り返し＋行長を均す。auto-phrase は
+                            狭い段組みで行が極端に短くなり、かえって読みにくい */
+.shead .r,.fv .lead,.phead p,.watch p,.points p,.sign p,.kb-feat p,.qa p,.voice p,
+.legal p,.legal li,.center .msg,.freecheck p,.fnote p,.soudan p,.cssbn p,
+.big .bd span,.setwari .lead2,.benefit p,.menu6 .bd span,.detail .lead,.spec2 span{
+  word-break:normal;overflow-wrap:anywhere;text-wrap:pretty}
+.shead .r,.big .bd span,.soudan p,.center .msg{text-wrap:balance}
+
+/* ---------- 下層ページの主写真：切り落とす量を減らす ----------
+   元画像は3:2。2:1だと上下を25%捨てるため16:9に改める。 */
+.hero{aspect-ratio:3/2}
+@media(min-width:560px){.hero{aspect-ratio:16/9}}
+@media(min-width:900px){.hero{aspect-ratio:16/9}}
+
+/* メニューカードの見出しを他のカード（かべやねん。/ グループ / 特長）と同じ 20px・900 に揃える */
+.menu6 .bd b{font-size:1.25rem;font-weight:900}
+.menu6 .bd{min-height:64px}
+.menu6 .bd i{font-size:1.125rem}
+@media(max-width:430px){.menu6 .bd b{font-size:1.125rem}}
+
+/* ---------- 折り返し位置の指定用クラスは、見た目に一切影響させない ----------
+   .row .tx span / .fv-meta span などの既存指定を拾って
+   block・小さい文字・薄い色になってしまうのを打ち消す。 */
+.nw{display:inline!important;white-space:nowrap;
+  font:inherit!important;color:inherit!important;letter-spacing:inherit!important;
+  margin:0!important;padding:0!important;line-height:inherit!important}
+
 /* ===== ブランドロゴ（原画をSVGで再現） ===== */
 .logo{gap:11px;align-items:center}
 .logomark{display:none}
@@ -1595,31 +1648,31 @@ footer .logotext small{color:#CBDCC4}
         <div class="no"><i>01</i><span>Search by Trouble</span></div>
         <h2><span class="nw">住まいの</span><span class="nw">お困りごと</span><span class="nw">から探す</span></h2>
       </div>
-      <p class="r">いま困っていることを選ぶと、担当の専門店・ページへご案内します。どこに頼めばいいか分からないときは、お電話でも構いません。</p>
+      <p class="r">いま困っていることをお選びください。ハウスゲートグループの中で最後まで対応します。お電話でも構いません。</p>
     </div>
     <div class="rows stagger"><a class="row" href="https://xn--mckor3s3a.xn--u9j0hkb2esdt17v84rsmbu13e6dj12t9w6c.com/osaka/" target="_blank" rel="noopener noreferrer" data-note="正直屋 枚方店">
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="3" width="12" height="17" rx="2"/><path d="M12 8c-1.4 1.5-2.2 2.6-2.2 3.9a2.2 2.2 0 0 0 4.4 0C14.2 10.6 13.4 9.5 12 8z"/><path d="M9 20v2M15 20v2"/></svg></span>
-        <span class="tx"><b><span class="nw">給湯器を</span><span class="nw">交換したい</span></b><span class="sub"><span>正直屋 枚方店</span><em class="lk ext">外部サイト</em></span></span>
+        <span class="tx"><b><span class="nw">給湯器を</span><span class="nw">交換したい</span></b><span class="sub"><em class="lk ext">別タブで開きます</em></span></span>
         <span class="arw" aria-hidden="true">→</span></a>
 <a class="row" href="https://yamatoya-ecocute.com/" target="_blank" rel="noopener noreferrer" data-note="やまと屋">
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="3"/><path d="M10.5 8.5a3.5 3.5 0 1 1-.4 4.8"/><path d="M9.6 8.2l.9.3-.3 1"/></svg></span>
-        <span class="tx"><b><span class="nw">エコキュートを</span><span class="nw">交換したい</span></b><span class="sub"><span>やまと屋</span><em class="lk ext">外部サイト</em></span></span>
+        <span class="tx"><b><span class="nw">エコキュートを</span><span class="nw">交換したい</span></b><span class="sub"><em class="lk ext">別タブで開きます</em></span></span>
         <span class="arw" aria-hidden="true">→</span></a>
 <a class="row" href="#" data-note="外壁・屋根塗装専門店HP">
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 9-7 9 7"/><path d="M5 10v9h14v-9"/><path d="M9 19v-5h6v5"/></svg></span>
-        <span class="tx"><b><span class="nw">外壁・屋根が</span><span class="nw">気になる</span></b><span class="sub"><span>外壁・屋根塗装専門店</span><em class="lk soon">リンク準備中</em></span></span>
+        <span class="tx"><b><span class="nw">外壁・屋根が</span><span class="nw">気になる</span></b><span class="sub"><em class="lk soon">リンク準備中</em></span></span>
         <span class="arw" aria-hidden="true">→</span></a>
 <a class="row" href="#/reform" data-note="リフォーム専用ページ">
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-3 3.6-5 6.2-5 9a5 5 0 0 0 10 0c0-2.8-2-5.4-5-9z"/><path d="M9.5 13.5a2.6 2.6 0 0 0 2.4 2.4"/></svg></span>
-        <span class="tx"><b><span class="nw">水まわりなど</span><span class="nw">リフォームしたい</span></b><span class="sub"><span>リフォームのご案内</span><em class="lk">サイト内</em></span></span>
+        <span class="tx"><b><span class="nw">水まわりなど</span><span class="nw">リフォームしたい</span></b></span>
         <span class="arw" aria-hidden="true">→</span></a>
 <a class="row" href="https://lafuado.net/" target="_blank" rel="noopener noreferrer" data-note="ラーフエイド">
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v5c0 4.4 3 8.4 7 10 4-1.6 7-5.6 7-10V6z"/><path d="m9.2 12 2 2 3.6-4"/></svg></span>
-        <span class="tx"><b><span class="nw">家の中を</span><span class="nw">抗菌・防臭したい</span></b><span class="sub"><span>ラーフエイド</span><em class="lk ext">外部サイト</em></span></span>
+        <span class="tx"><b><span class="nw">家の中を</span><span class="nw">抗菌・防臭したい</span></b><span class="sub"><em class="lk ext">別タブで開きます</em></span></span>
         <span class="arw" aria-hidden="true">→</span></a>
 <a class="row" href="https://akiya-gate.com/" target="_blank" rel="noopener noreferrer" data-note="空き家サポート">
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 11 8-7 8 7"/><path d="M6 10v9h12v-9"/><circle cx="12" cy="13" r="1.6"/><path d="M12 14.6V17"/></svg></span>
-        <span class="tx"><b><span class="nw">空き家の</span><span class="nw">管理に困っている</span></b><span class="sub"><span>空き家サポート</span><em class="lk ext">外部サイト</em></span></span>
+        <span class="tx"><b><span class="nw">空き家の</span><span class="nw">管理に困っている</span></b><span class="sub"><em class="lk ext">別タブで開きます</em></span></span>
         <span class="arw" aria-hidden="true">→</span></a></div>
   </div>
 </section>
@@ -1715,31 +1768,31 @@ footer .logotext small{color:#CBDCC4}
         <div class="no"><i>04</i><span>Our Services</span></div>
         <h2>サービスから探す</h2>
       </div>
-      <p class="r">ご希望のサービス名から、担当の専門店・ページへご案内します。</p>
+      <p class="r">ご希望のサービスをお選びください。いずれもハウスゲートグループが手がけている仕事です。</p>
     </div>
     <div class="rows stagger"><a class="row" href="https://xn--mckor3s3a.xn--u9j0hkb2esdt17v84rsmbu13e6dj12t9w6c.com/osaka/" target="_blank" rel="noopener noreferrer" data-note="正直屋 枚方店">
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="3" width="12" height="17" rx="2"/><path d="M12 8c-1.4 1.5-2.2 2.6-2.2 3.9a2.2 2.2 0 0 0 4.4 0C14.2 10.6 13.4 9.5 12 8z"/><path d="M9 20v2M15 20v2"/></svg></span>
-        <span class="tx"><b>給湯器</b><span class="sub"><span>正直屋 枚方店</span><em class="lk ext">外部サイト</em></span></span>
+        <span class="tx"><b>給湯器</b><span class="sub"><em class="lk ext">別タブで開きます</em></span></span>
         <span class="arw" aria-hidden="true">→</span></a>
 <a class="row" href="https://yamatoya-ecocute.com/" target="_blank" rel="noopener noreferrer" data-note="やまと屋">
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="3"/><path d="M10.5 8.5a3.5 3.5 0 1 1-.4 4.8"/><path d="M9.6 8.2l.9.3-.3 1"/></svg></span>
-        <span class="tx"><b>エコキュート</b><span class="sub"><span>やまと屋</span><em class="lk ext">外部サイト</em></span></span>
+        <span class="tx"><b>エコキュート</b><span class="sub"><em class="lk ext">別タブで開きます</em></span></span>
         <span class="arw" aria-hidden="true">→</span></a>
 <a class="row" href="#" data-note="外壁・屋根塗装専門店HP">
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 9-7 9 7"/><path d="M5 10v9h14v-9"/><path d="M9 19v-5h6v5"/></svg></span>
-        <span class="tx"><b>外壁・屋根塗装</b><span class="sub"><span>外壁・屋根塗装専門店</span><em class="lk soon">リンク準備中</em></span></span>
+        <span class="tx"><b>外壁・屋根塗装</b><span class="sub"><em class="lk soon">リンク準備中</em></span></span>
         <span class="arw" aria-hidden="true">→</span></a>
 <a class="row" href="#/reform" data-note="キッチン・洗面・浴室・トイレ・内外装">
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c-3 3.6-5 6.2-5 9a5 5 0 0 0 10 0c0-2.8-2-5.4-5-9z"/><path d="M9.5 13.5a2.6 2.6 0 0 0 2.4 2.4"/></svg></span>
-        <span class="tx"><b>リフォーム</b><span class="sub"><span>キッチン・浴室・洗面・トイレ・内外装</span><em class="lk">サイト内</em></span></span>
+        <span class="tx"><b>リフォーム</b></span>
         <span class="arw" aria-hidden="true">→</span></a>
 <a class="row" href="https://lafuado.net/" target="_blank" rel="noopener noreferrer" data-note="ラーフエイド">
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v5c0 4.4 3 8.4 7 10 4-1.6 7-5.6 7-10V6z"/><path d="m9.2 12 2 2 3.6-4"/></svg></span>
-        <span class="tx"><b>抗菌・防臭</b><span class="sub"><span>ラーフエイド</span><em class="lk ext">外部サイト</em></span></span>
+        <span class="tx"><b>抗菌・防臭</b><span class="sub"><em class="lk ext">別タブで開きます</em></span></span>
         <span class="arw" aria-hidden="true">→</span></a>
 <a class="row" href="https://akiya-gate.com/" target="_blank" rel="noopener noreferrer" data-note="空き家サポート">
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 11 8-7 8 7"/><path d="M6 10v9h12v-9"/><circle cx="12" cy="13" r="1.6"/><path d="M12 14.6V17"/></svg></span>
-        <span class="tx"><b>空き家管理</b><span class="sub"><span>空き家サポート</span><em class="lk ext">外部サイト</em></span></span>
+        <span class="tx"><b>空き家管理</b><span class="sub"><em class="lk ext">別タブで開きます</em></span></span>
         <span class="arw" aria-hidden="true">→</span></a></div>
     <div class="bigs stagger">
       <a class="big" href="#/kabeyanen">
@@ -1747,17 +1800,17 @@ footer .logotext small{color:#CBDCC4}
           alt="ショールーム＆セルフカフェ かべやねん。の店内">
           <span class="ov"><small>SHOWROOM&nbsp;&amp;&nbsp;SELF&nbsp;CAFE</small><b>かべやねん。</b></span></span>
         <span class="bd"><b>かべやねん。</b>
-          <span>ショールーム＆セルフカフェ。暮らしに役立つ情報を気軽にご覧いただけます。相談会の会場です。</span></span></a>
+          <span>ショールーム＆セルフカフェ。暮らしに役立つ情報を気軽にご覧いただけます。</span></span></a>
       <a class="big" href="#">
         <span class="thumb"><span class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h3l2-2h6l2 2h3v12H4z"/><circle cx="12" cy="13" r="3.4"/></svg><b>スタッフの集合写真が入ります</b>
           横900×560px<small>先方から支給（撮影推奨）</small></span></span>
         <span class="bd"><b>サポートスタッフ</b>
-          <span>私たちが住まいのお困りごとに寄り添います。</span></span></a>
+          <span>給湯器から外壁まで、住まいのお困りごとに私たちが最後まで対応します。</span></span></a>
       <a class="big" href="#">
         <span class="thumb"><span class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h3l2-2h6l2 2h3v12H4z"/><circle cx="12" cy="13" r="3.4"/></svg><b>かわら版の誌面写真が入ります</b>
           横900×560px<small>先方から支給（現物をスキャン）</small></span></span>
         <span class="bd"><b>住まいのかわら版</b>
-          <span>季節ごとの住まいのお役立ち情報や暮らしに関する情報をお届けしています。</span></span></a>
+          <span>季節ごとの住まいのお役立ち情報を、かわら版にしてお届けしています。</span></span></a>
     </div>
   </div>
 </section>
@@ -1771,7 +1824,7 @@ footer .logotext small{color:#CBDCC4}
       <p class="lead2">正直屋とホームエステのセット割引制度。複数の工事をまとめてご依頼いただくと、割引が適用されます。</p>
       <div class="combo">
         <div><i>＋</i>給湯器 × 外壁・屋根塗装</div>
-        <div><i>＋</i>給湯器 × ガスコンロ</div>
+        <div><i>＋</i>給湯器 × ガスコンロ × レンジフード</div>
         <div><i>＋</i>エコキュート × 外壁・屋根塗装</div>
         <div><i>＋</i>リフォーム × 外壁・屋根塗装</div>
       </div>
@@ -1814,7 +1867,7 @@ footer .logotext small{color:#CBDCC4}
         <div class="no"><i>06</i><span>House Gate Group</span></div>
         <h2><span class="nw">ハウスゲートグループの</span><span class="nw">サービス</span></h2>
       </div>
-      <p class="r">住まいと暮らしにかかわる各分野の専門店が、グループとして連携しています。</p>
+      <p class="r">住まいと暮らしにかかわる仕事を、グループの各店が手がけています。窓口はホームエステひとつです。</p>
     </div>
     <div class="ext stagger">
       <a href="https://www.gate2001.jp/" target="_blank" rel="noopener noreferrer"><span class="cat">グループ</span><b>ハウスゲートグループ</b></a>
@@ -2682,7 +2735,7 @@ footer .logotext small{color:#CBDCC4}
 <section style="padding-top:0"><div class="wrap">
   <div class="shead rv"><div class="l"><div class="no"><i>03</i><span>Group</span></div>
     <h2>ハウスゲートグループ</h2></div>
-    <p class="r">住まいと暮らしにかかわる各分野の専門店が、グループとして連携しています。</p></div>
+    <p class="r">住まいと暮らしにかかわる仕事を、グループの各店が手がけています。窓口はホームエステひとつです。</p></div>
   <div class="gtree rv">
     <p class="root">ハウスゲートグループ</p>
     <ul>
