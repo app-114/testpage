@@ -1556,6 +1556,16 @@ body.loaded .fv-video{transform:scale(1)}
   font-family:var(--disp);font-weight:700;letter-spacing:.02em}
 .parks a.park .pg::after{content:" ↗"}
 
+/* ---------- 相談会の開催概要 ---------- */
+.eventinfo{display:grid;gap:0;border-top:1px solid var(--hair);margin-bottom:36px}
+@media(min-width:700px){.eventinfo{grid-template-columns:1fr 1fr;column-gap:56px}}
+.eventinfo>*{min-width:0}
+.eventinfo div{display:flex;gap:20px;align-items:baseline;padding:16px 4px;border-bottom:1px solid var(--hair)}
+.eventinfo b{flex:none;min-width:72px;font-family:var(--disp);font-weight:700;font-size:.9375rem;
+  color:var(--ink-2);letter-spacing:.1em}
+.eventinfo span{font-size:var(--fs-base);line-height:1.7;font-weight:500}
+.benefit .sp-price{display:inline;font-size:1.375rem;font-weight:900;color:var(--ink)}
+
 /* ===== ブランドロゴ（原画をSVGで再現） ===== */
 .logo{gap:11px;align-items:center}
 .logomark{display:none}
@@ -2327,11 +2337,16 @@ footer .logotext small{color:#CBDCC4}
 
 <section><div class="wrap">
   <div class="shead rv"><div class="l"><div class="no"><i>02</i><span>This Month</span></div>
-    <h2>第8回 住まいのお困りごと相談会</h2></div>
-    </div>
+    <h2>第9回 住まいのお困りごと相談会</h2></div></div>
+  <div class="eventinfo rv">
+    <div><b>開催日</b><span>2026年9月26日<span class="nw">（土）</span>・27日<span class="nw">（日）</span></span></div>
+    <div><b>時間</b><span>10:00〜15:00</span></div>
+    <div><b>会場</b><span>ショールーム＆セルフカフェ<span class="nw">「かべやねん。」</span></span></div>
+    <div><b>対象</b><span>給湯器・ガスコンロ・<span class="nw">レンジフード</span>・外壁塗装</span></div>
+  </div>
   <div class="flyers rv">
     <figure><button type="button" class="zoomable" aria-label="チラシ 表を拡大表示"><img data-i="15" alt="第8回 住まいのお困りごと相談会のチラシ 表" loading="lazy"></button>
-      <figcaption>チラシ 表 ─ タップで拡大表示</figcaption></figure>
+      <figcaption>第9回 チラシ 表 ─ タップで拡大表示</figcaption></figure>
     <figure><button type="button" class="zoomable" aria-label="チラシ 裏を拡大表示"><img data-i="16" alt="チラシ 裏（正直屋が安い理由・アクセス）" loading="lazy"></button>
       <figcaption>チラシ 裏 ─ タップで拡大表示</figcaption></figure>
   </div>
@@ -2343,9 +2358,9 @@ footer .logotext small{color:#CBDCC4}
     <h2>今回の特典</h2></div></div>
   <div class="benefit stagger">
     <div><small>先着10名限定</small>
-      <b>ノーリツ24号給湯タイプ<br><span class="price">82%OFF</span></b>
-      <p><span class="strike">定価 417,890円</span> → 特別価格 <b style="display:inline;font-size:17px">75,220円</b><br>
-        品番：GT-2470SAW-1 BL ※税込・取付工事費別</p></div>
+      <b>ノーリツ24号給湯タイプ<br><span class="price">81.2%OFF</span></b>
+      <p><span class="strike">定価 463,760円</span> → 特別価格 <b class="sp-price">87,000円</b><br>
+        品番：GT-2470SAW-1 BL ※消費税込・取付工事費別</p></div>
     <div><small>来場者全組</small>
       <b>QUOカード500円分＋<br>オリジナルトートバッグ</b>
       <p>ご来場いただいた全組様にプレゼント。<br>※1組様につき1セットお渡しします。</p></div>
