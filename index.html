@@ -1750,6 +1750,10 @@ body{line-break:strict}
    40〜70代が読む前提では13pxは小さい */
 @media(max-width:520px){.ext .cat{font-size:.875rem}}
 
+/* 背景動画が2本以上あるときの受け皿。fv-b は次のシーン用で、切り替え時だけ前面に来る */
+.fv-video.fv-b{z-index:1}
+.fv-video.on{z-index:2}
+
 /* ===== ブランドロゴ（原画をSVGで再現） ===== */
 .logo{gap:11px;align-items:center}
 .logomark{display:none}
@@ -1845,8 +1849,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="fv-media">
       <img class="fv-img" data-i="0" width="1600" height="857" fetchpriority="high"
            alt="ショールームで住まいの相談をするご夫婦とスタッフ">
-      <video class="fv-video" muted loop playsinline preload="none" tabindex="-1" aria-hidden="true"
-             data-src-pc="fv-pc.mp4" data-src-sp="fv-sp.mp4"></video>
+      <video class="fv-video" muted loop playsinline preload="none" tabindex="-1" aria-hidden="true" data-scenes-pc="fv-pc.mp4" data-scenes-sp="fv-sp.mp4"></video>
     </div>
     <div class="fv-scrim" aria-hidden="true"></div>
     <div class="fv-inner"><div class="fv-body">
@@ -3332,29 +3335,66 @@ footer .logotext small{color:#CBDCC4}
   addEventListener('scroll',function(){ if(!ticking){ requestAnimationFrame(onScroll); ticking=true } },{passive:true});
   pt.addEventListener('click',function(){ scrollTo({top:0,behavior:reduced?'auto':'smooth'}) });
 
-  /* ---- FV背景動画：ファイルがあるときだけ写真の上に重ねる ---- */
+  /* ---- FV背景動画：ファイルがあるときだけ写真の上に重ねる。
+     2本以上あれば順に再生し、クロスフェードで次のシーンへ切り替える ---- */
   (function(){
-    var v = document.querySelector('.fv-video');
-    if(!v || reduced) return;
+    var a = document.querySelector('.fv-video:not(.fv-b)');
+    if(!a || reduced) return;
     try{ var c = navigator.connection; if(c && (c.saveData || /^(slow-)?2g$/.test(c.effectiveType||''))) return; }catch(e){}
     // 560px 未満は 4:3 のスマホ版、それ以上は 16:9 に近いPC版。CSSの比率の切替と揃える。
-    var src = (innerWidth < 560 && v.dataset.srcSp) ? v.dataset.srcSp : v.dataset.srcPc;
-    if(!src) return;
-    var ready = false;
-    v.addEventListener('loadeddata', function(){
-      ready = true; v.classList.add('on'); v.play().catch(function(){});
-    }, {once:true});
-    v.addEventListener('error', function(){ v.classList.remove('on'); });
-    v.src = src; v.load();
-    // 画面外・別ページのあいだは止める
+    var list = (innerWidth < 560 && a.dataset.scenesSp) ? a.dataset.scenesSp : a.dataset.scenesPc;
+    if(!list) return;
+    var scenes = list.split(',').filter(Boolean);
+    var b = document.querySelector('.fv-video.fv-b');
+    var single = scenes.length < 2 || !b;
+    var cur = a, next = b, idx = 0, visible = true, started = false;
+
+    function load(v, src, cb){
+      var done = false;
+      function ok(){ if(done) return; done = true; cb(true); }
+      v.addEventListener('loadeddata', ok, {once:true});
+      v.addEventListener('error', function(){ if(!done){ done = true; cb(false); } }, {once:true});
+      v.src = src; v.load();
+    }
+    function play(v){ if(visible && !document.hidden) v.play().catch(function(){}); }
+
+    // 1本目：読み込めたら写真の上に重ねる
+    load(a, scenes[0], function(ok){
+      if(!ok){ a.classList.remove('on'); return; }
+      started = true; a.classList.add('on'); play(a);
+      if(!single) arm(a);
+    });
+
+    // 残り 3 秒で次のシーンを裏で読み込み、終わったら入れ替える
+    var nextReady = false;
+    function arm(v){
+      nextReady = false;
+      var armed = false;
+      v.addEventListener('timeupdate', function pre(){
+        if(armed || !v.duration || v.duration - v.currentTime > 3) return;
+        armed = true; v.removeEventListener('timeupdate', pre);
+        idx = (idx + 1) % scenes.length;
+        load(next, scenes[idx], function(ok){ nextReady = ok; });
+      });
+      v.addEventListener('ended', function(){
+        if(!nextReady){ v.currentTime = 0; play(v); return; }   // 次が間に合わなければもう一周
+        next.currentTime = 0; play(next);
+        next.classList.add('on'); v.classList.remove('on');
+        var prev = v; setTimeout(function(){ prev.pause(); }, 1300);
+        cur = next; next = prev; arm(cur);
+      }, {once:true});
+    }
+
+    // 画面外・別ページ・タブ非表示のあいだは止める
     if('IntersectionObserver' in window){
       new IntersectionObserver(function(es){ es.forEach(function(e){
-        if(!ready) return;
-        if(e.isIntersecting) v.play().catch(function(){}); else v.pause();
-      }); },{threshold:0.01}).observe(v);
+        visible = e.isIntersecting;
+        if(!started) return;
+        if(visible) play(cur); else cur.pause();
+      }); },{threshold:0.01}).observe(a.parentNode);
     }
     document.addEventListener('visibilitychange', function(){
-      if(document.hidden) v.pause(); else if(ready && v.classList.contains('on')) v.play().catch(function(){});
+      if(document.hidden) cur.pause(); else if(started) play(cur);
     });
   })();
 
