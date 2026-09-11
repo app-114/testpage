@@ -1738,6 +1738,18 @@ body.loaded .fv-video{transform:scale(1)}
   .mem{grid-template-rows:auto auto 1fr auto}
 }
 
+/* フッターのサービス欄。inline-flex のままだと日本語が折り返せず
+   「給湯器（正直屋 枚方店）」が列幅を6pxはみ出す。
+   通常の行送りに戻し、タップ領域は上下の余白で44pxを確保する */
+.ft ul a{display:inline-block;min-height:44px;padding:11px 0;line-height:1.5}
+
+/* 禁則処理はページ全体に効かせる。住所欄などで行頭に「ー」が来ていた */
+body{line-break:strict}
+
+/* 520px以下で13pxまで落ちていた見出し上のラベルを14pxに戻す。
+   40〜70代が読む前提では13pxは小さい */
+@media(max-width:520px){.ext .cat{font-size:.875rem}}
+
 /* ===== ブランドロゴ（原画をSVGで再現） ===== */
 .logo{gap:11px;align-items:center}
 .logomark{display:none}
@@ -1795,7 +1807,7 @@ footer .logotext small{color:#CBDCC4}
     </nav>
     <div class="hd-cta">
       <a class="hd-tel" href="tel:0120304500"><b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>0120-304-500</b><span>営業時間 9:00〜19:00</span></a>
-      <a class="hd-line" href="#">LINEで無料相談</a>
+      <a class="hd-line" href="#"><span class="jpw"><span class="nw">LINEで</span><wbr><span class="nw">無料相談</span></span></a>
     </div>
     <a class="hd-call" href="tel:0120304500" aria-label="電話で相談する 0120-304-500"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span class="bl">電話</span></a>
     <button class="burger" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="drawer">
@@ -1811,12 +1823,12 @@ footer .logotext small{color:#CBDCC4}
   </div>
   <nav>
     <a href="#/">トップ</a>
-    <a href="#/soudankai">住まいのお困りごと相談会</a>
+    <a href="#/soudankai"><span class="jpw"><span class="nw">住まいの</span><wbr><span class="nw">お困りごと</span><wbr><span class="nw">相談会</span></span></a>
     <a href="#/reform">リフォーム一覧</a>
-    <a href="#/case">住まいのお困りごと解決事例</a>
+    <a href="#/case"><span class="jpw"><span class="nw">住まいの</span><wbr><span class="nw">お困りごと</span><wbr><span class="nw">解決事例</span></span></a>
     <a href="#/@service">サービスから探す</a>
     <a href="#/kabeyanen">かべやねん。</a>
-    <a href="#/sign">住まいのサインチェック</a>
+    <a href="#/sign"><span class="jpw"><span class="nw">住まいの</span><wbr><span class="nw">サインチェック</span></span></a>
     <a href="#/company">会社案内</a>
     <a href="#/contact">お問い合わせ</a>
   </nav>
@@ -2224,7 +2236,7 @@ footer .logotext small{color:#CBDCC4}
   <div class="wrap">
     <div class="shead rv"><div class="l"><div class="no"><i>05</i><span>Other Menu</span></div>
       <h2><span class="jpw"><span class="nw">ほかの</span><wbr><span class="nw">リフォームメニュー</span></span></h2></div>
-      <p class="r"><a href="#/reform" style="color:var(--green-ink);font-weight:700">リフォーム一覧を見る →</a></p></div>
+      <p class="r"><a href="#/reform" style="color:var(--green-ink);font-weight:700"><span class="jpw"><span class="nw">リフォーム</span><wbr><span class="nw">一覧を</span><wbr><span class="nw">見る →</span></span></a></p></div>
     <div class="menu6 stagger"><a href="#/bath"><span class="th"><img data-i="9" alt="" loading="lazy"></span><span class="bd"><b>浴室</b><i>→</i></span></a><a href="#/washstand"><span class="th"><img data-i="10" alt="" loading="lazy"></span><span class="bd"><b>洗面化粧台</b><i>→</i></span></a><a href="#/toilet"><span class="th"><img data-i="11" alt="" loading="lazy"></span><span class="bd"><b>トイレ</b><i>→</i></span></a><a href="#/interior"><span class="th"><img data-i="12" alt="" loading="lazy"></span><span class="bd"><b>内装工事</b><i>→</i></span></a><a href="#/exterior"><span class="th"><img data-i="13" alt="" loading="lazy"></span><span class="bd"><b>外構工事</b><i>→</i></span></a></div>
   </div>
 </section>
@@ -2279,7 +2291,7 @@ footer .logotext small{color:#CBDCC4}
   <div class="wrap">
     <div class="shead rv"><div class="l"><div class="no"><i>05</i><span>Other Menu</span></div>
       <h2><span class="jpw"><span class="nw">ほかの</span><wbr><span class="nw">リフォームメニュー</span></span></h2></div>
-      <p class="r"><a href="#/reform" style="color:var(--green-ink);font-weight:700">リフォーム一覧を見る →</a></p></div>
+      <p class="r"><a href="#/reform" style="color:var(--green-ink);font-weight:700"><span class="jpw"><span class="nw">リフォーム</span><wbr><span class="nw">一覧を</span><wbr><span class="nw">見る →</span></span></a></p></div>
     <div class="menu6 stagger"><a href="#/kitchen"><span class="th"><img data-i="8" alt="" loading="lazy"></span><span class="bd"><b>キッチン</b><i>→</i></span></a><a href="#/washstand"><span class="th"><img data-i="10" alt="" loading="lazy"></span><span class="bd"><b>洗面化粧台</b><i>→</i></span></a><a href="#/toilet"><span class="th"><img data-i="11" alt="" loading="lazy"></span><span class="bd"><b>トイレ</b><i>→</i></span></a><a href="#/interior"><span class="th"><img data-i="12" alt="" loading="lazy"></span><span class="bd"><b>内装工事</b><i>→</i></span></a><a href="#/exterior"><span class="th"><img data-i="13" alt="" loading="lazy"></span><span class="bd"><b>外構工事</b><i>→</i></span></a></div>
   </div>
 </section>
@@ -2334,7 +2346,7 @@ footer .logotext small{color:#CBDCC4}
   <div class="wrap">
     <div class="shead rv"><div class="l"><div class="no"><i>05</i><span>Other Menu</span></div>
       <h2><span class="jpw"><span class="nw">ほかの</span><wbr><span class="nw">リフォームメニュー</span></span></h2></div>
-      <p class="r"><a href="#/reform" style="color:var(--green-ink);font-weight:700">リフォーム一覧を見る →</a></p></div>
+      <p class="r"><a href="#/reform" style="color:var(--green-ink);font-weight:700"><span class="jpw"><span class="nw">リフォーム</span><wbr><span class="nw">一覧を</span><wbr><span class="nw">見る →</span></span></a></p></div>
     <div class="menu6 stagger"><a href="#/kitchen"><span class="th"><img data-i="8" alt="" loading="lazy"></span><span class="bd"><b>キッチン</b><i>→</i></span></a><a href="#/bath"><span class="th"><img data-i="9" alt="" loading="lazy"></span><span class="bd"><b>浴室</b><i>→</i></span></a><a href="#/toilet"><span class="th"><img data-i="11" alt="" loading="lazy"></span><span class="bd"><b>トイレ</b><i>→</i></span></a><a href="#/interior"><span class="th"><img data-i="12" alt="" loading="lazy"></span><span class="bd"><b>内装工事</b><i>→</i></span></a><a href="#/exterior"><span class="th"><img data-i="13" alt="" loading="lazy"></span><span class="bd"><b>外構工事</b><i>→</i></span></a></div>
   </div>
 </section>
@@ -2389,7 +2401,7 @@ footer .logotext small{color:#CBDCC4}
   <div class="wrap">
     <div class="shead rv"><div class="l"><div class="no"><i>05</i><span>Other Menu</span></div>
       <h2><span class="jpw"><span class="nw">ほかの</span><wbr><span class="nw">リフォームメニュー</span></span></h2></div>
-      <p class="r"><a href="#/reform" style="color:var(--green-ink);font-weight:700">リフォーム一覧を見る →</a></p></div>
+      <p class="r"><a href="#/reform" style="color:var(--green-ink);font-weight:700"><span class="jpw"><span class="nw">リフォーム</span><wbr><span class="nw">一覧を</span><wbr><span class="nw">見る →</span></span></a></p></div>
     <div class="menu6 stagger"><a href="#/kitchen"><span class="th"><img data-i="8" alt="" loading="lazy"></span><span class="bd"><b>キッチン</b><i>→</i></span></a><a href="#/bath"><span class="th"><img data-i="9" alt="" loading="lazy"></span><span class="bd"><b>浴室</b><i>→</i></span></a><a href="#/washstand"><span class="th"><img data-i="10" alt="" loading="lazy"></span><span class="bd"><b>洗面化粧台</b><i>→</i></span></a><a href="#/interior"><span class="th"><img data-i="12" alt="" loading="lazy"></span><span class="bd"><b>内装工事</b><i>→</i></span></a><a href="#/exterior"><span class="th"><img data-i="13" alt="" loading="lazy"></span><span class="bd"><b>外構工事</b><i>→</i></span></a></div>
   </div>
 </section>
@@ -2442,7 +2454,7 @@ footer .logotext small{color:#CBDCC4}
   <div class="wrap">
     <div class="shead rv"><div class="l"><div class="no"><i>05</i><span>Other Menu</span></div>
       <h2><span class="jpw"><span class="nw">ほかの</span><wbr><span class="nw">リフォームメニュー</span></span></h2></div>
-      <p class="r"><a href="#/reform" style="color:var(--green-ink);font-weight:700">リフォーム一覧を見る →</a></p></div>
+      <p class="r"><a href="#/reform" style="color:var(--green-ink);font-weight:700"><span class="jpw"><span class="nw">リフォーム</span><wbr><span class="nw">一覧を</span><wbr><span class="nw">見る →</span></span></a></p></div>
     <div class="menu6 stagger"><a href="#/kitchen"><span class="th"><img data-i="8" alt="" loading="lazy"></span><span class="bd"><b>キッチン</b><i>→</i></span></a><a href="#/bath"><span class="th"><img data-i="9" alt="" loading="lazy"></span><span class="bd"><b>浴室</b><i>→</i></span></a><a href="#/washstand"><span class="th"><img data-i="10" alt="" loading="lazy"></span><span class="bd"><b>洗面化粧台</b><i>→</i></span></a><a href="#/toilet"><span class="th"><img data-i="11" alt="" loading="lazy"></span><span class="bd"><b>トイレ</b><i>→</i></span></a><a href="#/exterior"><span class="th"><img data-i="13" alt="" loading="lazy"></span><span class="bd"><b>外構工事</b><i>→</i></span></a></div>
   </div>
 </section>
@@ -2495,7 +2507,7 @@ footer .logotext small{color:#CBDCC4}
   <div class="wrap">
     <div class="shead rv"><div class="l"><div class="no"><i>05</i><span>Other Menu</span></div>
       <h2><span class="jpw"><span class="nw">ほかの</span><wbr><span class="nw">リフォームメニュー</span></span></h2></div>
-      <p class="r"><a href="#/reform" style="color:var(--green-ink);font-weight:700">リフォーム一覧を見る →</a></p></div>
+      <p class="r"><a href="#/reform" style="color:var(--green-ink);font-weight:700"><span class="jpw"><span class="nw">リフォーム</span><wbr><span class="nw">一覧を</span><wbr><span class="nw">見る →</span></span></a></p></div>
     <div class="menu6 stagger"><a href="#/kitchen"><span class="th"><img data-i="8" alt="" loading="lazy"></span><span class="bd"><b>キッチン</b><i>→</i></span></a><a href="#/bath"><span class="th"><img data-i="9" alt="" loading="lazy"></span><span class="bd"><b>浴室</b><i>→</i></span></a><a href="#/washstand"><span class="th"><img data-i="10" alt="" loading="lazy"></span><span class="bd"><b>洗面化粧台</b><i>→</i></span></a><a href="#/toilet"><span class="th"><img data-i="11" alt="" loading="lazy"></span><span class="bd"><b>トイレ</b><i>→</i></span></a><a href="#/interior"><span class="th"><img data-i="12" alt="" loading="lazy"></span><span class="bd"><b>内装工事</b><i>→</i></span></a></div>
   </div>
 </section>
@@ -2734,7 +2746,7 @@ footer .logotext small{color:#CBDCC4}
 <section><div class="wrap">
   <div class="shead rv"><div class="l"><div class="no"><i>─</i><span>Related</span></div>
     <h2><span class="jpw"><span class="nw">関連する</span><wbr><span class="nw">解決事例</span></span></h2></div>
-    <p class="r"><a href="#/case" style="color:var(--green-ink);font-weight:700">解決事例一覧を見る →</a></p></div>
+    <p class="r"><a href="#/case" style="color:var(--green-ink);font-weight:700"><span class="jpw"><span class="nw">解決事例一覧を</span><wbr><span class="nw">見る →</span></span></a></p></div>
   <div class="caselist stagger"><a class="case" href="#/case/01" data-cat="kyutoki">
       <span class="cap"><b>BEFORE</b><span>AFTER</span></span>
       <span class="imgs">
@@ -2913,7 +2925,7 @@ footer .logotext small{color:#CBDCC4}
       <input type="file" name="photo" accept="image/*" capture="environment" multiple></div></div>
 
     <label class="agree"><input type="checkbox" name="agree" required>
-      <span><a href="#/privacy">プライバシーポリシー</a>に同意のうえ送信します。
+      <span><a href="#/privacy"><span class="jpw"><span class="nw">プライバシー</span><wbr><span class="nw">ポリシー</span></span></a>に同意のうえ送信します。
       ご記入いただいた情報は、お問い合わせへの回答以外の目的では使用いたしません。</span></label>
 
     <div class="submit">
@@ -2954,7 +2966,7 @@ footer .logotext small{color:#CBDCC4}
 
   <div class="acts">
     <a class="pill pill-green" href="tel:0120304500"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>0120-304-500 に電話する</a>
-    <a class="pill pill-ghost" href="#/">トップページへ戻る</a>
+    <a class="pill pill-ghost" href="#/"><span class="jpw"><span class="nw">トップページへ</span><wbr><span class="nw">戻る</span></span></a>
   </div>
 </div></div></section>
 </div>
@@ -3150,14 +3162,14 @@ footer .logotext small{color:#CBDCC4}
   <div class="box">
     <b><span class="jpw"><span class="nw">よく</span><wbr><span class="nw">見られている</span><wbr><span class="nw">ページ</span></span></b>
     <p style="display:flex;flex-direction:column;gap:8px;margin-top:4px">
-      <a href="#/soudankai" style="color:var(--green-ink);font-weight:700;text-decoration:none">→ 住まいのお困りごと相談会</a>
-      <a href="#/reform" style="color:var(--green-ink);font-weight:700;text-decoration:none">→ リフォーム一覧</a>
-      <a href="#/case" style="color:var(--green-ink);font-weight:700;text-decoration:none">→ 住まいのお困りごと解決事例</a>
-      <a href="#/contact" style="color:var(--green-ink);font-weight:700;text-decoration:none">→ お問い合わせ</a>
+      <a href="#/soudankai" style="color:var(--green-ink);font-weight:700;text-decoration:none"><span class="jpw"><span class="nw">→ </span><wbr><span class="nw">住まいの</span><wbr><span class="nw">お困りごと</span><wbr><span class="nw">相談会</span></span></a>
+      <a href="#/reform" style="color:var(--green-ink);font-weight:700;text-decoration:none"><span class="jpw"><span class="nw">→ </span><wbr><span class="nw">リフォーム一覧</span></span></a>
+      <a href="#/case" style="color:var(--green-ink);font-weight:700;text-decoration:none"><span class="jpw"><span class="nw">→ </span><wbr><span class="nw">住まいの</span><wbr><span class="nw">お困りごと</span><wbr><span class="nw">解決事例</span></span></a>
+      <a href="#/contact" style="color:var(--green-ink);font-weight:700;text-decoration:none"><span class="jpw"><span class="nw">→ </span><wbr><span class="nw">お問い合わせ</span></span></a>
     </p>
   </div>
   <div class="acts">
-    <a class="pill pill-green" href="#/">トップページへ戻る</a>
+    <a class="pill pill-green" href="#/"><span class="jpw"><span class="nw">トップページへ</span><wbr><span class="nw">戻る</span></span></a>
     <a class="pill pill-ghost" href="tel:0120304500"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>電話で相談する</a>
   </div>
 </div></div></section>
@@ -3185,19 +3197,19 @@ footer .logotext small{color:#CBDCC4}
         <li><a href="#/washstand">洗面化粧台</a></li><li><a href="#/toilet">トイレ</a></li>
         <li><a href="#/interior">内装工事</a></li><li><a href="#/exterior">外構工事</a></li></ul></div>
       <div><h4>サービス</h4><ul>
-        <li><a href="https://xn--m7rz27cmsk.xn--u9j0hkb2esdt17v84rsmbu13e6dj12t9w6c.com/osaka/" target="_blank" rel="noopener noreferrer">給湯器（正直屋 枚方店）</a></li>
-        <li><a href="https://yamatoya-ecocute.com/" target="_blank" rel="noopener noreferrer">エコキュート（やまと屋）</a></li>
-        <li><a href="https://hirakata-toso.jp/" target="_blank" rel="noopener noreferrer">外壁・屋根塗装専門店</a></li>
+        <li><a href="https://xn--m7rz27cmsk.xn--u9j0hkb2esdt17v84rsmbu13e6dj12t9w6c.com/osaka/" target="_blank" rel="noopener noreferrer"><span class="jpw"><span class="nw">給湯器</span><wbr><span class="nw">（正直屋 </span><wbr><span class="nw">枚方店）</span></span></a></li>
+        <li><a href="https://yamatoya-ecocute.com/" target="_blank" rel="noopener noreferrer"><span class="jpw"><span class="nw">エコキュート</span><wbr><span class="nw">（やまと屋）</span></span></a></li>
+        <li><a href="https://hirakata-toso.jp/" target="_blank" rel="noopener noreferrer"><span class="jpw"><span class="nw">外壁・</span><wbr><span class="nw">屋根塗装専門店</span></span></a></li>
         <li><a href="#/reform">リフォーム</a></li>
-        <li><a href="https://lafuado.net/" target="_blank" rel="noopener noreferrer">抗菌・防臭（ラーフエイド）</a></li>
+        <li><a href="https://lafuado.net/" target="_blank" rel="noopener noreferrer"><span class="jpw"><span class="nw">抗菌・</span><wbr><span class="nw">防臭</span><wbr><span class="nw">（ラーフエイド）</span></span></a></li>
         <li><a href="https://akiya-gate.com/" target="_blank" rel="noopener noreferrer">空き家管理</a></li></ul></div>
       <div><h4>サイト内</h4><ul>
-        <li><a href="#/soudankai">住まいのお困りごと相談会</a></li>
-        <li><a href="#/case">住まいのお困りごと解決事例</a></li>
+        <li><a href="#/soudankai"><span class="jpw"><span class="nw">住まいの</span><wbr><span class="nw">お困りごと</span><wbr><span class="nw">相談会</span></span></a></li>
+        <li><a href="#/case"><span class="jpw"><span class="nw">住まいの</span><wbr><span class="nw">お困りごと</span><wbr><span class="nw">解決事例</span></span></a></li>
         <li><a href="#/staff">サポートスタッフ</a></li>
-        <li><a href="#/sign">住まいのサインチェック</a></li>
-        <li><a href="#/@access">かべやねん。／アクセス</a></li>
-        <li><a href="#/contact">お問い合わせ</a></li><li><a href="#/privacy">プライバシーポリシー</a></li></ul></div>
+        <li><a href="#/sign"><span class="jpw"><span class="nw">住まいの</span><wbr><span class="nw">サインチェック</span></span></a></li>
+        <li><a href="#/@access"><span class="jpw"><span class="nw">かべやねん。／</span><wbr><span class="nw">アクセス</span></span></a></li>
+        <li><a href="#/contact">お問い合わせ</a></li><li><a href="#/privacy"><span class="jpw"><span class="nw">プライバシー</span><wbr><span class="nw">ポリシー</span></span></a></li></ul></div>
     </div>
     <p class="copyright"><span class="jpw"><span class="nw">© </span><wbr><span class="nw">株式会社</span><wbr><span class="nw">ホームエステ　※ </span><wbr><span class="nw">本</span><wbr><span class="nw">ページは</span><wbr><span class="nw">構成確認用の</span><wbr><span class="nw">叩き台です。</span><wbr><span class="nw">画像・</span><wbr><span class="nw">文言・リンク</span><wbr><span class="nw">先は仮のものを</span><wbr><span class="nw">含みます。</span></span></p>
   </div></div>
