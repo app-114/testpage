@@ -1925,6 +1925,11 @@ a[href^="tel:"]{white-space:nowrap}
 /* 住所・アクセスの行：見出し（b）の右側は1つの箱。文節や .nobr が別々の横並び要素になって崩れるのを防ぐ */
 .addr div>.av{flex:1 1 auto;min-width:0}
 
+/* 割らない指定（.nobr）も、.row .tx span などの span 指定を拾って小さく薄くならないようにする
+   （サービス一覧の「外壁・屋根塗装」だけ文字が小さく灰色になっていた） */
+.nobr{display:inline!important;font:inherit!important;color:inherit!important;letter-spacing:inherit!important;
+  margin:0!important;padding:0!important;line-height:inherit!important;background:none!important;border:0!important}
+
 /* ===== ブランドロゴ（原画をSVGで再現） ===== */
 .logo{gap:11px;align-items:center}
 .logomark{display:none}
