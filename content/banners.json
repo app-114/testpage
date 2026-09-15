@@ -1,0 +1,67 @@
+{
+  "items": [
+    {
+      "title": "ハウスゲートグループ",
+      "image": "",
+      "category": "グループ",
+      "url": "https://www.gate2001.jp/",
+      "style": "plain"
+    },
+    {
+      "title": "枚方市の地域密着 外壁・屋根塗装事業 外壁・屋根塗装専門店",
+      "image": "/uploads/bnr-toso.jpg",
+      "category": "",
+      "url": "https://hirakata-toso.jp/",
+      "style": "plain"
+    },
+    {
+      "title": "給湯器・ガスコンロ交換事業 正直屋 枚方店",
+      "image": "/uploads/bnr-shojikiya.jpg",
+      "category": "",
+      "url": "https://xn--m7rz27cmsk.xn--u9j0hkb2esdt17v84rsmbu13e6dj12t9w6c.com/osaka/",
+      "style": "plain"
+    },
+    {
+      "title": "環境衛生事業 ラーフエイド",
+      "image": "/uploads/bnr-lafuado.jpg",
+      "category": "",
+      "url": "https://lafuado.net/",
+      "style": "plain"
+    },
+    {
+      "title": "エコキュート専門店 やまと屋",
+      "image": "/uploads/bnr-yamatoya.jpg",
+      "category": "",
+      "url": "https://yamatoya-ecocute.com/",
+      "style": "plain"
+    },
+    {
+      "title": "住まいの主治医",
+      "image": "",
+      "category": "住宅健康診断",
+      "url": "",
+      "style": "blue"
+    },
+    {
+      "title": "空き家管理サービス事業 日本空き家サポート 正規加盟店",
+      "image": "/uploads/bnr-akiya.jpg",
+      "category": "",
+      "url": "https://akiya-gate.com/",
+      "style": "plain"
+    },
+    {
+      "title": "不動産仲介・買取・販売事業 不動産売却サイト",
+      "image": "/uploads/bnr-fudosan.jpg",
+      "category": "",
+      "url": "https://www.kaitori-fudousan.net/",
+      "style": "plain"
+    },
+    {
+      "title": "総合買取事業 バイクイック",
+      "image": "/uploads/bnr-buyquick.jpg",
+      "category": "",
+      "url": "https://www.buy-quick.jp/",
+      "style": "plain"
+    }
+  ]
+}

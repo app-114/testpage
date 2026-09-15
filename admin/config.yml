@@ -1,0 +1,262 @@
+# 管理画面の設定（Sveltia CMS）
+# 編集した内容は GitHub の app-114/testpage に保存され、数分でサイトに反映されます。
+
+backend:
+  name: github
+  repo: app-114/testpage
+  branch: main
+  commit_messages:
+    create: "管理画面：{{collection}}「{{slug}}」を追加"
+    update: "管理画面：{{collection}}「{{slug}}」を更新"
+    delete: "管理画面：{{collection}}「{{slug}}」を削除"
+    uploadMedia: "管理画面：画像 {{path}} を追加"
+    deleteMedia: "管理画面：画像 {{path}} を削除"
+
+site_url: https://app-114.github.io/testpage/
+display_url: https://app-114.github.io/testpage/
+
+# 写真はここに保存。スマホの写真（4〜8MB）は自動で縮小・WebP に変換してから保存する
+media_folder: uploads
+public_folder: /uploads
+media_libraries:
+  default:
+    config:
+      max_file_size: 30000000
+      transformations:
+        raster_image:
+          format: webp
+          quality: 82
+          width: 1600
+          height: 1600
+
+slug:
+  encoding: ascii
+  clean_accents: true
+
+collections:
+  # ---------------------------------------------------------------- お知らせ・コラム
+  - name: news
+    label: お知らせ・コラム
+    label_singular: 記事
+    description: サイトの「お知らせ・コラム」に載る記事です。「公開する」をオンにして保存すると、数分で表示されます。
+    folder: content/news
+    format: json
+    create: true
+    delete: true
+    slug: "{{year}}{{month}}{{day}}-{{uuid_shorter}}"
+    identifier_field: title
+    summary: "{{title}}"
+    sortable_fields: [date, title]
+    editor:
+      preview: false
+    fields:
+      - label: 公開する
+        name: published
+        widget: boolean
+        default: false
+        hint: オフのあいだは、保存してもサイトには表示されません（下書き）。
+      - label: タイトル
+        name: title
+        widget: string
+      - label: 公開日
+        name: date
+        widget: datetime
+        format: YYYY-MM-DD
+        date_format: YYYY/MM/DD
+        time_format: false
+        default: "{{now}}"
+        hint: 一覧はこの日付の新しい順に並びます。
+      - label: 種類
+        name: kind
+        widget: select
+        options: [お知らせ, コラム]
+        default: お知らせ
+      - label: 見出し画像
+        name: thumbnail
+        widget: image
+        required: false
+        hint: 記事の一番上に出ます。無くても構いません。
+      - label: 本文
+        name: body
+        widget: markdown
+        buttons: [bold, link, heading-two, heading-three, bulleted-list, numbered-list, quote]
+        editor_components: [image]
+        hint: 見出し・太字・リンク・箇条書き・画像が使えます。
+
+  # ---------------------------------------------------------------- 解決事例
+  - name: cases
+    label: 解決事例
+    label_singular: 解決事例
+    description: 「公開する」と「掲載同意を確認済み」の両方がオンの事例だけがサイトに出ます。
+    folder: content/cases
+    format: json
+    create: true
+    delete: true
+    slug: "{{year}}{{month}}{{day}}-{{uuid_shorter}}"
+    identifier_field: title
+    summary: "{{title}}"
+    sortable_fields: [date, title]
+    editor:
+      preview: false
+    fields:
+      - label: 公開する
+        name: published
+        widget: boolean
+        default: false
+        hint: オフのあいだは、保存してもサイトには表示されません（下書き）。
+      - label: 掲載同意を確認済み
+        name: consent
+        widget: boolean
+        default: false
+        hint: お客様から、写真とお声をサイトに載せる同意をいただいたらオンにします。オフのままでは、公開してもサイトに出ません。
+      - label: トップページに優先して出す
+        name: featured
+        widget: boolean
+        default: false
+        required: false
+      - label: 施工日
+        name: date
+        widget: datetime
+        format: YYYY-MM-DD
+        date_format: YYYY/MM/DD
+        time_format: false
+        default: "{{now}}"
+      - label: カテゴリ
+        name: category
+        widget: select
+        options:
+          - { label: 給湯器, value: kyutoki }
+          - { label: エコキュート, value: eco }
+          - { label: 外壁・屋根, value: gaiheki }
+          - { label: 水まわりリフォーム, value: water }
+          - { label: 内装, value: interior }
+          - { label: 外構, value: exterior }
+          - { label: その他, value: other }
+        default: kyutoki
+      - label: タイトル
+        name: title
+        widget: string
+        hint: 例：突然お湯が出なくなった給湯器。
+      - label: サブタイトル
+        name: subtitle
+        widget: string
+        required: false
+        hint: 例：スピード対応で、2日後に安心の暮らしを取り戻しました。
+      - label: 一覧用の短い説明
+        name: catch
+        widget: text
+        hint: 一覧のカードに出ます。60字くらいまでが読みやすい長さです。
+      - label: 施工前（Before）の写真
+        name: img_before
+        widget: image
+        hint: 施工後と同じ位置・同じ角度で撮った写真を選んでください。表札や車のナンバーが写らないようにお願いします。
+      - label: 施工後（After）の写真
+        name: img_after
+        widget: image
+      - label: お客様の困りごと
+        name: trouble
+        widget: text
+      - label: ホームエステの対応
+        name: response
+        widget: text
+      - label: お客様の感想
+        name: voice
+        widget: text
+        required: false
+      - label: お客様のお名前の表記
+        name: customer
+        widget: string
+        required: false
+        hint: 例：枚方市 T様（イニシャルで）
+      - label: 施工エリア
+        name: area
+        widget: string
+        required: false
+        default: 大阪府枚方市
+      - label: 築年数
+        name: building_age
+        widget: string
+        required: false
+        hint: 例：約20年
+      - label: 施工期間
+        name: period
+        widget: string
+        required: false
+        hint: 例：ご相談から2日
+      - label: 担当
+        name: staff
+        widget: string
+        required: false
+
+  # ---------------------------------------------------------------- 相談会・バナー
+  - name: pages
+    label: 相談会・バナー
+    description: 1つずつしか無いページの中身です。
+    editor:
+      preview: false
+    files:
+      - name: soudankai
+        label: 住まいのお困りごと相談会
+        file: content/soudankai.json
+        fields:
+          - label: 開催回
+            name: event_no
+            widget: number
+            value_type: int
+            min: 1
+            hint: 「第9回」なら 9 と入れます。
+          - label: 開催日
+            name: dates
+            widget: string
+            hint: 例：2026年9月26日（土）・27日（日）
+          - label: 時間
+            name: time
+            widget: string
+            default: 10:00〜15:00
+          - label: チラシ（表）
+            name: flyer_front
+            widget: image
+          - label: チラシ（裏）
+            name: flyer_back
+            widget: image
+            required: false
+          - label: 今回の特典
+            name: benefits
+            widget: list
+            summary: "{{fields.badge}}　{{fields.title}}"
+            fields:
+              - { label: 見出しの札, name: badge, widget: string, hint: 例：先着10名限定 }
+              - { label: 特典名, name: title, widget: string, hint: 例：ノーリツ24号給湯タイプ }
+              - { label: 強調する文字, name: highlight, widget: string, required: false, hint: 例：81.2%OFF }
+              - { label: 説明, name: body, widget: text, required: false }
+          - label: 年間開催スケジュール
+            name: schedule
+            widget: list
+            summary: "{{fields.month}}　{{fields.days}}　{{fields.note}}"
+            fields:
+              - { label: 年月, name: month, widget: string, hint: 例：2026年 9月 }
+              - { label: 日にち, name: days, widget: string, hint: 例：26(土)・27(日) }
+              - { label: 備考, name: note, widget: string, required: false, hint: 例：インテリアフェア }
+
+      - name: banners
+        label: トップのバナー（ハウスゲートグループ）
+        file: content/banners.json
+        fields:
+          - label: バナー
+            name: items
+            widget: list
+            summary: "{{fields.title}}"
+            hint: 上から順にサイトに並びます。ドラッグで並び順を変えられます。
+            fields:
+              - { label: 名前, name: title, widget: string, hint: 画像の代わりに読み上げられる文字です。画像が無いときは、この文字がそのまま出ます。 }
+              - { label: 画像, name: image, widget: image, required: false, hint: 横2：縦1 の比率（368×182 など）。無ければ文字だけのタイルになります。 }
+              - { label: 小見出し, name: category, widget: string, required: false, hint: 画像が無いときだけ、名前の上に出ます。例：グループ }
+              - { label: リンク先の URL, name: url, widget: string, required: false, hint: 空のままにすると「準備中」と出ます。 }
+              - label: 文字タイルの色
+                name: style
+                widget: select
+                required: false
+                default: plain
+                options:
+                  - { label: 白, value: plain }
+                  - { label: 青, value: blue }

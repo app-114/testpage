@@ -1795,6 +1795,11 @@ body{line-break:strict}
 .parks a.park:hover::after{opacity:1}
 .parks a.park:focus-visible{outline:3px solid var(--green);outline-offset:2px}
 
+/* ---------- 困りごと・サービスの画像アイコン ---------- */
+.row .ico.ico-img{width:64px;height:64px;background:var(--mist)}
+.row .ico.ico-img img{width:42px;height:42px;display:block;object-fit:contain}
+@media(max-width:430px){.row .ico.ico-img{width:56px;height:56px}.row .ico.ico-img img{width:36px;height:36px}}
+
 /* ===== ブランドロゴ（原画をSVGで再現） ===== */
 .logo{gap:11px;align-items:center}
 .logomark{display:none}
@@ -1818,6 +1823,60 @@ footer .logotext small{color:#CBDCC4}
 .splash .t1 .wm{display:block;font-size:2.15rem;letter-spacing:.06em;padding:0 .06em}
 .splash .t1 small{display:block;margin-top:12px;font-size:.9rem;letter-spacing:.22em;text-indent:.22em;color:var(--ink-2)}
 .splash .t2{margin-top:30px}
+
+/* ---------- 管理画面の中身（お知らせ・記事・動的な解決事例） ---------- */
+.cms-news-top[hidden],.flyers figure[hidden]{display:none!important}
+.newslist{list-style:none;margin:0;padding:0;border-top:1px solid var(--hair)}
+.newslist li{border-bottom:1px solid var(--hair);margin:0}
+.newslist a{display:flex;flex-direction:column;gap:8px;padding:20px 4px;min-height:44px;
+  text-decoration:none;color:var(--ink)}
+@media(min-width:768px){
+  .newslist a{display:grid;grid-template-columns:210px minmax(0,1fr);gap:24px;align-items:baseline;padding:24px 8px}
+}
+.newslist .m{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.newslist time,.post-meta time{font-family:var(--disp);font-weight:700;font-size:.9375rem;
+  letter-spacing:.04em;color:var(--green-ink);white-space:nowrap}
+.newslist .k,.post-meta .k{display:inline-block;font-size:.875rem;line-height:1.5;padding:2px 12px;
+  border:1px solid var(--hair);border-radius:999px;color:var(--ink-2);background:#fff}
+.newslist b{font-weight:700;font-size:1.0625rem;line-height:1.75;min-width:0}
+.newslist a:hover b{color:var(--green-ink);text-decoration:underline;text-underline-offset:4px}
+.newslist a:focus-visible{outline:3px solid var(--green);outline-offset:2px}
+.newsempty{padding:28px 4px;color:var(--muted);font-size:1rem}
+
+.post{max-width:780px;margin:0 auto;padding-top:24px;padding-bottom:72px}
+.post-meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0}
+.post h1{font-family:var(--serif);font-weight:600;font-size:1.75rem;line-height:1.6;
+  letter-spacing:.04em;margin:14px 0 0}
+@media(min-width:768px){.post h1{font-size:2.125rem}}
+.post-thumb{margin:32px 0 0}
+.post-thumb img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:12px;background:var(--mist)}
+.post-body{margin-top:32px;font-size:1.0625rem;line-height:2;color:var(--ink)}
+.post-body>*:first-child{margin-top:0}
+.post-body p{margin:0 0 1.3em}
+.post-body h2{font-family:var(--serif);font-weight:600;font-size:1.375rem;line-height:1.6;
+  margin:52px 0 16px;padding-left:14px;border-left:4px solid var(--green)}
+.post-body h3{font-size:1.1875rem;line-height:1.7;margin:36px 0 10px}
+.post-body h4{font-size:1.0625rem;margin:28px 0 8px}
+.post-body ul,.post-body ol{margin:0 0 1.3em;padding-left:1.4em}
+.post-body li{margin:.3em 0}
+.post-body img{display:block;max-width:100%;height:auto;border-radius:10px;margin:12px 0}
+.post-body a{color:var(--green-ink);text-decoration:underline;text-underline-offset:3px}
+.post-body blockquote{margin:0 0 1.3em;padding:14px 20px;background:var(--mist);border-radius:10px}
+.post-body blockquote p{margin:0}
+.post-back{margin-top:56px}
+
+.cms-news-top .shead{align-items:flex-end}
+.cms-news-top .shead .r{margin-left:auto;text-align:right;white-space:nowrap}
+.cms-detail .phead h1{font-size:1.75rem;line-height:1.55}
+@media(min-width:768px){.cms-detail .phead h1{font-size:2.375rem}}
+.cms-detail h1:focus,.page h1[tabindex="-1"]:focus{outline:none}
+.cms-ph{word-break:keep-all;overflow-wrap:anywhere}
+.cms-lead{font-family:var(--serif);font-size:1.0625rem;font-weight:600;line-height:2;
+  letter-spacing:.04em;color:var(--ink);margin-top:16px}
+.cms-loading{padding:96px 0;text-align:center;color:var(--muted)}
+.cms-missing{padding:80px 0;text-align:center}
+.cms-missing h1{font-family:var(--serif);font-weight:600;font-size:1.75rem;margin:0 0 16px}
+.cms-missing a{color:var(--green-ink);font-weight:700}
 </style>
 </head>
 <body>
@@ -1875,6 +1934,7 @@ footer .logotext small{color:#CBDCC4}
     <a href="#/kabeyanen">かべやねん。</a>
     <a href="#/sign"><span class="jpw"><span class="nw">住まいの</span><wbr><span class="nw">サインチェック</span></span></a>
     <a href="#/company">会社案内</a>
+    <a href="#/news">お知らせ・コラム</a>
     <a href="#/contact">お問い合わせ</a>
   </nav>
   <div class="drawer-foot">
@@ -2150,6 +2210,16 @@ footer .logotext small{color:#CBDCC4}
         <div class="cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>正直屋 枚方店／かべやねん。（京阪本線 光善寺駅）</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- お知らせ・コラム（管理画面の記事があるときだけ表示） -->
+<section id="news" class="cms-news-top" hidden>
+  <div class="wrap">
+    <div class="shead"><div class="l"><div class="no"><i>─</i><span>News &amp; Column</span></div>
+      <h2>お知らせ・コラム</h2></div>
+      <p class="r"><a href="#/news" style="color:var(--green-ink);font-weight:700"><span class="jpw"><span class="nw">一覧を</span><wbr><span class="nw">見る →</span></span></a></p></div>
+    <ul class="newslist" id="cms-news-top"></ul>
   </div>
 </section>
 
@@ -3196,6 +3266,80 @@ footer .logotext small{color:#CBDCC4}
   <p class="end"><span class="jpw"><span class="nw">制定日：　　</span><wbr><span class="nw">年　　</span><wbr><span class="nw">月　　日</span></span><br><span class="jpw"><span class="nw">株式会社</span><wbr><span class="nw">ホームエステ</span></span></p>
 </div></div></section>
 </div>
+<div class="page" id="p/news" data-title="お知らせ・コラム">
+<div class="wrap"><p class="crumb"><a href="#/">トップ</a><span>›</span>お知らせ・コラム</p></div>
+<div class="wrap"><div class="phead rv">
+      <div class="no"><i>01</i><span>News &amp; Column</span></div>
+      <h1>お知らせ・コラム</h1>
+      <p><span class="jpw"><span class="nw">相談会の</span><wbr><span class="nw">ご案内や、</span><wbr><span class="nw">住まいの</span><wbr><span class="nw">お手入れに</span><wbr><span class="nw">役立つ</span><wbr><span class="nw">情報を</span><wbr><span class="nw">お届けします。</span></span></p>
+    </div></div>
+<section style="padding-top:8px"><div class="wrap">
+  <ul class="newslist" id="cms-news-list"><li class="newsempty"><span class="jpw"><span class="nw">現在、</span><wbr><span class="nw">お知らせはありません。</span></span></li></ul>
+</div></section>
+<div class="band">
+  <div class="wrap"><div class="in">
+    <div class="l rv">
+      <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
+      <a class="tel" href="tel:0120304500"><span class="fr">通話<br>無料</span><b>0120-304-500</b></a>
+      <p class="hours"><span class="jpw"><span class="nw">営業時間／9:</span><wbr><span class="nw">00〜</span><wbr><span class="nw">19:</span><wbr><span class="nw">00</span><wbr><span class="nw">（土・</span><wbr><span class="nw">日・</span><wbr><span class="nw">祝日も</span><wbr><span class="nw">受付）</span></span></p>
+    </div>
+    <div class="sep" aria-hidden="true"></div>
+    <div class="r rv">
+      <p class="g"><span class="jpw"><span class="nw">メール・</span><wbr><span class="nw">LINEからでも</span><wbr><span class="nw">お気軽に</span><wbr><span class="nw">お問合せください。</span></span></p>
+      <div class="btns">
+        <a class="btn btn-mail" href="#/contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
+        <a class="btn btn-line" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 9 9 0 0 1-3.8-.8L3 21l1.9-5.6a8.2 8.2 0 0 1-.9-3.9A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg>LINEで無料相談</a>
+      </div>
+      <p class="hint"><b><span class="jpw"><span class="nw">給湯器の品番</span><wbr><span class="nw">シールを</span><wbr><span class="nw">撮って</span><wbr><span class="nw">送るだけ</span></span></b><span class="jpw"><span class="nw">で、</span><wbr><span class="nw">概算の</span><wbr><span class="nw">お見積を</span><wbr><span class="nw">ご案内します。</span></span></p>
+    </div>
+  </div></div>
+</div>
+
+</div>
+<div class="page" id="p/news/_" data-title="お知らせ・コラム">
+<div class="cms-detail"></div>
+<div class="band">
+  <div class="wrap"><div class="in">
+    <div class="l rv">
+      <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
+      <a class="tel" href="tel:0120304500"><span class="fr">通話<br>無料</span><b>0120-304-500</b></a>
+      <p class="hours"><span class="jpw"><span class="nw">営業時間／9:</span><wbr><span class="nw">00〜</span><wbr><span class="nw">19:</span><wbr><span class="nw">00</span><wbr><span class="nw">（土・</span><wbr><span class="nw">日・</span><wbr><span class="nw">祝日も</span><wbr><span class="nw">受付）</span></span></p>
+    </div>
+    <div class="sep" aria-hidden="true"></div>
+    <div class="r rv">
+      <p class="g"><span class="jpw"><span class="nw">メール・</span><wbr><span class="nw">LINEからでも</span><wbr><span class="nw">お気軽に</span><wbr><span class="nw">お問合せください。</span></span></p>
+      <div class="btns">
+        <a class="btn btn-mail" href="#/contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
+        <a class="btn btn-line" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 9 9 0 0 1-3.8-.8L3 21l1.9-5.6a8.2 8.2 0 0 1-.9-3.9A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg>LINEで無料相談</a>
+      </div>
+      <p class="hint"><b><span class="jpw"><span class="nw">給湯器の品番</span><wbr><span class="nw">シールを</span><wbr><span class="nw">撮って</span><wbr><span class="nw">送るだけ</span></span></b><span class="jpw"><span class="nw">で、</span><wbr><span class="nw">概算の</span><wbr><span class="nw">お見積を</span><wbr><span class="nw">ご案内します。</span></span></p>
+    </div>
+  </div></div>
+</div>
+
+</div>
+<div class="page" id="p/case/_" data-title="解決事例">
+<div class="cms-detail"></div>
+<div class="band">
+  <div class="wrap"><div class="in">
+    <div class="l rv">
+      <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
+      <a class="tel" href="tel:0120304500"><span class="fr">通話<br>無料</span><b>0120-304-500</b></a>
+      <p class="hours"><span class="jpw"><span class="nw">営業時間／9:</span><wbr><span class="nw">00〜</span><wbr><span class="nw">19:</span><wbr><span class="nw">00</span><wbr><span class="nw">（土・</span><wbr><span class="nw">日・</span><wbr><span class="nw">祝日も</span><wbr><span class="nw">受付）</span></span></p>
+    </div>
+    <div class="sep" aria-hidden="true"></div>
+    <div class="r rv">
+      <p class="g"><span class="jpw"><span class="nw">メール・</span><wbr><span class="nw">LINEからでも</span><wbr><span class="nw">お気軽に</span><wbr><span class="nw">お問合せください。</span></span></p>
+      <div class="btns">
+        <a class="btn btn-mail" href="#/contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>メールで無料相談</a>
+        <a class="btn btn-line" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 9 9 0 0 1-3.8-.8L3 21l1.9-5.6a8.2 8.2 0 0 1-.9-3.9A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg>LINEで無料相談</a>
+      </div>
+      <p class="hint"><b><span class="jpw"><span class="nw">給湯器の品番</span><wbr><span class="nw">シールを</span><wbr><span class="nw">撮って</span><wbr><span class="nw">送るだけ</span></span></b><span class="jpw"><span class="nw">で、</span><wbr><span class="nw">概算の</span><wbr><span class="nw">お見積を</span><wbr><span class="nw">ご案内します。</span></span></p>
+    </div>
+  </div></div>
+</div>
+
+</div>
 <div class="page" id="p/404" data-title="ページが見つかりません">
 <section><div class="wrap"><div class="center rv">
   <span class="mark" style="background:#FDF8F1;color:var(--orange-deep)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4.5M12 17h.01"/><path d="M10.3 3.9 1.9 18.3A2 2 0 0 0 3.6 21.3h16.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></span>
@@ -3253,7 +3397,8 @@ footer .logotext small{color:#CBDCC4}
         <li><a href="#/staff">サポートスタッフ</a></li>
         <li><a href="#/sign"><span class="jpw"><span class="nw">住まいの</span><wbr><span class="nw">サインチェック</span></span></a></li>
         <li><a href="#/@access"><span class="jpw"><span class="nw">かべやねん。／</span><wbr><span class="nw">アクセス</span></span></a></li>
-        <li><a href="#/contact">お問い合わせ</a></li><li><a href="#/privacy"><span class="jpw"><span class="nw">プライバシー</span><wbr><span class="nw">ポリシー</span></span></a></li></ul></div>
+        <li><a href="#/news">お知らせ・コラム</a></li>
+          <li><a href="#/contact">お問い合わせ</a></li><li><a href="#/privacy"><span class="jpw"><span class="nw">プライバシー</span><wbr><span class="nw">ポリシー</span></span></a></li></ul></div>
     </div>
     <p class="copyright"><span class="jpw"><span class="nw">© </span><wbr><span class="nw">株式会社</span><wbr><span class="nw">ホームエステ　※ </span><wbr><span class="nw">本</span><wbr><span class="nw">ページは</span><wbr><span class="nw">構成確認用の</span><wbr><span class="nw">叩き台です。</span><wbr><span class="nw">画像・</span><wbr><span class="nw">文言・リンク</span><wbr><span class="nw">先は仮のものを</span><wbr><span class="nw">含みます。</span></span></p>
   </div></div>
@@ -3283,7 +3428,12 @@ footer .logotext small{color:#CBDCC4}
   document.querySelectorAll('.page').forEach(function(p){ pages[p.id.slice(1)] = p; });
   var SITE = 'ホームエステ 住まいの総合サイト（叩き台）';
   function show(route, anchor, push){
-    if(!pages[route]) route = '/';
+    if(/\/_$/.test(route)) route = '/404';
+    if(!pages[route]){
+      var dm = /^\/(news|case)\/([A-Za-z0-9_-]+)$/.exec(route);
+      if(dm && pages['/'+dm[1]+'/_']){ cmsDetail(dm[1], dm[2]); route = '/'+dm[1]+'/_'; }
+      else route = '/';
+    }
     Object.keys(pages).forEach(function(k){ pages[k].classList.toggle('active', k===route); });
     var p = pages[route];
     hydrate(p);
@@ -3494,6 +3644,7 @@ footer .logotext small{color:#CBDCC4}
       });
     }
     apply(document);
+    window.__jpwrap = apply;
   })();
 
   /* ---- 未設定リンク：先頭へ飛ぶ挙動を止める（URL支給後に差し替え） ---- */
@@ -3531,6 +3682,304 @@ footer .logotext small{color:#CBDCC4}
       c.style.display=(k==='all'||c.dataset.cat===k)?'':'none';
     });
   });
+
+  /* ---- 管理画面（CMS）の中身を反映する ----
+     content/ の JSON を読み、中身があれば静的な表示を差し替える。読めなければ静的なまま。
+     start() より前に呼ばれてもよいように、読み込みは初回に呼ばれたときに始める。 */
+  var CMS_P = null;
+  var CMS_CAT = {kyutoki:'給湯器',eco:'エコキュート',gaiheki:'外壁・屋根',water:'水まわりリフォーム',
+                 interior:'内装',exterior:'外構',other:'その他'};
+  function cmsEsc(s){
+    return String(s==null?'':s).replace(/[&<>"']/g,function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; });
+  }
+  var CMS_SEG = null;
+  function cmsPhrase(s){
+    var t = String(s==null?'':s), segs = [];
+    try{
+      CMS_SEG = CMS_SEG || new Intl.Segmenter('ja',{granularity:'word'});
+      var it = CMS_SEG.segment(t)[Symbol.iterator](), x;
+      while(!(x = it.next()).done) segs.push(x.value.segment);
+    }catch(e){ return cmsEsc(t); }
+    var K = /[\u4E00-\u9FFF\u3005\u3007]/, KA = /[\u30A0-\u30FF]/, L = /[A-Za-z0-9]/, OPEN = /[「『（(【［]/;
+    var out = [], pre = '';
+    segs.forEach(function(g){
+      if(/^[おご]$/.test(g)){ pre += g; return; }                 // 「お湯」「ご案内」の接頭は次に付ける
+      var c = g.charAt(0), last = out.length ? out[out.length-1] : '', lc = last.charAt(last.length-1);
+      var starts = K.test(c) || KA.test(c) || L.test(c) || OPEN.test(c);
+      var glue = (K.test(c) && K.test(lc)) || (L.test(c) && L.test(lc)) || OPEN.test(lc);
+      if(!out.length || (starts && !glue)) out.push(pre+g); else out[out.length-1] += pre+g;
+      pre = '';
+    });
+    if(pre){ if(out.length) out[out.length-1] += pre; else out.push(pre); }
+    return '<span class="cms-ph">'+out.map(cmsEsc).join('<wbr>')+'</span>';
+  }
+  function cmsBr(s){ return cmsEsc(s).replace(/\r?\n/g,'<br>'); }
+  function cmsUrl(p){
+    p = String(p||'').trim();
+    if(!p) return '';
+    if(/^https?:\/\//i.test(p)) return p;
+    if(/^[a-z][a-z0-9+.-]*:/i.test(p)) return '';          // javascript: などは使わない
+    return p.charAt(0)==='#' ? p : p.replace(/^\/+/,'');     // /uploads/… → uploads/…（サイトの置き場所に合わせる）
+  }
+  function cmsDate(d){
+    var m = /^(\d{4})-(\d{1,2})-(\d{1,2})/.exec(String(d||''));
+    return m ? m[1]+'.'+('0'+m[2]).slice(-2)+'.'+('0'+m[3]).slice(-2) : '';
+  }
+  function cmsGet(path){
+    return fetch('content/'+path,{cache:'no-cache'})
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .catch(function(){ return null; });
+  }
+  function cmsLoad(){
+    if(CMS_P) return CMS_P;
+    if(!window.fetch || typeof Promise==='undefined') return null;
+    CMS_P = Promise.all([cmsGet('index/news.json'),cmsGet('index/cases.json'),
+                         cmsGet('soudankai.json'),cmsGet('banners.json')])
+      .then(function(a){
+        function arr(x){ return Array.isArray(x) ? x : []; }
+        function newer(x,y){ return String(y.date||'').localeCompare(String(x.date||'')); }
+        return {
+          news: arr(a[0]).filter(function(n){ return n && n.published===true && n.slug && n.title; }).sort(newer),
+          cases: arr(a[1]).filter(function(c){ return c && c.published===true && c.consent===true && c.slug && c.title; })
+                   .sort(function(x,y){ return (y.featured?1:0)-(x.featured?1:0) || newer(x,y); }),
+          soudan: (a[2] && typeof a[2]==='object') ? a[2] : null,
+          banners: (a[3] && Array.isArray(a[3].items)) ? a[3].items : null
+        };
+      });
+    return CMS_P;
+  }
+
+  /* 本文（Markdown）を HTML にする。先に全体をエスケープするので、本文に書いた HTML はそのまま文字で出る */
+  function cmsInline(s){
+    s = cmsEsc(s);
+    s = s.replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g,function(_,alt,src){
+      var u = cmsUrl(src.replace(/&amp;/g,'&'));
+      return u ? '<img src="'+cmsEsc(u)+'" alt="'+alt+'" loading="lazy">' : '';
+    });
+    s = s.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g,function(_,t,href){
+      var u = cmsUrl(href.replace(/&amp;/g,'&'));
+      if(!u) return t;
+      var ext = /^https?:/i.test(u);
+      return '<a href="'+cmsEsc(u)+'"'+(ext?' target="_blank" rel="noopener noreferrer"':'')+'>'+t+'</a>';
+    });
+    return s.replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+  }
+  function cmsMd(src){
+    var out = [], para = [], list = null;
+    function flushP(){ if(para.length){ out.push('<p>'+para.map(cmsInline).join('<br>')+'</p>'); para = []; } }
+    function flushL(){
+      if(!list) return;
+      out.push('<'+list.t+'>'+list.items.map(function(i){ return '<li>'+cmsInline(i)+'</li>'; }).join('')+'</'+list.t+'>');
+      list = null;
+    }
+    String(src||'').replace(/\r\n?/g,'\n').split('\n').forEach(function(line){
+      var m;
+      if(!line.trim()){ flushP(); flushL(); return; }
+      if((m = /^(#{1,3})\s+(.*)$/.exec(line))){
+        flushP(); flushL(); var lv = m[1].length+1;
+        out.push('<h'+lv+'>'+cmsInline(m[2])+'</h'+lv+'>'); return;
+      }
+      if((m = /^\s*[-*+]\s+(.*)$/.exec(line))){
+        flushP(); if(!list || list.t!=='ul'){ flushL(); list = {t:'ul',items:[]}; } list.items.push(m[1]); return;
+      }
+      if((m = /^\s*\d+[.)]\s+(.*)$/.exec(line))){
+        flushP(); if(!list || list.t!=='ol'){ flushL(); list = {t:'ol',items:[]}; } list.items.push(m[1]); return;
+      }
+      if((m = /^>\s?(.*)$/.exec(line))){
+        flushP(); flushL(); out.push('<blockquote><p>'+cmsInline(m[1])+'</p></blockquote>'); return;
+      }
+      flushL(); para.push(line.replace(/\s+$/,''));
+    });
+    flushP(); flushL();
+    return out.join('');
+  }
+
+  function cmsNewsItem(n){
+    return '<li><a href="#/news/'+encodeURIComponent(n.slug)+'"><span class="m">'+
+      '<time datetime="'+cmsEsc(String(n.date||'').slice(0,10))+'">'+cmsDate(n.date)+'</time>'+
+      (n.kind ? '<span class="k">'+cmsEsc(n.kind)+'</span>' : '')+
+      '</span><b>'+cmsPhrase(n.title)+'</b></a></li>';
+  }
+  function cmsCaseCard(c){
+    var cat = CMS_CAT[c.category] ? c.category : 'other';
+    function im(p,alt){
+      var u = cmsUrl(p);
+      return u ? '<img src="'+cmsEsc(u)+'" alt="'+alt+'" loading="lazy">' : '<span class="ph"><b>'+alt+'</b></span>';
+    }
+    var meta = [c.area,c.building_age,c.period].filter(Boolean)
+      .map(function(x){ return '<span>'+cmsEsc(x)+'</span>'; }).join('');
+    return '<a class="case" href="#/case/'+encodeURIComponent(c.slug)+'" data-cat="'+cat+'">'+
+      '<span class="cap"><b>BEFORE</b><span>AFTER</span></span>'+
+      '<span class="imgs">'+im(c.img_before,'施工前')+'<span class="mid"><i>›</i></span>'+im(c.img_after,'施工後')+'</span>'+
+      '<span class="bd"><span class="tag">'+cmsEsc(CMS_CAT[cat])+'</span><h3>'+cmsPhrase(c.catch||c.title)+'</h3>'+
+      (meta ? '<span class="meta">'+meta+'</span>' : '')+'</span></a>';
+  }
+  function cmsNewsHTML(n){
+    var th = cmsUrl(n.thumbnail);
+    return '<div class="wrap"><p class="crumb"><a href="#/">トップ</a><span>›</span>'+
+        '<a href="#/news">お知らせ・コラム</a><span>›</span>'+cmsEsc(n.title)+'</p></div>'+
+      '<article class="wrap post">'+
+        '<p class="post-meta"><time datetime="'+cmsEsc(String(n.date||'').slice(0,10))+'">'+cmsDate(n.date)+'</time>'+
+          (n.kind ? '<span class="k">'+cmsEsc(n.kind)+'</span>' : '')+'</p>'+
+        '<h1>'+cmsPhrase(n.title)+'</h1>'+
+        (th ? '<figure class="post-thumb"><img src="'+cmsEsc(th)+'" alt=""></figure>' : '')+
+        '<div class="post-body">'+cmsMd(n.body)+'</div>'+
+        '<p class="post-back"><a class="more" href="#/news">お知らせ・コラム一覧へ<i>→</i></a></p>'+
+      '</article>';
+  }
+  function cmsCaseHTML(c){
+    var cat = CMS_CAT[c.category] || 'その他';
+    function fig(p,label,cls,alt){
+      var u = cmsUrl(p);
+      return u ? '<figure><img src="'+cmsEsc(u)+'" alt="'+alt+'" loading="lazy" '+
+        'style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px">'+
+        '<figcaption class="'+cls+'">'+label+'</figcaption></figure>' : '';
+    }
+    function sec(h,t){ return t ? '<section><h2>'+h+'</h2><p>'+cmsBr(t)+'</p></section>' : ''; }
+    var spec = [['カテゴリ',cat],['施工エリア',c.area],['築年数',c.building_age],['施工期間',c.period],['担当',c.staff]]
+      .filter(function(r){ return r[1]; })
+      .map(function(r){ return '<div><b>'+r[0]+'</b>'+cmsEsc(r[1])+'</div>'; }).join('');
+    var ba = (c.img_before || c.img_after)
+      ? '<div class="ba">'+fig(c.img_before,'BEFORE','bfc','施工前')+'<div class="ar" aria-hidden="true">→</div>'+
+        fig(c.img_after,'AFTER','afc','施工後')+'</div>' : '';
+    return '<div class="wrap"><p class="crumb"><a href="#/">トップ</a><span>›</span>'+
+        '<a href="#/case">解決事例</a><span>›</span>'+cmsEsc(c.title)+'</p></div>'+
+      '<div class="wrap"><div class="phead" style="max-width:800px;margin:0 auto">'+
+        '<div class="no"><i>'+cmsEsc(cat)+'</i><span>Case</span></div>'+
+        '<h1>'+cmsPhrase(c.title)+'</h1>'+(c.subtitle ? '<p class="cms-lead">'+cmsPhrase(c.subtitle)+'</p>' : '')+
+      '</div></div>'+
+      '<section style="padding-top:0"><div class="wrap"><div class="detail">'+ba+
+        '<div class="qa">'+sec('お客様の困りごと',c.trouble)+sec('ホームエステの対応',c.response)+
+          (c.voice ? '<section><h2>お客様の感想</h2><div class="voice"><p>'+cmsBr(c.voice)+'</p>'+
+            (c.customer ? '<small>'+cmsEsc(c.customer)+'／掲載のご同意をいただいています</small>' : '')+'</div></section>' : '')+
+        '</div>'+(spec ? '<div class="spec">'+spec+'</div>' : '')+
+      '</div></div></section>';
+  }
+
+  function cmsFocus(pg, box){
+    var h = box.querySelector('h1');
+    if(!h) return;
+    var a = document.activeElement;
+    if(a && a!==document.body && !pg.contains(a)) return;         // 利用者がほかの場所を操作中なら動かさない
+    if(a && a.blur && pg.contains(a)) a.blur();
+    h.setAttribute('tabindex','-1');
+    try{ h.focus({preventScroll:true}); }catch(e){ h.focus(); }
+  }
+  function cmsWrap(el){ if(el && window.__jpwrap){ try{ window.__jpwrap(el); }catch(e){} } }
+
+  function cmsDetail(type, slug){
+    var pg = pages['/'+type+'/_'], box = pg && pg.querySelector('.cms-detail');
+    if(!box) return;
+    box.innerHTML = '<div class="wrap"><p class="cms-loading">読み込んでいます…</p></div>';
+    var p = cmsLoad();
+    if(!p) return;
+    p.then(function(d){
+      if((location.hash||'').slice(1).split('@')[0] !== '/'+type+'/'+slug) return;   // すでに別のページへ移動した
+      var list = d ? (type==='news' ? d.news : d.cases) : [], item = null;
+      for(var i=0;i<list.length;i++){ if(list[i].slug===slug){ item = list[i]; break; } }
+      if(!item){
+        box.innerHTML = '<div class="wrap"><div class="cms-missing"><h1>ページが見つかりません</h1>'+
+          '<p>削除されたか、まだ公開されていない可能性があります。</p>'+
+          '<p><a href="#/'+type+'">'+(type==='news' ? 'お知らせ・コラム一覧へ' : '解決事例一覧へ')+'</a></p></div></div>';
+        document.title = 'ページが見つかりません｜'+SITE;
+        cmsFocus(pg, box);
+        return;
+      }
+      box.innerHTML = type==='news' ? cmsNewsHTML(item) : cmsCaseHTML(item);
+      pg.dataset.title = item.title;
+      document.title = item.title+'｜'+SITE;
+      cmsWrap(box);
+      cmsFocus(pg, box);
+    });
+  }
+
+  function cmsRender(d){
+    if(!d) return;
+    var top = pages['/'], el;
+
+    var nt = document.getElementById('cms-news-top');
+    if(nt && d.news.length){
+      nt.innerHTML = d.news.slice(0,3).map(cmsNewsItem).join('');
+      var sec = nt.closest('section'); if(sec) sec.hidden = false;
+      cmsWrap(nt);
+    }
+    var nl = document.getElementById('cms-news-list');
+    if(nl){
+      nl.innerHTML = d.news.length ? d.news.map(cmsNewsItem).join('')
+                                   : '<li class="newsempty"><span class="jpw"><span class="nw">現在、</span><wbr><span class="nw">お知らせはありません。</span></span></li>';
+      cmsWrap(nl);
+    }
+
+    if(d.cases.length){
+      if(top && (el = top.querySelector('.case-scroll'))){
+        el.innerHTML = d.cases.slice(0,6).map(cmsCaseCard).join(''); cmsWrap(el);
+      }
+      var cl = pages['/case'];
+      if(cl && (el = cl.querySelector('.caselist'))){
+        el.innerHTML = d.cases.map(cmsCaseCard).join(''); cmsWrap(el);
+        var note = cl.querySelector('.caselist ~ .sysnote'); if(note) note.parentNode.removeChild(note);
+        cl.querySelectorAll('.tabs button').forEach(function(b){
+          b.setAttribute('aria-selected', b.dataset.cat==='all' ? 'true' : 'false'); });
+      }
+    }
+
+    var s = d.soudan, sp = pages['/soudankai'];
+    if(s && sp){
+      var no = s.event_no ? '第'+s.event_no+'回 ' : '';
+      var h = sp.querySelector('.shead h2');
+      if(h && s.event_no){ h.innerHTML = cmsPhrase(no+'住まいのお困りごと相談会'); }
+      sp.querySelectorAll('.eventinfo > div').forEach(function(row){
+        var b = row.querySelector('b'), v = row.querySelector('b + span');
+        if(!b || !v) return;
+        var k = b.textContent.trim();
+        if(k==='開催日' && s.dates) v.textContent = s.dates;
+        if(k==='時間' && s.time) v.textContent = s.time;
+      });
+      var figs = sp.querySelectorAll('.flyers figure'), fl = [s.flyer_front, s.flyer_back], side = ['表','裏'];
+      [0,1].forEach(function(i){
+        var f = figs[i]; if(!f) return;
+        var u = cmsUrl(fl[i]);
+        if(!u){ if(i===1 && cmsUrl(s.flyer_front)) f.hidden = true; return; }
+        f.hidden = false;
+        var im = f.querySelector('img');
+        if(im){ im.removeAttribute('data-i'); im.src = u; im.alt = no+'住まいのお困りごと相談会のチラシ '+side[i]; }
+        var btn = f.querySelector('.zoomable'); if(btn) btn.setAttribute('aria-label','チラシ '+side[i]+'を拡大表示');
+        var cap = f.querySelector('figcaption'); if(cap) cap.textContent = no+'チラシ '+side[i]+' ─ タップで拡大表示';
+      });
+      if(Array.isArray(s.benefits) && s.benefits.length && (el = sp.querySelector('.benefit'))){
+        el.innerHTML = s.benefits.map(function(x){
+          return '<div>'+(x.badge ? '<small>'+cmsEsc(x.badge)+'</small>' : '')+
+            '<b>'+cmsPhrase(x.title)+(x.highlight ? '<br><span class="price">'+cmsEsc(x.highlight)+'</span>' : '')+'</b>'+
+            (x.body ? '<p>'+cmsBr(x.body)+'</p>' : '')+'</div>';
+        }).join('');
+        cmsWrap(el);
+      }
+      if(Array.isArray(s.schedule) && s.schedule.length && (el = sp.querySelector('.sched'))){
+        el.innerHTML = s.schedule.map(function(x){
+          return '<div><b>'+cmsEsc(x.month)+'</b><span>'+cmsEsc(x.days)+'</span>'+(x.note ? '<em>'+cmsEsc(x.note)+'</em>' : '')+'</div>';
+        }).join('');
+      }
+    }
+
+    if(d.banners && d.banners.length && top && (el = top.querySelector('.ext'))){
+      el.innerHTML = d.banners.map(function(b){
+        var u = String(b.url||'').trim(), ext = /^https?:\/\//i.test(u);
+        var href = ext ? u : (/^#\//.test(u) ? u : '#');
+        var attrs = 'href="'+cmsEsc(href)+'"'+(ext ? ' target="_blank" rel="noopener noreferrer"' : '');
+        var img = cmsUrl(b.image);
+        if(img){
+          return '<a class="bnr" '+attrs+'><img src="'+cmsEsc(img)+'" width="368" height="182" loading="lazy" alt="'+cmsEsc(b.title)+'">'+
+            '<span class="sr-only">'+cmsEsc(b.title)+'</span></a>';
+        }
+        return '<a class="txt-tile'+(b.style==='blue' ? ' blue-tile' : '')+'" '+attrs+'>'+
+          (b.category ? '<span class="cat">'+cmsPhrase(b.category)+'</span>' : '')+'<b>'+cmsPhrase(b.title)+'</b></a>';
+      }).join('');
+      cmsWrap(el);
+    }
+  }
+
+  (function(){ var p = cmsLoad(); if(p) p.then(cmsRender); })();
 })();
 </script>
 

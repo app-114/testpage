@@ -1,0 +1,51 @@
+# 管理画面で記事や解決事例を保存したら、公開中の一覧（content/index/*.json）を作り直す。
+# サイトはこの一覧を読んで表示する。
+name: 記事一覧を更新
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/news/**"
+      - "content/cases/**"
+      - ".github/scripts/build-index.mjs"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: content-index
+  cancel-in-progress: false
+
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 一覧を作る
+        run: node .github/scripts/build-index.mjs
+
+      - name: 変更があれば保存する
+        run: |
+          if [ -z "$(git status --porcelain -- content/index)" ]; then
+            echo "一覧に変更はありません"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          git add content/index
+          git commit -m "記事一覧を更新（自動）"
+          for i in 1 2 3; do
+            if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+            sleep 5
+          done
+          exit 1
+
+      # このワークフローからの保存では GitHub Pages が作り直されないため、明示的に依頼する
+      - name: サイトの再公開を依頼する
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "再公開の依頼に失敗しました（次の更新で反映されます）"
