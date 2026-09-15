@@ -1800,6 +1800,25 @@ body{line-break:strict}
 .row .ico.ico-img img{width:42px;height:42px;display:block;object-fit:contain}
 @media(max-width:430px){.row .ico.ico-img{width:56px;height:56px}.row .ico.ico-img img{width:36px;height:36px}}
 
+/* ---------- 行の組み方（全体） ----------
+   見出しは行の長さをそろえて、最後の行に「か？」「ポイント」だけが残らないようにする。
+   本文は最後の行が極端に短くならないようにする。
+   短い段落は文ごとの塊（.snt）にして、文の頭が行末に残らないようにする。 */
+h1,h2,h3,h4,.row .tx b,.sign b,.points b,.kb-feat b,.benefit b,.ext b,.case h3,.big .bd b,
+.cssbn b,.menu6 .bd b,.mem-name,.newslist b,.post h1,.tile .cap,.closer{text-wrap:balance}
+p,li,dd,figcaption,.snt{text-wrap:pretty}
+.snt{display:inline-block;max-width:100%;vertical-align:top}
+.nobr{white-space:nowrap}
+
+/* ---------- 無償点検のボタン ----------
+   スマホ：全幅で縦に2つ。768px以上：同じ幅で横に2つ、中央。 */
+.freecheck .acts{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;
+  width:100%;max-width:none;margin:32px auto 0}
+@media(min-width:768px){
+  .freecheck .acts{grid-template-columns:repeat(2,minmax(0,320px));justify-content:center;gap:16px}
+}
+.freecheck .acts .btn{width:100%;min-height:64px;padding:0 20px;white-space:nowrap}
+
 /* ===== ブランドロゴ（原画をSVGで再現） ===== */
 .logo{gap:11px;align-items:center}
 .logomark{display:none}
@@ -2081,7 +2100,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr">通話<br>無料</span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／9:</span><wbr><span class="nw">00〜</span><wbr><span class="nw">19:</span><wbr><span class="nw">00</span><wbr><span class="nw">（土・</span><wbr><span class="nw">日・</span><wbr><span class="nw">祝日も</span><wbr><span class="nw">受付）</span></span></p>
+      <p class="hours">営業時間／9:00〜19:00<span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -2161,8 +2180,8 @@ footer .logotext small{color:#CBDCC4}
         <span class="bd"><b>サポートスタッフ</b>
           <span>給湯器から外壁まで、住まいのお困りごとに私たちが最後まで対応します。</span></span></a>
       <a class="big" href="https://www.gate2001.jp/kawaraban/" target="_blank" rel="noopener noreferrer">
-        <span class="thumb"><span class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h3l2-2h6l2 2h3v12H4z"/><circle cx="12" cy="13" r="3.4"/></svg><b><span class="jpw"><span class="nw">かわら版の</span><wbr><span class="nw">誌面写真が</span><wbr><span class="nw">入ります</span></span></b>
-          横900×560px<small>先方から支給（現物をスキャン）</small></span></span>
+        <span class="thumb"><img src="kawaraban.jpg" width="1280" height="800" loading="lazy" decoding="async"
+          alt="食卓に置かれた住まいのかわら版のイメージ"></span>
         <span class="bd"><b>住まいのかわら版</b>
           <span>季節ごとの住まいのお役立ち情報を、かわら版にしてお届けしています。</span></span></a>
     </div>
@@ -2175,14 +2194,14 @@ footer .logotext small{color:#CBDCC4}
     <div class="setwari rv">
       <span class="badge">お得なご案内</span>
       <h2><span class="jpw"><span class="nw">まとめて</span><wbr><span class="nw">ご依頼いただくと、</span><wbr><span class="nw">お得になります。</span></span></h2>
-      <p class="lead2"><span class="jpw"><span class="nw">正直屋と</span><wbr><span class="nw">ホームエステの</span><wbr><span class="nw">セット</span><wbr><span class="nw">割引制度。</span><wbr><span class="nw">複数の</span><wbr><span class="nw">工事をまとめて</span><wbr><span class="nw">ご依頼いただくと、</span><wbr><span class="nw">割引が</span><wbr><span class="nw">適用されます。</span></span></p>
+      <p class="lead2"><span class="snt">正直屋とホームエステのセット割引制度。</span><span class="snt">複数の工事をまとめてご依頼いただくと、割引が適用されます。</span></p>
       <div class="combo">
         <div><i>＋</i>給湯器 × 外壁・屋根塗装</div>
         <div><i>＋</i>給湯器 × ガスコンロ × レンジフード</div>
         <div><i>＋</i>エコキュート × 外壁・屋根塗装</div>
         <div><i>＋</i>リフォーム × 外壁・屋根塗装</div>
       </div>
-      <p class="foot"><span class="jpw"><span class="nw">※ </span><wbr><span class="nw">組み合わせ・</span><wbr><span class="nw">割引額は</span><wbr><span class="nw">仮のものです</span><wbr><span class="nw">（店内掲示の</span><wbr><span class="nw">制度を</span><wbr><span class="nw">転記予定・</span><wbr><span class="nw">先方確認中）。本</span><wbr><span class="nw">セクションは構成</span><wbr><span class="nw">イメージにない</span><wbr><span class="nw">追加提案です。</span></span></p>
+      <p class="foot"><span class="snt">※ 組み合わせ・割引額は仮のものです（店内掲示の制度を転記予定・先方確認中）。</span><span class="snt">本セクションは構成イメージにない追加提案です。</span></p>
     </div>
   </div>
 </section>
@@ -2252,7 +2271,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr">通話<br>無料</span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／9:</span><wbr><span class="nw">00〜</span><wbr><span class="nw">19:</span><wbr><span class="nw">00</span><wbr><span class="nw">（土・</span><wbr><span class="nw">日・</span><wbr><span class="nw">祝日も</span><wbr><span class="nw">受付）</span></span></p>
+      <p class="hours">営業時間／9:00〜19:00<span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -2273,7 +2292,7 @@ footer .logotext small{color:#CBDCC4}
 <div class="wrap"><div class="phead rv">
       <div class="no"><i>01</i><span>Reform Menu</span></div>
       <h1><span class="jpw"><span class="nw">暮らしをもっと</span><wbr><span class="nw">快適に。</span></span></h1>
-      <p><span class="jpw"><span class="nw">キッチンや</span><wbr><span class="nw">浴室、</span><wbr><span class="nw">洗面化粧台、</span><wbr><span class="nw">トイレな</span><wbr><span class="nw">どの水まわりから、</span><wbr><span class="nw">内装・</span><wbr><span class="nw">外構まで、</span><wbr><span class="nw">住まいに関する</span><wbr><span class="nw">幅広い</span><wbr><span class="nw">リフォームに</span><wbr><span class="nw">対応。</span><wbr><span class="nw">毎日の</span><wbr><span class="nw">暮らしを</span><wbr><span class="nw">快適で</span><wbr><span class="nw">心地よい</span><wbr><span class="nw">空間へと</span><wbr><span class="nw">ご提案します。</span></span></p>
+      <p><span class="snt">キッチンや浴室、洗面化粧台、トイレなどの水まわりから、内装・外構まで、住まいに関する幅広いリフォームに対応。</span><span class="snt">毎日の暮らしを快適で心地よい空間へとご提案します。</span></p>
     </div></div>
 <div class="wrap"><img class="hero hero-reform rv" data-i="7" alt="リフォーム後の明るいLDK" width="1100" height="733"></div>
 <section><div class="wrap">
@@ -2287,7 +2306,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr">通話<br>無料</span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／9:</span><wbr><span class="nw">00〜</span><wbr><span class="nw">19:</span><wbr><span class="nw">00</span><wbr><span class="nw">（土・</span><wbr><span class="nw">日・</span><wbr><span class="nw">祝日も</span><wbr><span class="nw">受付）</span></span></p>
+      <p class="hours">営業時間／9:00〜19:00<span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -2306,7 +2325,7 @@ footer .logotext small{color:#CBDCC4}
 <div class="wrap"><div class="phead rv">
       <div class="no"><i>01</i><span>Kitchen</span></div>
       <h1><span class="jpw"><span class="nw">毎日の</span><wbr><span class="nw">料理が、</span></span><br><span class="jpw"><span class="nw">もっと</span><wbr><span class="nw">楽しくなる</span><wbr><span class="nw">キッチンへ。</span></span></h1>
-      <p><span class="jpw"><span class="nw">キッチンは、</span><wbr><span class="nw">毎日の</span><wbr><span class="nw">暮らしを</span><wbr><span class="nw">支える</span><wbr><span class="nw">大切な</span><wbr><span class="nw">空間であり、</span><wbr><span class="nw">住まいの</span><wbr><span class="nw">中心です。</span><wbr><span class="nw">ご家族の</span><wbr><span class="nw">暮らしに</span><wbr><span class="nw">合わせた</span><wbr><span class="nw">使いやすく</span><wbr><span class="nw">快適な</span><wbr><span class="nw">キッチンを</span><wbr><span class="nw">お届けします。</span></span></p>
+      <p><span class="snt">キッチンは、毎日の暮らしを支える大切な空間であり、住まいの中心です。</span><span class="snt">ご家族の暮らしに合わせた使いやすく快適なキッチンをお届けします。</span></p>
     </div></div>
 <div class="wrap"><img class="hero hero-kitchen rv" data-i="8" alt="キッチンのイメージ" width="1100" height="733"></div>
 
@@ -2326,14 +2345,14 @@ footer .logotext small{color:#CBDCC4}
 <section style="padding-top:0"><div class="wrap"><div class="shead rv"><div class="l"><div class="no"><i>04</i><span>Makers</span></div>
       <h2><span class="jpw"><span class="nw">取扱い</span><wbr><span class="nw">メーカー</span></span></h2></div></div>
       <div class="makers rv"><div>Takara standard<small>LOGO</small></div><div>LIXIL<small>LOGO</small></div><div>クリナップ<small>LOGO</small></div><div>Panasonic<small>LOGO</small></div><div>TOTO<small>LOGO</small></div><div>TOCLAS<small>LOGO</small></div></div>
-      <p class="sysnote" style="margin-top:16px"><span class="jpw"><span class="nw">ロゴは正規</span><wbr><span class="nw">データに</span><wbr><span class="nw">差し替え。</span><wbr><span class="nw">各社の</span><wbr><span class="nw">掲載規定の</span><wbr><span class="nw">確認が</span><wbr><span class="nw">必要です。</span></span></p></div></section>
+      <p class="sysnote" style="margin-top:16px"><span class="snt">ロゴは正規データに差し替え。</span><span class="snt">各社の掲載規定の確認が必要です。</span></p></div></section>
 
 <div class="band">
   <div class="wrap"><div class="in">
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr">通話<br>無料</span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／9:</span><wbr><span class="nw">00〜</span><wbr><span class="nw">19:</span><wbr><span class="nw">00</span><wbr><span class="nw">（土・</span><wbr><span class="nw">日・</span><wbr><span class="nw">祝日も</span><wbr><span class="nw">受付）</span></span></p>
+      <p class="hours">営業時間／9:00〜19:00<span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -2361,7 +2380,7 @@ footer .logotext small{color:#CBDCC4}
 <div class="wrap"><div class="phead rv">
       <div class="no"><i>02</i><span>Bathroom</span></div>
       <h1><span class="jpw"><span class="nw">一日の</span><wbr><span class="nw">疲れを、</span></span><br><span class="jpw"><span class="nw">ゆったりと</span><wbr><span class="nw">心地よく</span><wbr><span class="nw">癒す浴室へ。</span></span></h1>
-      <p><span class="jpw"><span class="nw">浴室は</span><wbr><span class="nw">一日の</span><wbr><span class="nw">疲れを</span><wbr><span class="nw">癒し、</span><wbr><span class="nw">心と体を</span><wbr><span class="nw">リフレッシュする</span><wbr><span class="nw">大切な</span><wbr><span class="nw">空間です。</span><wbr><span class="nw">ご家族がゆっくりとくつろげる</span><wbr><span class="nw">心地よい</span><wbr><span class="nw">浴室を</span><wbr><span class="nw">お届けします。</span></span></p>
+      <p><span class="snt">浴室は一日の疲れを癒し、心と体をリフレッシュする大切な空間です。</span><span class="snt">ご家族がゆっくりとくつろげる心地よい浴室をお届けします。</span></p>
     </div></div>
 <div class="wrap"><img class="hero hero-bath rv" data-i="9" alt="浴室のイメージ" width="1100" height="733"></div>
 
@@ -2381,14 +2400,14 @@ footer .logotext small{color:#CBDCC4}
 <section style="padding-top:0"><div class="wrap"><div class="shead rv"><div class="l"><div class="no"><i>04</i><span>Makers</span></div>
       <h2><span class="jpw"><span class="nw">取扱い</span><wbr><span class="nw">メーカー</span></span></h2></div></div>
       <div class="makers rv"><div>Takara standard<small>LOGO</small></div><div>LIXIL<small>LOGO</small></div><div>クリナップ<small>LOGO</small></div><div>Panasonic<small>LOGO</small></div><div>TOTO<small>LOGO</small></div><div>TOCLAS<small>LOGO</small></div></div>
-      <p class="sysnote" style="margin-top:16px"><span class="jpw"><span class="nw">ロゴは正規</span><wbr><span class="nw">データに</span><wbr><span class="nw">差し替え。</span><wbr><span class="nw">各社の</span><wbr><span class="nw">掲載規定の</span><wbr><span class="nw">確認が</span><wbr><span class="nw">必要です。</span></span></p></div></section>
+      <p class="sysnote" style="margin-top:16px"><span class="snt">ロゴは正規データに差し替え。</span><span class="snt">各社の掲載規定の確認が必要です。</span></p></div></section>
 
 <div class="band">
   <div class="wrap"><div class="in">
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr">通話<br>無料</span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／9:</span><wbr><span class="nw">00〜</span><wbr><span class="nw">19:</span><wbr><span class="nw">00</span><wbr><span class="nw">（土・</span><wbr><span class="nw">日・</span><wbr><span class="nw">祝日も</span><wbr><span class="nw">受付）</span></span></p>
+      <p class="hours">営業時間／9:00〜19:00<span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -2416,7 +2435,7 @@ footer .logotext small{color:#CBDCC4}
 <div class="wrap"><div class="phead rv">
       <div class="no"><i>03</i><span>Washstand</span></div>
       <h1><span class="jpw"><span class="nw">毎朝の</span><wbr><span class="nw">身支度を、</span></span><br><span class="jpw"><span class="nw">もっと</span><wbr><span class="nw">快適に</span><wbr><span class="nw">整える</span><wbr><span class="nw">洗面化粧台へ。</span></span></h1>
-      <p><span class="jpw"><span class="nw">洗面化粧台は</span><wbr><span class="nw">毎日の</span><wbr><span class="nw">身支度を</span><wbr><span class="nw">快適にする</span><wbr><span class="nw">大切な</span><wbr><span class="nw">空間です。</span><wbr><span class="nw">収納や</span><wbr><span class="nw">使いやすさにこだわった</span><wbr><span class="nw">快適な</span><wbr><span class="nw">洗面空間を</span><wbr><span class="nw">お届けします。</span></span></p>
+      <p><span class="snt">洗面化粧台は毎日の身支度を快適にする大切な空間です。</span><span class="snt">収納や使いやすさにこだわった快適な洗面空間をお届けします。</span></p>
     </div></div>
 <div class="wrap"><img class="hero hero-washstand rv" data-i="10" alt="洗面化粧台のイメージ" width="1100" height="733"></div>
 
@@ -2436,14 +2455,14 @@ footer .logotext small{color:#CBDCC4}
 <section style="padding-top:0"><div class="wrap"><div class="shead rv"><div class="l"><div class="no"><i>04</i><span>Makers</span></div>
       <h2><span class="jpw"><span class="nw">取扱い</span><wbr><span class="nw">メーカー</span></span></h2></div></div>
       <div class="makers rv"><div>Takara standard<small>LOGO</small></div><div>LIXIL<small>LOGO</small></div><div>クリナップ<small>LOGO</small></div><div>Panasonic<small>LOGO</small></div><div>TOTO<small>LOGO</small></div><div>TOCLAS<small>LOGO</small></div></div>
-      <p class="sysnote" style="margin-top:16px"><span class="jpw"><span class="nw">ロゴは正規</span><wbr><span class="nw">データに</span><wbr><span class="nw">差し替え。</span><wbr><span class="nw">各社の</span><wbr><span class="nw">掲載規定の</span><wbr><span class="nw">確認が</span><wbr><span class="nw">必要です。</span></span></p></div></section>
+      <p class="sysnote" style="margin-top:16px"><span class="snt">ロゴは正規データに差し替え。</span><span class="snt">各社の掲載規定の確認が必要です。</span></p></div></section>
 
 <div class="band">
   <div class="wrap"><div class="in">
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr">通話<br>無料</span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／9:</span><wbr><span class="nw">00〜</span><wbr><span class="nw">19:</span><wbr><span class="nw">00</span><wbr><span class="nw">（土・</span><wbr><span class="nw">日・</span><wbr><span class="nw">祝日も</span><wbr><span class="nw">受付）</span></span></p>
+      <p class="hours">営業時間／9:00〜19:00<span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -2471,7 +2490,7 @@ footer .logotext small{color:#CBDCC4}
 <div class="wrap"><div class="phead rv">
       <div class="no"><i>04</i><span>Toilet</span></div>
       <h1><span class="jpw"><span class="nw">毎日使う</span><wbr><span class="nw">場所を、</span></span><br><span class="jpw"><span class="nw">もっと</span><wbr><span class="nw">清潔で</span><wbr><span class="nw">快適な</span><wbr><span class="nw">トイレへ。</span></span></h1>
-      <p><span class="jpw"><span class="nw">トイレは</span><wbr><span class="nw">毎日使うからこそ</span><wbr><span class="nw">快適さと</span><wbr><span class="nw">清潔さが</span><wbr><span class="nw">大切な</span><wbr><span class="nw">空間です。</span><wbr><span class="nw">ご家族みんなが</span><wbr><span class="nw">気持ちよく</span><wbr><span class="nw">使える</span><wbr><span class="nw">機能的な</span><wbr><span class="nw">トイレを</span><wbr><span class="nw">お届けします。</span></span></p>
+      <p><span class="snt">トイレは毎日使うからこそ快適さと清潔さが大切な空間です。</span><span class="snt">ご家族みんなが気持ちよく使える機能的なトイレをお届けします。</span></p>
     </div></div>
 <div class="wrap"><img class="hero hero-toilet rv" data-i="11" alt="トイレのイメージ" width="1100" height="733"></div>
 
@@ -2491,14 +2510,14 @@ footer .logotext small{color:#CBDCC4}
 <section style="padding-top:0"><div class="wrap"><div class="shead rv"><div class="l"><div class="no"><i>04</i><span>Makers</span></div>
       <h2><span class="jpw"><span class="nw">取扱い</span><wbr><span class="nw">メーカー</span></span></h2></div></div>
       <div class="makers rv"><div>TOTO<small>LOGO</small></div><div>LIXIL<small>LOGO</small></div><div>Panasonic<small>LOGO</small></div></div>
-      <p class="sysnote" style="margin-top:16px"><span class="jpw"><span class="nw">ロゴは正規</span><wbr><span class="nw">データに</span><wbr><span class="nw">差し替え。</span><wbr><span class="nw">各社の</span><wbr><span class="nw">掲載規定の</span><wbr><span class="nw">確認が</span><wbr><span class="nw">必要です。</span></span></p></div></section>
+      <p class="sysnote" style="margin-top:16px"><span class="snt">ロゴは正規データに差し替え。</span><span class="snt">各社の掲載規定の確認が必要です。</span></p></div></section>
 
 <div class="band">
   <div class="wrap"><div class="in">
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr">通話<br>無料</span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／9:</span><wbr><span class="nw">00〜</span><wbr><span class="nw">19:</span><wbr><span class="nw">00</span><wbr><span class="nw">（土・</span><wbr><span class="nw">日・</span><wbr><span class="nw">祝日も</span><wbr><span class="nw">受付）</span></span></p>
+      <p class="hours">営業時間／9:00〜19:00<span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -2526,7 +2545,7 @@ footer .logotext small{color:#CBDCC4}
 <div class="wrap"><div class="phead rv">
       <div class="no"><i>05</i><span>Interior</span></div>
       <h1><span class="jpw"><span class="nw">毎日過ごす</span><wbr><span class="nw">空間を、</span></span><br><span class="jpw"><span class="nw">もっと</span><wbr><span class="nw">心地よい</span><wbr><span class="nw">住まいへ。</span></span></h1>
-      <p><span class="jpw"><span class="nw">毎日過ごす</span><wbr><span class="nw">住まいだからこそ、</span><wbr><span class="nw">心地よい</span><wbr><span class="nw">空間づくりが</span><wbr><span class="nw">大切です。</span><wbr><span class="nw">内装工事でお部屋の</span><wbr><span class="nw">印象や</span><wbr><span class="nw">暮らしやすさをより</span><wbr><span class="nw">快適に</span><wbr><span class="nw">整えます。</span></span></p>
+      <p><span class="snt">毎日過ごす住まいだからこそ、心地よい空間づくりが大切です。</span><span class="snt">内装工事でお部屋の印象や暮らしやすさをより快適に整えます。</span></p>
     </div></div>
 <div class="wrap"><img class="hero hero-interior rv" data-i="12" alt="内装工事のイメージ" width="1100" height="733"></div>
 
@@ -2551,7 +2570,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr">通話<br>無料</span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／9:</span><wbr><span class="nw">00〜</span><wbr><span class="nw">19:</span><wbr><span class="nw">00</span><wbr><span class="nw">（土・</span><wbr><span class="nw">日・</span><wbr><span class="nw">祝日も</span><wbr><span class="nw">受付）</span></span></p>
+      <p class="hours">営業時間／9:00〜19:00<span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -2579,7 +2598,7 @@ footer .logotext small{color:#CBDCC4}
 <div class="wrap"><div class="phead rv">
       <div class="no"><i>06</i><span>Exterior</span></div>
       <h1><span class="jpw"><span class="nw">住まいの</span><wbr><span class="nw">外まわりを、</span></span><br><span class="jpw"><span class="nw">もっと</span><wbr><span class="nw">美しく</span><wbr><span class="nw">使いやすく。</span></span></h1>
-      <p><span class="jpw"><span class="nw">外構工事は</span><wbr><span class="nw">住まいの</span><wbr><span class="nw">第一印象と</span><wbr><span class="nw">暮らしやすさを</span><wbr><span class="nw">左右する</span><wbr><span class="nw">大切な</span><wbr><span class="nw">空間です。</span><wbr><span class="nw">門まわりや</span><wbr><span class="nw">駐車場、</span><wbr><span class="nw">お庭まで</span><wbr><span class="nw">ご家族に</span><wbr><span class="nw">合った</span><wbr><span class="nw">外構づくりをお手伝いします。</span></span></p>
+      <p><span class="snt">外構工事は住まいの第一印象と暮らしやすさを左右する大切な空間です。</span><span class="snt">門まわりや駐車場、お庭までご家族に合った外構づくりをお手伝いします。</span></p>
     </div></div>
 <div class="wrap"><img class="hero hero-exterior rv" data-i="13" alt="外構工事のイメージ" width="1100" height="733"></div>
 
@@ -2604,7 +2623,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr">通話<br>無料</span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／9:</span><wbr><span class="nw">00〜</span><wbr><span class="nw">19:</span><wbr><span class="nw">00</span><wbr><span class="nw">（土・</span><wbr><span class="nw">日・</span><wbr><span class="nw">祝日も</span><wbr><span class="nw">受付）</span></span></p>
+      <p class="hours">営業時間／9:00〜19:00<span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -2632,7 +2651,7 @@ footer .logotext small{color:#CBDCC4}
 <div class="wrap"><div class="phead rv">
       <div class="no"><i>01</i><span>Consultation</span></div>
       <h1><span class="jpw"><span class="nw">住まいの</span><wbr><span class="nw">お困りごとを</span></span><br><span class="jpw"><span class="nw">気軽に</span><wbr><span class="nw">相談してみませんか？</span></span></h1>
-      <p><span class="jpw"><span class="nw">住まいの</span><wbr><span class="nw">お困りごとは、</span><wbr><span class="nw">小さなことでも</span><wbr><span class="nw">早めの</span><wbr><span class="nw">相談が</span><wbr><span class="nw">安心につながります。</span><wbr><span class="nw">毎月第</span><wbr><span class="nw">4土曜日・</span><wbr><span class="nw">日曜日に</span><wbr><span class="nw">「住まいの</span><wbr><span class="nw">お困りごと</span><wbr><span class="nw">相談会」を</span><wbr><span class="nw">開催しています。</span><wbr><span class="nw">住まいのことなら、</span><wbr><span class="nw">どんなことでも</span><wbr><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></p>
+      <p><span class="snt">住まいのお困りごとは、小さなことでも早めの相談が安心につながります。</span><span class="snt">毎月第4土曜日・日曜日に「住まいのお困りごと相談会」を開催しています。</span><span class="snt">住まいのことなら、どんなことでもお気軽にご相談ください。</span></p>
     </div></div>
 <div class="wrap"><img class="hero hero-kabeyanen rv" data-i="14" alt="ショールーム＆セルフカフェ かべやねん。の店内" width="1100" height="734"></div>
 
@@ -2717,7 +2736,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr">通話<br>無料</span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／9:</span><wbr><span class="nw">00〜</span><wbr><span class="nw">19:</span><wbr><span class="nw">00</span><wbr><span class="nw">（土・</span><wbr><span class="nw">日・</span><wbr><span class="nw">祝日も</span><wbr><span class="nw">受付）</span></span></p>
+      <p class="hours">営業時間／9:00〜19:00<span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -2736,7 +2755,7 @@ footer .logotext small{color:#CBDCC4}
 <div class="wrap"><div class="phead rv">
       <div class="no"><i>01</i><span>Case Studies</span></div>
       <h1><span class="jpw"><span class="nw">住まいの</span><wbr><span class="nw">お困りごと</span><wbr><span class="nw">解決事例</span></span></h1>
-      <p><span class="jpw"><span class="nw">実際に、</span><wbr><span class="nw">どのような</span><wbr><span class="nw">お困りごとがあり、</span><wbr><span class="nw">どのように</span><wbr><span class="nw">解決したのか。</span><wbr><span class="nw">お客様の</span><wbr><span class="nw">困りごとから</span><wbr><span class="nw">解決までの</span><wbr><span class="nw">流れを、</span><wbr><span class="nw">Before・</span><wbr><span class="nw">Afterの</span><wbr><span class="nw">写真とともに</span><wbr><span class="nw">ご紹介します。</span></span></p>
+      <p><span class="snt">実際に、どのようなお困りごとがあり、どのように解決したのか。</span><span class="snt">お客様の困りごとから解決までの流れを、Before・Afterの写真とともにご紹介します。</span></p>
     </div></div>
 <section style="padding-top:8px"><div class="wrap">
   <div class="tabs" role="tablist" aria-label="カテゴリで絞り込む"><button type="button" role="tab" data-cat="all" aria-selected="true">すべて</button><button type="button" role="tab" data-cat="kyutoki" aria-selected="false">給湯器</button><button type="button" role="tab" data-cat="eco" aria-selected="false">エコキュート</button><button type="button" role="tab" data-cat="gaiheki" aria-selected="false">外壁・屋根</button><button type="button" role="tab" data-cat="water" aria-selected="false">水まわりリフォーム</button><button type="button" role="tab" data-cat="interior" aria-selected="false">内装</button><button type="button" role="tab" data-cat="exterior" aria-selected="false">外構</button><button type="button" role="tab" data-cat="other" aria-selected="false">その他</button></div>
@@ -2777,14 +2796,14 @@ footer .logotext small{color:#CBDCC4}
         <span class="mid"><i>›</i></span><span class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h3l2-2h6l2 2h3v12H4z"/><circle cx="12" cy="13" r="3.4"/></svg><b>After</b><small>支給待ち</small></span></span>
       <span class="bd"><span class="tag">追加予定</span><h3><span class="jpw"><span class="nw">事例6：</span><wbr><span class="nw">管理画面から</span><wbr><span class="nw">追加すると、</span><wbr><span class="nw">ここに</span><wbr><span class="nw">自動で</span><wbr><span class="nw">表示されます。</span></span></h3>
         <span class="meta"><span>─</span></span></span></a></div>
-  <p class="sysnote" style="margin-top:26px"><span class="jpw"><span class="nw">事例は</span><wbr><span class="nw">管理画面から</span><wbr><span class="nw">追加・</span><wbr><span class="nw">編集できます</span><wbr><span class="nw">（解決事例 投稿</span><wbr><span class="nw">システム）。</span><wbr><span class="nw">現在は</span><wbr><span class="nw">2件が実</span><wbr><span class="nw">データ、</span><wbr><span class="nw">4件は</span><wbr><span class="nw">ダミーです。</span></span></p>
+  <p class="sysnote" style="margin-top:26px"><span class="snt">事例は管理画面から追加・編集できます（解決事例 投稿システム）。</span><span class="snt">現在は2件が実データ、4件はダミーです。</span></p>
 </div></section>
 <div class="band">
   <div class="wrap"><div class="in">
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr">通話<br>無料</span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／9:</span><wbr><span class="nw">00〜</span><wbr><span class="nw">19:</span><wbr><span class="nw">00</span><wbr><span class="nw">（土・</span><wbr><span class="nw">日・</span><wbr><span class="nw">祝日も</span><wbr><span class="nw">受付）</span></span></p>
+      <p class="hours">営業時間／9:00〜19:00<span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -2821,9 +2840,9 @@ footer .logotext small{color:#CBDCC4}
 
   <div class="qa">
     <section class="rv"><h2><span class="jpw"><span class="nw">お客様の</span><wbr><span class="nw">困りごと</span></span></h2>
-      <p><span class="jpw"><span class="nw">夜になって</span><wbr><span class="nw">突然お湯が</span><wbr><span class="nw">出なくなり、</span><wbr><span class="nw">お風呂にも</span><wbr><span class="nw">入れず</span><wbr><span class="nw">困っていました。</span><wbr><span class="nw">ホームページで</span><wbr><span class="nw">ホームエステを</span><wbr><span class="nw">見つけ、</span><wbr><span class="nw">電話で</span><wbr><span class="nw">相談したところ、</span><wbr><span class="nw">品番を</span><wbr><span class="nw">伝えるだけで</span><wbr><span class="nw">概算の</span><wbr><span class="nw">お見積を</span><wbr><span class="nw">案内していただきました。</span></span></p></section>
+      <p><span class="snt">夜になって突然お湯が出なくなり、お風呂にも入れず困っていました。</span><span class="snt">ホームページでホームエステを見つけ、電話で相談したところ、品番を伝えるだけで概算のお見積を案内していただきました。</span></p></section>
     <section class="rv"><h2><span class="jpw"><span class="nw">ホームエステの</span><wbr><span class="nw">対応</span></span></h2>
-      <p><span class="jpw"><span class="nw">お電話で</span><wbr><span class="nw">お伺いした</span><wbr><span class="nw">内容と</span><wbr><span class="nw">給湯器の</span><wbr><span class="nw">品番をもとに</span><wbr><span class="nw">概算の</span><wbr><span class="nw">お見積を</span><wbr><span class="nw">ご案内し、</span><wbr><span class="nw">その後すぐに</span><wbr><span class="nw">現地確認を</span><wbr><span class="nw">実施。</span><wbr><span class="nw">お客様の</span><wbr><span class="nw">ご希望を</span><wbr><span class="nw">ご確認したうえで、</span><wbr><span class="nw">2日後に</span><wbr><span class="nw">新しい</span><wbr><span class="nw">給湯器へ</span><wbr><span class="nw">交換しました。</span></span></p></section>
+      <p><span class="snt">お電話でお伺いした内容と給湯器の品番をもとに概算のお見積をご案内し、その後すぐに現地確認を実施。</span><span class="snt">お客様のご希望をご確認したうえで、2日後に新しい給湯器へ交換しました。</span></p></section>
     <section class="rv"><h2>お客様の感想</h2>
       <div class="voice"><p><span class="jpw"><span class="nw">突然の</span><wbr><span class="nw">故障にも</span><wbr><span class="nw">迅速に</span><wbr><span class="nw">対応してもらえたことで、</span><wbr><span class="nw">安心していつもの</span><wbr><span class="nw">暮らしを</span><wbr><span class="nw">取り戻すことができました。</span></span></p>
         <small>枚方市 T様／掲載のご同意をいただいています</small></div></section>
@@ -2844,7 +2863,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr">通話<br>無料</span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／9:</span><wbr><span class="nw">00〜</span><wbr><span class="nw">19:</span><wbr><span class="nw">00</span><wbr><span class="nw">（土・</span><wbr><span class="nw">日・</span><wbr><span class="nw">祝日も</span><wbr><span class="nw">受付）</span></span></p>
+      <p class="hours">営業時間／9:00〜19:00<span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -2892,17 +2911,17 @@ footer .logotext small{color:#CBDCC4}
 <div class="wrap"><div class="phead rv">
       <div class="no"><i>01</i><span>Warning Signs</span></div>
       <h1>その不調、<br><span class="jpw"><span class="nw">住まいからの</span><wbr><span class="nw">サインかもしれません。</span></span></h1>
-      <p><span class="jpw"><span class="nw">設備や</span><wbr><span class="nw">外壁は、</span><wbr><span class="nw">壊れる</span><wbr><span class="nw">前に必ず</span><wbr><span class="nw">「サイン」を</span><wbr><span class="nw">出しています。</span><wbr><span class="nw">早めに</span><wbr><span class="nw">気づいて</span><wbr><span class="nw">手を打てば、</span><wbr><span class="nw">費用も</span><wbr><span class="nw">工期も</span><wbr><span class="nw">小さく</span><wbr><span class="nw">済みます。</span><wbr><span class="nw">ショールーム</span><wbr><span class="nw">「かべやねん。」に</span><wbr><span class="nw">掲示している</span><wbr><span class="nw">内容を、</span><wbr><span class="nw">そのまま</span><wbr><span class="nw">ご覧いただける</span><wbr><span class="nw">よう</span><wbr><span class="nw">まとめました。</span></span></p>
+      <p><span class="snt">設備や外壁は、壊れる前に必ず「サイン」を出しています。</span><span class="snt">早めに気づいて手を打てば、費用も工期も小さく済みます。</span><span class="snt"><span class="jpw"><span class="nw">ショールーム「かべやねん。」に掲示している内容を、</span><wbr><span class="nw">そのまま</span><wbr><span class="nw">ご覧いただける</span><wbr><span class="nw">よう</span><wbr><span class="nw">まとめました。</span></span></span></p>
     </div></div>
 <section style="padding-top:0"><div class="wrap">
   <div class="shead rv"><div class="l"><div class="no"><i>02</i><span>Water Heater</span></div>
     <h2><span class="jpw"><span class="nw">給湯器の</span><wbr><span class="nw">交換時期</span><wbr><span class="nw">サイン</span></span></h2></div>
     </div>
   <div class="signs stagger">
-    <div class="sign"><span class="n">1</span><span><b><span class="jpw"><span class="nw">設定温度から</span><wbr><span class="nw">ズレが</span><wbr><span class="nw">出てきた</span></span></b><p><span class="jpw"><span class="nw">設定した</span><wbr><span class="nw">温度どおりのお湯が</span><wbr><span class="nw">出ない、</span><wbr><span class="nw">途中でぬるくなる。</span><wbr><span class="nw">内部の</span><wbr><span class="nw">部品が</span><wbr><span class="nw">劣化している</span><wbr><span class="nw">サインです。</span></span></p></span></div>
-    <div class="sign"><span class="n">2</span><span><b><span class="jpw"><span class="nw">リモコンの</span><wbr><span class="nw">反応が</span><wbr><span class="nw">悪くなった</span></span></b><p><span class="jpw"><span class="nw">ボタンを</span><wbr><span class="nw">押しても</span><wbr><span class="nw">反応しない、</span><wbr><span class="nw">表示が</span><wbr><span class="nw">点滅する。</span><wbr><span class="nw">基板や</span><wbr><span class="nw">配線の</span><wbr><span class="nw">不具合が</span><wbr><span class="nw">考えられます。</span></span></p></span></div>
-    <div class="sign"><span class="n">3</span><span><b><span class="jpw"><span class="nw">異常な</span><wbr><span class="nw">音がするようになった</span></span></b><p><span class="jpw"><span class="nw">「ボン」という</span><wbr><span class="nw">着火音、</span><wbr><span class="nw">うなるような</span><wbr><span class="nw">運転音。</span><wbr><span class="nw">不完全燃焼につながる</span><wbr><span class="nw">恐れがあります。</span></span></p></span></div>
-    <div class="sign"><span class="n">4</span><span><b><span class="jpw"><span class="nw">液晶の</span><wbr><span class="nw">表示がおかしくなった</span></span></b><p><span class="jpw"><span class="nw">エラーコードが</span><wbr><span class="nw">頻繁に</span><wbr><span class="nw">出る、</span><wbr><span class="nw">表示が</span><wbr><span class="nw">欠ける。</span><wbr><span class="nw">放置すると</span><wbr><span class="nw">突然使えなくなることがあります。</span></span></p></span></div>
+    <div class="sign"><span class="n">1</span><span><b><span class="jpw"><span class="nw">設定温度から</span><wbr><span class="nw">ズレが</span><wbr><span class="nw">出てきた</span></span></b><p><span class="snt">設定した温度どおりのお湯が出ない、途中でぬるくなる。</span><span class="snt">内部の部品が劣化しているサインです。</span></p></span></div>
+    <div class="sign"><span class="n">2</span><span><b><span class="jpw"><span class="nw">リモコンの</span><wbr><span class="nw">反応が</span><wbr><span class="nw">悪くなった</span></span></b><p><span class="snt">ボタンを押しても反応しない、表示が点滅する。</span><span class="snt">基板や配線の不具合が考えられます。</span></p></span></div>
+    <div class="sign"><span class="n">3</span><span><b><span class="jpw"><span class="nw">異常な</span><wbr><span class="nw">音がするようになった</span></span></b><p><span class="snt">「ボン」という着火音、うなるような運転音。</span><span class="snt">不完全燃焼につながる恐れがあります。</span></p></span></div>
+    <div class="sign"><span class="n">4</span><span><b><span class="jpw"><span class="nw">液晶の</span><wbr><span class="nw">表示がおかしくなった</span></span></b><p><span class="snt">エラーコードが頻繁に出る、表示が欠ける。</span><span class="snt">放置すると突然使えなくなることがあります。</span></p></span></div>
   </div>
   <p class="closer rv" style="margin-top:28px"><span class="jpw"><span class="nw">サインを</span><wbr><span class="nw">見つけたら、</span><wbr><span class="nw">まずは</span><wbr><span class="nw">お気軽に</span><wbr><span class="nw">ご連絡ください。</span></span></p>
 </div></section>
@@ -2912,9 +2931,9 @@ footer .logotext small{color:#CBDCC4}
     <h2><span class="jpw"><span class="nw">外壁の</span><wbr><span class="nw">塗り替え</span><wbr><span class="nw">サイン</span></span></h2></div>
     </div>
   <div class="signs stagger">
-    <div class="sign"><span class="n">1</span><span><b><span class="jpw"><span class="nw">触ると</span><wbr><span class="nw">白い粉がつく</span><wbr><span class="nw">（チョーキング）</span></span></b><p><span class="jpw"><span class="nw">塗膜が</span><wbr><span class="nw">紫外線で</span><wbr><span class="nw">劣化し、</span><wbr><span class="nw">粉状になった</span><wbr><span class="nw">状態。</span><wbr><span class="nw">防水性能が</span><wbr><span class="nw">落ちはじめています。</span></span></p></span></div>
-    <div class="sign"><span class="n">2</span><span><b><span class="jpw"><span class="nw">ひび割れが</span><wbr><span class="nw">見られる</span></span></b><p><span class="jpw"><span class="nw">ヘアクラックから</span><wbr><span class="nw">構造的なひび割れまで。</span><wbr><span class="nw">幅</span><wbr><span class="nw">0.3mmを</span><wbr><span class="nw">超えると</span><wbr><span class="nw">雨水が</span><wbr><span class="nw">侵入する</span><wbr><span class="nw">恐れがあります。</span></span></p></span></div>
-    <div class="sign"><span class="n">3</span><span><b><span class="jpw"><span class="nw">苔・カビ・</span><wbr><span class="nw">藻が生えている</span></span></b><p><span class="jpw"><span class="nw">湿気がこもり、</span><wbr><span class="nw">水はけが</span><wbr><span class="nw">悪くなっている</span><wbr><span class="nw">証拠。</span><wbr><span class="nw">北側や</span><wbr><span class="nw">日陰の</span><wbr><span class="nw">面に出やすい</span><wbr><span class="nw">症状です。</span></span></p></span></div>
+    <div class="sign"><span class="n">1</span><span><b><span class="jpw"><span class="nw">触ると</span><wbr><span class="nw">白い粉がつく</span><wbr><span class="nw">（チョーキング）</span></span></b><p><span class="snt">塗膜が紫外線で劣化し、粉状になった状態。</span><span class="snt">防水性能が落ちはじめています。</span></p></span></div>
+    <div class="sign"><span class="n">2</span><span><b><span class="jpw"><span class="nw">ひび割れが</span><wbr><span class="nw">見られる</span></span></b><p><span class="snt">ヘアクラックから構造的なひび割れまで。</span><span class="snt">幅0.3mmを超えると雨水が侵入する恐れがあります。</span></p></span></div>
+    <div class="sign"><span class="n">3</span><span><b><span class="jpw"><span class="nw">苔・カビ・</span><wbr><span class="nw">藻が生えている</span></span></b><p><span class="snt">湿気がこもり、水はけが悪くなっている証拠。</span><span class="snt">北側や日陰の面に出やすい症状です。</span></p></span></div>
     <div class="sign"><span class="n">4</span><span><b><span class="jpw"><span class="nw">色褪せ・</span><wbr><span class="nw">汚れが</span><wbr><span class="nw">目立つ</span></span></b><p><span class="jpw"><span class="nw">美観の</span><wbr><span class="nw">問題だけでなく、</span><wbr><span class="nw">塗膜が</span><wbr><span class="nw">寿命を</span><wbr><span class="nw">迎えている</span><wbr><span class="nw">サインでもあります。</span></span></p></span></div>
   </div>
   <p class="closer rv" style="margin-top:28px"><span class="jpw"><span class="nw">一つでも</span><wbr><span class="nw">当てはまる</span><wbr><span class="nw">場合は、</span><wbr><span class="nw">無償点検をご利用ください。</span></span></p>
@@ -2924,14 +2943,13 @@ footer .logotext small{color:#CBDCC4}
   <div class="freecheck rv">
     <small>外壁・屋根</small>
     <h2><span class="jpw"><span class="nw">無償点検を</span><wbr><span class="nw">承っています。</span></span></h2>
-    <p><span class="jpw"><span class="nw">専門</span><wbr><span class="nw">スタッフが</span><wbr><span class="nw">現地に</span><wbr><span class="nw">伺い、</span><wbr><span class="nw">外壁・</span><wbr><span class="nw">屋根の</span><wbr><span class="nw">状態を</span><wbr><span class="nw">確認して</span><wbr><span class="nw">ご報告します。</span><wbr><span class="nw">点検は</span><wbr><span class="nw">無料です。</span><wbr><span class="nw">
-      すぐに</span><wbr><span class="nw">工事を</span><wbr><span class="nw">ご検討でなくても</span><wbr><span class="nw">構いません。</span><wbr><span class="nw">まずは</span><wbr><span class="nw">今の状態を</span><wbr><span class="nw">知っていただくことが、</span><wbr><span class="nw">住まいを</span><wbr><span class="nw">長持ちさせる</span><wbr><span class="nw">第一歩です。</span></span></p>
+    <p><span class="snt">専門スタッフが現地に伺い、外壁・屋根の状態を確認してご報告します。</span><span class="snt">点検は無料です。</span><span class="snt">すぐに工事をご検討でなくても構いません。</span><span class="snt">まずは今の状態を知っていただくことが、住まいを長持ちさせる第一歩です。</span></p>
     <div class="acts">
       <a class="btn btn-mail" href="tel:0120304500"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>0120-304-500 に電話する</a>
       <a class="btn btn-line" href="#/contact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>フォームから申し込む</a>
     </div>
   </div>
-  <p class="sysnote" style="margin-top:20px"><span class="jpw"><span class="nw">本</span><wbr><span class="nw">ページは</span><wbr><span class="nw">店内掲示</span><wbr><span class="nw">パネルの</span><wbr><span class="nw">内容をもとにした</span><wbr><span class="nw">追加提案です。</span><wbr><span class="nw">正確な</span><wbr><span class="nw">文言は</span><wbr><span class="nw">パネルの元</span><wbr><span class="nw">データを</span><wbr><span class="nw">ご提供いただき</span><wbr><span class="nw">次第、</span><wbr><span class="nw">差し替えます。</span></span></p>
+  <p class="sysnote" style="margin-top:20px"><span class="snt">本ページは店内掲示パネルの内容をもとにした追加提案です。</span><span class="snt">正確な文言はパネルの元データをご提供いただき次第、差し替えます。</span></p>
 </div></section>
 </div>
 <div class="page" id="p/kabeyanen" data-title="かべやねん。">
@@ -2939,7 +2957,7 @@ footer .logotext small{color:#CBDCC4}
 <div class="wrap"><div class="phead rv">
       <div class="no"><i>01</i><span>Showroom</span></div>
       <h1>かべやねん。</h1>
-      <p><span class="jpw"><span class="nw">ショールーム＆</span><wbr><span class="nw">セルフカフェ</span><wbr><span class="nw">「かべやねん。」は、</span><wbr><span class="nw">住まいのことを</span><wbr><span class="nw">気軽に</span><wbr><span class="nw">相談できる</span><wbr><span class="nw">場所です。</span><wbr><span class="nw">コーヒーを</span><wbr><span class="nw">飲みながら、</span><wbr><span class="nw">外壁の</span><wbr><span class="nw">塗り替え</span><wbr><span class="nw">サインや</span><wbr><span class="nw">給湯器の</span><wbr><span class="nw">交換時期など、</span><wbr><span class="nw">暮らしに</span><wbr><span class="nw">役立つ</span><wbr><span class="nw">情報をご覧いただけます。</span><wbr><span class="nw">毎月第</span><wbr><span class="nw">4土曜日・</span><wbr><span class="nw">日曜日の</span><wbr><span class="nw">「住まいの</span><wbr><span class="nw">お困りごと</span><wbr><span class="nw">相談会」の</span><wbr><span class="nw">会場でもあります。</span></span></p>
+      <p><span class="snt"><span class="jpw"><span class="nw">ショールーム＆</span><wbr><span class="nw">セルフカフェ</span><wbr><span class="nw">「かべやねん。」は、住まいのことを気軽に相談できる場所です。</span></span></span><span class="snt">コーヒーを飲みながら、外壁の塗り替えサインや給湯器の交換時期など、暮らしに役立つ情報をご覧いただけます。</span><span class="snt">毎月第4土曜日・日曜日の「住まいのお困りごと相談会」の会場でもあります。</span></p>
     </div></div>
 <div class="wrap"><img class="hero hero-kabeyanen rv" data-i="14" alt="ショールーム＆セルフカフェ かべやねん。の店内" width="1100" height="734"></div>
 
@@ -2949,7 +2967,7 @@ footer .logotext small{color:#CBDCC4}
     </div>
   <div class="kb-feat stagger">
     <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h13v6a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M17 9h1.6a2.4 2.4 0 0 1 0 4.8H17"/><path d="M7 2v2.5M11 2v2.5"/></svg></span><b>セルフカフェ</b>
-      <p><span class="jpw"><span class="nw">ドリップコーヒーの</span><wbr><span class="nw">サーバーを</span><wbr><span class="nw">ご用意しています。</span><wbr><span class="nw">ゆっくりお過ごしください。</span></span></p></div>
+      <p><span class="snt">ドリップコーヒーのサーバーをご用意しています。</span><span class="snt">ゆっくりお過ごしください。</span></p></div>
     <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M12 17v4M8 21h8"/><path d="M7 8h6M7 12h4"/></svg></span><b><span class="jpw"><span class="nw">暮らしの掲示</span><wbr><span class="nw">コーナー</span></span></b>
       <p><span class="jpw"><span class="nw">外壁の</span><wbr><span class="nw">塗り替え</span><wbr><span class="nw">サイン、</span><wbr><span class="nw">給湯器の</span><wbr><span class="nw">交換時期</span><wbr><span class="nw">サイン、</span><wbr><span class="nw">施工事例、</span><wbr><span class="nw">塗料の</span><wbr><span class="nw">サンプルなどを</span><wbr><span class="nw">掲示しています。</span></span></p></div>
     <div><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h2a2 2 0 0 1 2 2v11l-3.5-3H10a2 2 0 0 1-2-2v-1"/><path d="M15 3H4a2 2 0 0 0-2 2v8l3.5-3H15a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/></svg></span><b><span class="jpw"><span class="nw">その場で</span><wbr><span class="nw">お見積</span></span></b>
@@ -2997,7 +3015,7 @@ footer .logotext small{color:#CBDCC4}
 <div class="wrap"><div class="phead rv">
       <div class="no"><i>01</i><span>Contact</span></div>
       <h1>お問い合わせ</h1>
-      <p><span class="jpw"><span class="nw">住まいのことなら、</span><wbr><span class="nw">どんな</span><wbr><span class="nw">小さなことでも</span><wbr><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span><wbr><span class="nw">お見積・</span><wbr><span class="nw">現地調査は</span><wbr><span class="nw">無料です。</span><wbr><span class="nw">内容を</span><wbr><span class="nw">確認のうえ、</span><wbr><span class="nw">担当者より</span><wbr><span class="nw">2営業日以内に</span><wbr><span class="nw">ご連絡いたします。</span></span></p>
+      <p><span class="snt">住まいのことなら、どんな小さなことでもお気軽にご相談ください。</span><span class="snt">お見積・現地調査は無料です。</span><span class="snt">内容を確認のうえ、担当者より2営業日以内にご連絡いたします。</span></p>
     </div></div>
 <section style="padding-top:0"><div class="wrap"><div class="formwrap">
 
@@ -3032,7 +3050,7 @@ footer .logotext small{color:#CBDCC4}
       <option>住まいの主治医（住宅健康診断）</option>
       <option>お困りごと相談会について</option><option>その他・まだ決まっていない</option>
     </select></div>
-<div class="field"><span class="lb">詳しい内容<span class="opt">任意</span></span><p class="hint2"><span class="jpw"><span class="nw">「まだ</span><wbr><span class="nw">何も決まっていない」という</span><wbr><span class="nw">段階でも</span><wbr><span class="nw">構いません。</span><wbr><span class="nw">分かる</span><wbr><span class="nw">範囲で</span><wbr><span class="nw">お書きください。</span></span></p><textarea name="body" placeholder="例）10年ほど使っている給湯器の調子が悪く、お湯の温度が安定しません。交換の目安と費用を知りたいです。"></textarea></div>
+<div class="field"><span class="lb">詳しい内容<span class="opt">任意</span></span><p class="hint2"><span class="snt">「まだ何も決まっていない」という段階でも構いません。</span><span class="snt">分かる範囲でお書きください。</span></p><textarea name="body" placeholder="例）10年ほど使っている給湯器の調子が悪く、お湯の温度が安定しません。交換の目安と費用を知りたいです。"></textarea></div>
 <div class="field"><span class="lb">写真の添付<span class="opt">任意</span></span><div class="filebox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.5 12.9 20.6a5 5 0 0 1-7.1-7.1l8.5-8.5a3.4 3.4 0 0 1 4.8 4.8l-8.5 8.5a1.7 1.7 0 0 1-2.4-2.4l7.8-7.8"/></svg>
       <p><span class="jpw"><span class="nw">設備の品番</span><wbr><span class="nw">シールや、</span><wbr><span class="nw">気になる</span><wbr><span class="nw">箇所の</span><wbr><span class="nw">写真を</span><wbr><span class="nw">添付できます。</span></span><br><span class="jpw"><span class="nw">
         
@@ -3090,7 +3108,7 @@ footer .logotext small{color:#CBDCC4}
 <div class="wrap"><div class="phead rv">
       <div class="no"><i>01</i><span>Support Staff</span></div>
       <h1><span class="jpw"><span class="nw">住まいの</span><wbr><span class="nw">お困りごとに、</span></span><br><span class="jpw"><span class="nw">この4人が</span><wbr><span class="nw">向き合います。</span></span></h1>
-      <p><span class="jpw"><span class="nw">給湯器の</span><wbr><span class="nw">交換から</span><wbr><span class="nw">外壁・</span><wbr><span class="nw">屋根の</span><wbr><span class="nw">塗装、</span><wbr><span class="nw">リフォームまで。</span><wbr><span class="nw">窓口は</span><wbr><span class="nw">ホームエステひとつ。</span><wbr><span class="nw">ご相談から</span><wbr><span class="nw">工事、</span><wbr><span class="nw">その後の</span><wbr><span class="nw">点検まで、</span><wbr><span class="nw">同じ会社が</span><wbr><span class="nw">責任をもって</span><wbr><span class="nw">対応します。</span></span></p>
+      <p><span class="snt">給湯器の交換から外壁・屋根の塗装、リフォームまで。</span><span class="snt">窓口はホームエステひとつ。</span><span class="snt">ご相談から工事、その後の点検まで、同じ会社が責任をもって対応します。</span></p>
     </div></div>
 <section style="padding-top:0"><div class="wrap">
   <div class="roster"><article class="mem">
@@ -3099,7 +3117,7 @@ footer .logotext small{color:#CBDCC4}
       <div class="mem-body">
         <p class="mem-meta"><span class="no">01</span><span class="ro">代表取締役</span></p>
         <h2 class="mem-name">大内 良介<small>おおうち りょうすけ</small></h2>
-        <p class="mem-msg"><span class="jpw"><span class="nw">まず、</span><wbr><span class="nw">本当に</span><wbr><span class="nw">直す必要があるかを</span><wbr><span class="nw">確かめます。</span><wbr><span class="nw">ホームインスペクターの</span><wbr><span class="nw">目で建物を</span><wbr><span class="nw">見て、</span><wbr><span class="nw">いま</span><wbr><span class="nw">直すべきところと、</span><wbr><span class="nw">様子を</span><wbr><span class="nw">見てよいところをお伝えします。</span></span></p>
+        <p class="mem-msg"><span class="snt">まず、本当に直す必要があるかを確かめます。</span><span class="snt">ホームインスペクターの目で建物を見て、いま直すべきところと、様子を見てよいところをお伝えします。</span></p>
         <div class="mem-lic"><p class="lb">保有資格</p><ul><li><span class="jpw"><span class="nw">ホームインスペクター</span><wbr><span class="nw">会員</span></span></li><li>増改築相談員</li><li>宅地建物取引士</li><li><span class="jpw"><span class="nw">ガス</span><wbr><span class="nw">可とう</span><wbr><span class="nw">管接続工事監督者</span></span></li><li><span class="jpw"><span class="nw">マンション</span><wbr><span class="nw">管理士</span></span></li><li>管理業務主任者</li><li><span class="jpw"><span class="nw">競売不動産取扱い</span><wbr><span class="nw">主任者</span></span></li><li>賃貸不動産経営管理士</li></ul></div>
       </div>
     </article><article class="mem">
@@ -3108,7 +3126,7 @@ footer .logotext small{color:#CBDCC4}
       <div class="mem-body">
         <p class="mem-meta"><span class="no">02</span></p>
         <h2 class="mem-name">新 隆幸<small>あたらし たかゆき</small></h2>
-        <p class="mem-msg"><span class="jpw"><span class="nw">工事が</span><wbr><span class="nw">終わったあとに</span><wbr><span class="nw">始まるのが、</span><wbr><span class="nw">毎日の</span><wbr><span class="nw">暮らしです。</span><wbr><span class="nw">使う人の背丈や</span><wbr><span class="nw">動き方、朝と晩の</span><wbr><span class="nw">使い方まで</span><wbr><span class="nw">お聞きして、</span><wbr><span class="nw">住んでから</span><wbr><span class="nw">楽になる</span><wbr><span class="nw">形をいっしょに</span><wbr><span class="nw">考えます。</span></span></p>
+        <p class="mem-msg"><span class="snt">工事が終わったあとに始まるのが、毎日の暮らしです。</span><span class="snt">使う人の背丈や動き方、朝と晩の使い方までお聞きして、住んでから楽になる形をいっしょに考えます。</span></p>
         
       </div>
     </article><article class="mem">
@@ -3117,7 +3135,7 @@ footer .logotext small{color:#CBDCC4}
       <div class="mem-body">
         <p class="mem-meta"><span class="no">03</span></p>
         <h2 class="mem-name">橋崎 裕亮<small>はしざき ゆうすけ</small></h2>
-        <p class="mem-msg"><span class="jpw"><span class="nw">お見積りは、</span><wbr><span class="nw">金額だけでなく</span><wbr><span class="nw">内訳と</span><wbr><span class="nw">工事の</span><wbr><span class="nw">中身まで</span><wbr><span class="nw">ご説明します。</span><wbr><span class="nw">その場で</span><wbr><span class="nw">決めていただく</span><wbr><span class="nw">必要はありません。</span><wbr><span class="nw">ご家族で</span><wbr><span class="nw">話し合っていただいてから、</span><wbr><span class="nw">お返事ください。</span></span></p>
+        <p class="mem-msg"><span class="snt">お見積りは、金額だけでなく内訳と工事の中身までご説明します。</span><span class="snt">その場で決めていただく必要はありません。</span><span class="snt">ご家族で話し合っていただいてから、お返事ください。</span></p>
         
       </div>
     </article><article class="mem">
@@ -3126,7 +3144,7 @@ footer .logotext small{color:#CBDCC4}
       <div class="mem-body">
         <p class="mem-meta"><span class="no">04</span></p>
         <h2 class="mem-name">竹中 勝久<small>たけなか かつひさ</small></h2>
-        <p class="mem-msg"><span class="jpw"><span class="nw">工事の</span><wbr><span class="nw">当日は、</span><wbr><span class="nw">お住まいのまわりを</span><wbr><span class="nw">先にひと通り</span><wbr><span class="nw">見て、</span><wbr><span class="nw">傷つけてはいけない</span><wbr><span class="nw">場所を</span><wbr><span class="nw">養生します。</span><wbr><span class="nw">ご近所へのごあいさつも、</span><wbr><span class="nw">作業を</span><wbr><span class="nw">始める</span><wbr><span class="nw">前に済ませます。</span></span></p>
+        <p class="mem-msg"><span class="snt">工事の当日は、お住まいのまわりを先にひと通り見て、傷つけてはいけない場所を養生します。</span><span class="snt">ご近所へのごあいさつも、作業を始める前に済ませます。</span></p>
         <div class="mem-lic"><p class="lb">保有資格</p><ul><li>大型自動車免許</li><li>大型二輪免許</li><li><span class="jpw"><span class="nw">フォークリフト</span><wbr><span class="nw">免許</span></span></li><li><span class="jpw"><span class="nw">ドローン</span><wbr><span class="nw">操縦技能</span></span></li></ul></div>
       </div>
     </article></div>
@@ -3139,7 +3157,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr">通話<br>無料</span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／9:</span><wbr><span class="nw">00〜</span><wbr><span class="nw">19:</span><wbr><span class="nw">00</span><wbr><span class="nw">（土・</span><wbr><span class="nw">日・</span><wbr><span class="nw">祝日も</span><wbr><span class="nw">受付）</span></span></p>
+      <p class="hours">営業時間／9:00〜19:00<span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -3212,7 +3230,7 @@ footer .logotext small{color:#CBDCC4}
       <div><b>所在地</b>〒573-0064<br>大阪府枚方市北中振3-45-23</div>
       <div><b>最寄駅</b>京阪本線 光善寺駅</div>
       <div><b>カーナビ</b>枚方市北中振3-45-23</div>
-      <div><b>営業時間</b>9:00〜19:00（土・日・祝日も受付）</div>
+      <div><b>営業時間</b>9:00〜19:00<span class="nobr">（土・日・祝日も受付）</span></div>
     </div>
     <div class="parks">
       <span><i>P1</i>タイムズ光善寺駅前第3</span><span><i>P2</i>タイムズ光善寺駅前西</span>
@@ -3254,15 +3272,15 @@ footer .logotext small{color:#CBDCC4}
     <li><span class="jpw"><span class="nw">人の生命、</span><wbr><span class="nw">身体または</span><wbr><span class="nw">財産の</span><wbr><span class="nw">保護のために</span><wbr><span class="nw">必要があり、</span><wbr><span class="nw">本人の</span><wbr><span class="nw">同意を</span><wbr><span class="nw">得ることが</span><wbr><span class="nw">困難な場合</span></span></li>
     <li><span class="jpw"><span class="nw">工事の</span><wbr><span class="nw">施工に</span><wbr><span class="nw">必要な</span><wbr><span class="nw">範囲で、</span><wbr><span class="nw">協力会社・メーカーへ</span><wbr><span class="nw">提供する場合</span><wbr><span class="nw">（この場合、</span><wbr><span class="nw">当社は</span><wbr><span class="nw">提供先に対し</span><wbr><span class="nw">適切な</span><wbr><span class="nw">管理を</span><wbr><span class="nw">求めます）</span></span></li></ul></section>
 <section class="rv"><h2><em>05</em>施工事例等の掲載</h2><p><span class="jpw"><span class="nw">当社</span><wbr><span class="nw">ウェブサイトに</span><wbr><span class="nw">掲載する</span><wbr><span class="nw">施工事例、</span><wbr><span class="nw">お客様の声、</span><wbr><span class="nw">Before・</span><wbr><span class="nw">Afterの</span><wbr><span class="nw">写真については、</span></span><b><span class="jpw"><span class="nw">あらかじめお客様の</span><wbr><span class="nw">ご同意をいただいたもののみ</span></span></b><span class="jpw"><span class="nw">を</span><wbr><span class="nw">掲載しております。</span><wbr><span class="nw">掲載後であっても、</span><wbr><span class="nw">削除を</span><wbr><span class="nw">ご希望の</span><wbr><span class="nw">場合は下記</span><wbr><span class="nw">お問い合わせ</span><wbr><span class="nw">窓口まで</span><wbr><span class="nw">ご連絡ください。</span><wbr><span class="nw">速やかに</span><wbr><span class="nw">対応いたします。</span></span></p></section>
-<section class="rv"><h2><em>06</em>安全管理措置</h2><p><span class="jpw"><span class="nw">当社は、</span><wbr><span class="nw">個人情報の</span><wbr><span class="nw">漏えい、</span><wbr><span class="nw">滅失またはき損の</span><wbr><span class="nw">防止その他の</span><wbr><span class="nw">個人情報の</span><wbr><span class="nw">安全管理のために、</span><wbr><span class="nw">必要かつ</span><wbr><span class="nw">適切な</span><wbr><span class="nw">措置を</span><wbr><span class="nw">講じます。</span><wbr><span class="nw">また、</span><wbr><span class="nw">個人情報を</span><wbr><span class="nw">取り扱う</span><wbr><span class="nw">従業者に対し、</span><wbr><span class="nw">必要かつ</span><wbr><span class="nw">適切な</span><wbr><span class="nw">監督を</span><wbr><span class="nw">行います。</span></span></p></section>
-<section class="rv"><h2><em>07</em><span class="jpw"><span class="nw">アクセス解析・</span><wbr><span class="nw">Cookieについて</span></span></h2><p><span class="jpw"><span class="nw">当社</span><wbr><span class="nw">ウェブサイトでは、</span><wbr><span class="nw">サービス</span><wbr><span class="nw">向上のため</span><wbr><span class="nw">アクセス解析</span><wbr><span class="nw">ツールを</span><wbr><span class="nw">使用する</span><wbr><span class="nw">場合があります。</span><wbr><span class="nw">これらの</span><wbr><span class="nw">ツールは</span><wbr><span class="nw">Cookieを</span><wbr><span class="nw">使用して</span><wbr><span class="nw">情報を</span><wbr><span class="nw">収集しますが、</span><wbr><span class="nw">個人を</span><wbr><span class="nw">特定する</span><wbr><span class="nw">情報は</span><wbr><span class="nw">含まれません。</span></span></p>
-    <p><span class="jpw"><span class="nw">Cookieの</span><wbr><span class="nw">使用は、</span><wbr><span class="nw">ブラウザの</span><wbr><span class="nw">設定により</span><wbr><span class="nw">無効にすることができます。</span><wbr><span class="nw">無効にした</span><wbr><span class="nw">場合、当</span><wbr><span class="nw">ウェブサイトの</span><wbr><span class="nw">一部機能がご利用いただけない</span><wbr><span class="nw">場合があります。</span></span></p></section>
+<section class="rv"><h2><em>06</em>安全管理措置</h2><p><span class="snt">当社は、個人情報の漏えい、滅失またはき損の防止その他の個人情報の安全管理のために、必要かつ適切な措置を講じます。</span><span class="snt">また、個人情報を取り扱う従業者に対し、必要かつ適切な監督を行います。</span></p></section>
+<section class="rv"><h2><em>07</em><span class="jpw"><span class="nw">アクセス解析・</span><wbr><span class="nw">Cookieについて</span></span></h2><p><span class="snt">当社ウェブサイトでは、サービス向上のためアクセス解析ツールを使用する場合があります。</span><span class="snt">これらのツールはCookieを使用して情報を収集しますが、個人を特定する情報は含まれません。</span></p>
+    <p><span class="snt">Cookieの使用は、ブラウザの設定により無効にすることができます。</span><span class="snt">無効にした場合、当ウェブサイトの一部機能がご利用いただけない場合があります。</span></p></section>
 <section class="rv"><h2><em>08</em><span class="jpw"><span class="nw">開示・</span><wbr><span class="nw">訂正・</span><wbr><span class="nw">削除等の</span><wbr><span class="nw">ご請求</span></span></h2><p><span class="jpw"><span class="nw">お客様</span><wbr><span class="nw">ご本人から、</span><wbr><span class="nw">個人情報の</span><wbr><span class="nw">開示、</span><wbr><span class="nw">訂正、</span><wbr><span class="nw">追加、</span><wbr><span class="nw">削除、</span><wbr><span class="nw">利用停止の</span><wbr><span class="nw">ご請求があった</span><wbr><span class="nw">場合には、</span><wbr><span class="nw">ご本人であることを</span><wbr><span class="nw">確認させていただいたうえで、</span><wbr><span class="nw">法令に従い</span><wbr><span class="nw">速やかに</span><wbr><span class="nw">対応いたします。</span></span></p></section>
 <section class="rv"><h2><em>09</em>お問い合わせ窓口</h2><p><span class="jpw"><span class="nw">個人情報の</span><wbr><span class="nw">取り扱いに関する</span><wbr><span class="nw">お問い合わせは、</span><wbr><span class="nw">下記まで</span><wbr><span class="nw">ご連絡ください。</span></span></p>
     <ul><li><span class="jpw"><span class="nw">株式会社</span><wbr><span class="nw">ホームエステ</span></span></li>
     <li><span class="jpw"><span class="nw">〒</span><wbr><span class="nw">573-</span><wbr><span class="nw">0064 </span><wbr><span class="nw">大阪府枚方市北中振</span><wbr><span class="nw">3-</span><wbr><span class="nw">45-23</span></span></li>
     <li><span class="jpw"><span class="nw">電話：</span><wbr><span class="nw">0120-</span><wbr><span class="nw">304-</span><wbr><span class="nw">500</span><wbr><span class="nw">（受付時間 9:</span><wbr><span class="nw">00〜</span><wbr><span class="nw">19:</span><wbr><span class="nw">00）</span></span></li></ul></section>
-<section class="rv"><h2><em>10</em>本方針の変更</h2><p><span class="jpw"><span class="nw">当社は、</span><wbr><span class="nw">法令の</span><wbr><span class="nw">改正や</span><wbr><span class="nw">事業内容の</span><wbr><span class="nw">変更等に</span><wbr><span class="nw">応じて、</span><wbr><span class="nw">本方針を</span><wbr><span class="nw">変更することがあります。</span><wbr><span class="nw">変更後の</span><wbr><span class="nw">本方針は、当</span><wbr><span class="nw">ウェブサイトに</span><wbr><span class="nw">掲載した</span><wbr><span class="nw">時点から</span><wbr><span class="nw">効力を</span><wbr><span class="nw">生じるものとします。</span></span></p></section>
+<section class="rv"><h2><em>10</em>本方針の変更</h2><p><span class="snt">当社は、法令の改正や事業内容の変更等に応じて、本方針を変更することがあります。</span><span class="snt">変更後の本方針は、当ウェブサイトに掲載した時点から効力を生じるものとします。</span></p></section>
   <p class="end"><span class="jpw"><span class="nw">制定日：　　</span><wbr><span class="nw">年　　</span><wbr><span class="nw">月　　日</span></span><br><span class="jpw"><span class="nw">株式会社</span><wbr><span class="nw">ホームエステ</span></span></p>
 </div></div></section>
 </div>
@@ -3281,7 +3299,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr">通話<br>無料</span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／9:</span><wbr><span class="nw">00〜</span><wbr><span class="nw">19:</span><wbr><span class="nw">00</span><wbr><span class="nw">（土・</span><wbr><span class="nw">日・</span><wbr><span class="nw">祝日も</span><wbr><span class="nw">受付）</span></span></p>
+      <p class="hours">営業時間／9:00〜19:00<span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -3303,7 +3321,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr">通話<br>無料</span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／9:</span><wbr><span class="nw">00〜</span><wbr><span class="nw">19:</span><wbr><span class="nw">00</span><wbr><span class="nw">（土・</span><wbr><span class="nw">日・</span><wbr><span class="nw">祝日も</span><wbr><span class="nw">受付）</span></span></p>
+      <p class="hours">営業時間／9:00〜19:00<span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -3325,7 +3343,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr">通話<br>無料</span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／9:</span><wbr><span class="nw">00〜</span><wbr><span class="nw">19:</span><wbr><span class="nw">00</span><wbr><span class="nw">（土・</span><wbr><span class="nw">日・</span><wbr><span class="nw">祝日も</span><wbr><span class="nw">受付）</span></span></p>
+      <p class="hours">営業時間／9:00〜19:00<span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -3400,7 +3418,7 @@ footer .logotext small{color:#CBDCC4}
         <li><a href="#/news">お知らせ・コラム</a></li>
           <li><a href="#/contact">お問い合わせ</a></li><li><a href="#/privacy"><span class="jpw"><span class="nw">プライバシー</span><wbr><span class="nw">ポリシー</span></span></a></li></ul></div>
     </div>
-    <p class="copyright"><span class="jpw"><span class="nw">© </span><wbr><span class="nw">株式会社</span><wbr><span class="nw">ホームエステ　※ </span><wbr><span class="nw">本</span><wbr><span class="nw">ページは</span><wbr><span class="nw">構成確認用の</span><wbr><span class="nw">叩き台です。</span><wbr><span class="nw">画像・</span><wbr><span class="nw">文言・リンク</span><wbr><span class="nw">先は仮のものを</span><wbr><span class="nw">含みます。</span></span></p>
+    <p class="copyright"><span class="snt">© 株式会社ホームエステ　※ 本ページは構成確認用の叩き台です。</span><span class="snt">画像・文言・リンク先は仮のものを含みます。</span></p>
   </div></div>
 </footer>
 
