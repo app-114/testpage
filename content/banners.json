@@ -2,7 +2,7 @@
   "items": [
     {
       "title": "ハウスゲートグループ",
-      "image": "",
+      "image": "/uploads/bnr-group.jpg",
       "category": "グループ",
       "url": "https://www.gate2001.jp/",
       "style": "plain"
@@ -37,7 +37,7 @@
     },
     {
       "title": "住まいの主治医",
-      "image": "",
+      "image": "/uploads/bnr-shujii.jpg",
       "category": "住宅健康診断",
       "url": "https://sumai-shujii.com/",
       "style": "blue"
