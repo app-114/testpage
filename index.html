@@ -1922,6 +1922,9 @@ a[href^="tel:"]{white-space:nowrap}
 /* 管理画面の文言も、文節の中では割らない */
 .cms-ph{word-break:keep-all!important}
 
+/* 住所・アクセスの行：見出し（b）の右側は1つの箱。文節や .nobr が別々の横並び要素になって崩れるのを防ぐ */
+.addr div>.av{flex:1 1 auto;min-width:0}
+
 /* ===== ブランドロゴ（原画をSVGで再現） ===== */
 .logo{gap:11px;align-items:center}
 .logomark{display:none}
@@ -2088,7 +2091,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="fv-meta">
       <span><span class="jpw"><span class="nw">通話無料</span></span><br><b>0120-304-500</b></span><i></i>
       <span><span class="jpw"><span class="nw">営業時間</span></span><br><b>9:00 − 19:00</b></span><i></i>
-      <span><span class="jpw"><span class="nw">相談会</span></span><br><b><span class="jpw"><span class="nw">毎月  </span></span><wbr><span class="nw">第4土・日</span></b></span>
+      <span><span class="jpw"><span class="nw">相談会</span></span><br><b><span class="jpw"><span class="nw">毎月</span></span> <span class="nw">第4土・日</span></b></span>
     </div>
     <div class="fv-note" aria-hidden="true"><span>SCROLL<i></i></span></div>
   </div>
@@ -2198,7 +2201,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr"><span class="jpw"><span class="nw">通話</span></span><br><span class="jpw"><span class="nw">無料</span></span></span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><span class="nobr">（土・日・祝日も受付）</span></p>
+      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><wbr><span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -2290,10 +2293,10 @@ footer .logotext small{color:#CBDCC4}
       <h2><span class="jpw"><span class="nw">まとめてご</span><wbr><span class="nw">依頼いただくと、</span><wbr><span class="nw">お得になります。</span></span></h2>
       <p class="lead2"><span class="snt"><span class="jpw"><span class="nw">正直屋と</span><wbr><span class="nw">ホームエステの</span><wbr><span class="nw">セット</span><wbr><span class="nw">割引制度。</span></span></span><span class="snt"><span class="jpw"><span class="nw">複数の</span><wbr><span class="nw">工事をまとめてご</span><wbr><span class="nw">依頼いただくと、</span><wbr><span class="nw">割引が</span><wbr><span class="nw">適用されます。</span></span></span></p>
       <div class="combo">
-        <div><i>＋</i><span class="cbt"><span class="jpw"><span class="nw">給湯器 ×  </span></span><span class="nobr">外壁・屋根塗装</span></span></div>
+        <div><i>＋</i><span class="cbt"><span class="jpw"><span class="nw">給湯器 ×</span><wbr></span> <span class="nobr">外壁・屋根塗装</span></span></div>
         <div><i>＋</i><span class="cbt"><span class="jpw"><span class="nw">給湯器 × </span><wbr><span class="nw">ガスコンロ × </span><wbr><span class="nw">レンジフード</span></span></span></div>
-        <div><i>＋</i><span class="cbt"><span class="jpw"><span class="nw">エコキュート ×  </span></span><span class="nobr">外壁・屋根塗装</span></span></div>
-        <div><i>＋</i><span class="cbt"><span class="jpw"><span class="nw">リフォーム ×  </span></span><span class="nobr">外壁・屋根塗装</span></span></div>
+        <div><i>＋</i><span class="cbt"><span class="jpw"><span class="nw">エコキュート ×</span><wbr></span> <span class="nobr">外壁・屋根塗装</span></span></div>
+        <div><i>＋</i><span class="cbt"><span class="jpw"><span class="nw">リフォーム ×</span><wbr></span> <span class="nobr">外壁・屋根塗装</span></span></div>
       </div>
       <p class="foot"><span class="snt"><span class="jpw"><span class="nw">※ </span><wbr><span class="nw">組み合わせ・</span><wbr><span class="nw">割引額は</span><wbr><span class="nw">仮のものです</span><wbr><span class="nw">（店内掲示の</span><wbr><span class="nw">制度を</span><wbr><span class="nw">転記予定・</span><wbr><span class="nw">先方確認中）。</span></span></span><span class="snt"><span class="jpw"><span class="nw">本</span><wbr><span class="nw">セクションは構成</span><wbr><span class="nw">イメージにない</span><wbr><span class="nw">追加提案です。</span></span></span></p>
     </div>
@@ -2348,7 +2351,7 @@ footer .logotext small{color:#CBDCC4}
     </div>
     <div class="ext stagger">
       <a class="txt-tile" href="https://www.gate2001.jp/" target="_blank" rel="noopener noreferrer"><span class="cat"><span class="jpw"><span class="nw">グループ</span></span></span><b><span class="jpw"><span class="nw">ハウスゲート</span><wbr><span class="nw">グループ</span></span></b></a>
-      <a class="bnr" href="https://hirakata-toso.jp/" target="_blank" rel="noopener noreferrer"><img src="bnr-toso.jpg" width="368" height="182" loading="lazy" alt="枚方市の地域密着 外壁・屋根塗装事業　外壁・屋根塗装専門店"><span class="sr-only"><span class="jpw"><span class="nw">枚方市の</span><wbr><span class="nw">地域密着  </span></span><span class="nobr">外壁・屋根塗装</span><span class="jpw"><span class="nw">事業　　</span></span><span class="nobr">外壁・屋根塗装</span><span class="jpw"><span class="nw">専門店</span></span></span></a>
+      <a class="bnr" href="https://hirakata-toso.jp/" target="_blank" rel="noopener noreferrer"><img src="bnr-toso.jpg" width="368" height="182" loading="lazy" alt="枚方市の地域密着 外壁・屋根塗装事業　外壁・屋根塗装専門店"><span class="sr-only"><span class="jpw"><span class="nw">枚方市の</span><wbr><span class="nw">地域密着</span><wbr></span> <span class="nobr">外壁・屋根塗装</span><span class="jpw"><wbr><span class="nw">事業</span><wbr></span>　<span class="nobr">外壁・屋根塗装</span><span class="jpw"><wbr><span class="nw">専門店</span></span></span></a>
       <a class="bnr" href="https://xn--m7rz27cmsk.xn--u9j0hkb2esdt17v84rsmbu13e6dj12t9w6c.com/osaka/" target="_blank" rel="noopener noreferrer"><img src="bnr-shojikiya.jpg" width="368" height="182" loading="lazy" alt="給湯器・ガスコンロ交換事業　正直屋 枚方店"><span class="sr-only"><span class="jpw"><span class="nw">給湯器・ガスコンロ</span><wbr><span class="nw">交換事業　</span><wbr><span class="nw">正直屋 </span><wbr><span class="nw">枚方店</span></span></span></a>
       <a class="bnr" href="https://lafuado.net/" target="_blank" rel="noopener noreferrer"><img src="bnr-lafuado.jpg" width="368" height="182" loading="lazy" alt="環境衛生事業　ラーフエイド"><span class="sr-only"><span class="jpw"><span class="nw">環境衛生事業　</span><wbr><span class="nw">ラーフエイド</span></span></span></a>
       <a class="bnr" href="https://yamatoya-ecocute.com/" target="_blank" rel="noopener noreferrer"><img src="bnr-yamatoya.jpg" width="368" height="182" loading="lazy" alt="エコキュート専門店　やまと屋"><span class="sr-only"><span class="jpw"><span class="nw">エコキュート</span><wbr><span class="nw">専門店　やまと屋</span></span></span></a>
@@ -2365,7 +2368,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr"><span class="jpw"><span class="nw">通話</span></span><br><span class="jpw"><span class="nw">無料</span></span></span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><span class="nobr">（土・日・祝日も受付）</span></p>
+      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><wbr><span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -2400,7 +2403,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr"><span class="jpw"><span class="nw">通話</span></span><br><span class="jpw"><span class="nw">無料</span></span></span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><span class="nobr">（土・日・祝日も受付）</span></p>
+      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><wbr><span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -2446,7 +2449,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr"><span class="jpw"><span class="nw">通話</span></span><br><span class="jpw"><span class="nw">無料</span></span></span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><span class="nobr">（土・日・祝日も受付）</span></p>
+      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><wbr><span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -2501,7 +2504,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr"><span class="jpw"><span class="nw">通話</span></span><br><span class="jpw"><span class="nw">無料</span></span></span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><span class="nobr">（土・日・祝日も受付）</span></p>
+      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><wbr><span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -2556,7 +2559,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr"><span class="jpw"><span class="nw">通話</span></span><br><span class="jpw"><span class="nw">無料</span></span></span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><span class="nobr">（土・日・祝日も受付）</span></p>
+      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><wbr><span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -2611,7 +2614,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr"><span class="jpw"><span class="nw">通話</span></span><br><span class="jpw"><span class="nw">無料</span></span></span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><span class="nobr">（土・日・祝日も受付）</span></p>
+      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><wbr><span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -2664,7 +2667,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr"><span class="jpw"><span class="nw">通話</span></span><br><span class="jpw"><span class="nw">無料</span></span></span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><span class="nobr">（土・日・祝日も受付）</span></p>
+      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><wbr><span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -2717,7 +2720,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr"><span class="jpw"><span class="nw">通話</span></span><br><span class="jpw"><span class="nw">無料</span></span></span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><span class="nobr">（土・日・祝日も受付）</span></p>
+      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><wbr><span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -2773,9 +2776,8 @@ footer .logotext small{color:#CBDCC4}
   <div class="benefit stagger">
     <div><small><span class="jpw"><span class="nw">先着</span><wbr><span class="nw">10名限定</span></span></small>
       <b><span class="jpw"><span class="nw">ノーリツ</span><wbr><span class="nw">24号給湯</span><wbr><span class="nw">タイプ</span></span><br><span class="price">81.2%OFF</span></b>
-      <p><span class="strike"><span class="jpw"><span class="nw">定価 </span><wbr><span class="nw">463,760円</span></span></span><span class="jpw"><span class="nw">  → </span><wbr><span class="nw">特別価格  </span></span><b class="sp-price"><span class="jpw"><span class="nw">87,000円</span></span></b><br><span class="jpw"><span class="nw">
-        
-        </span><wbr><span class="nw">品番：</span><wbr><span class="nw">GT-</span><wbr><span class="nw">2470SAW-</span><wbr><span class="nw">1 </span><wbr><span class="nw">BL ※</span><wbr><span class="nw">消費税込・</span><wbr><span class="nw">取付工事費別</span></span></p></div>
+      <p><span class="strike"><span class="jpw"><span class="nw">定価 </span><wbr><span class="nw">463,760円</span></span></span> <span class="jpw"><span class="nw">→ </span><wbr><span class="nw">特別価格</span></span> <b class="sp-price"><span class="jpw"><span class="nw">87,000円</span></span></b><br>
+        <span class="jpw"><span class="nw">品番：</span><wbr><span class="nw">GT-</span><wbr><span class="nw">2470SAW-</span><wbr><span class="nw">1 </span><wbr><span class="nw">BL ※</span><wbr><span class="nw">消費税込・</span><wbr><span class="nw">取付工事費別</span></span></p></div>
     <div><small><span class="jpw"><span class="nw">来場者全組</span></span></small>
       <b><span class="jpw"><span class="nw">QUO</span><wbr><span class="nw">カード</span><wbr><span class="nw">500円分＋</span></span><br><span class="jpw"><span class="nw">オリジナル</span><wbr><span class="nw">トートバッグ</span></span></b>
       <p><span class="snt"><span class="jpw"><span class="nw">ご来場いただいた</span><wbr><span class="nw">全組様に</span><wbr><span class="nw">プレゼント。</span></span></span><br><span class="snt"><span class="jpw"><span class="nw">※</span><wbr><span class="nw">1組様につき1</span><wbr><span class="nw">セット</span><wbr><span class="nw">お渡しします。</span></span></span></p></div>
@@ -2811,9 +2813,9 @@ footer .logotext small{color:#CBDCC4}
     <div>
       <div class="addr">
         <div><b><span class="jpw"><span class="nw">会場</span></span></b><span class="jpw"><span class="nw">ショールーム＆</span><wbr><span class="nw">セルフカフェ</span><wbr><span class="nw">「かべやねん。」</span></span><br><span class="jpw"><span class="nw">／</span><wbr><span class="nw">正直屋 </span><wbr><span class="nw">枚方店</span></span></div>
-        <div><b><span class="jpw"><span class="nw">住所</span></span></b><span class="nobr">〒573-0064</span><br><span class="jpw"><span class="nw">大阪府枚方市</span></span><span class="nobr">北中振3-45-23</span></div>
-        <div><b><span class="jpw"><span class="nw">最寄駅</span></span></b><span class="jpw"><span class="nw">京阪本線 </span><wbr><span class="nw">光善寺駅</span></span></div>
-        <div><b><span class="jpw"><span class="nw">カーナビ</span></span></b><span class="jpw"><span class="nw">枚方市</span></span><span class="nobr">北中振3-45-23</span></div>
+        <div><b><span class="jpw"><span class="nw">住所</span></span></b><span class="av"><span class="nobr">〒573-0064</span><br><span class="jpw"><span class="nw">大阪府枚方市</span><wbr></span><span class="nobr">北中振3-45-23</span></span></div>
+        <div><b><span class="jpw"><span class="nw">最寄駅</span></span></b><span class="av"><span class="jpw"><span class="nw">京阪本線 </span><wbr><span class="nw">光善寺駅</span></span></span></div>
+        <div><b><span class="jpw"><span class="nw">カーナビ</span></span></b><span class="av"><span class="jpw"><span class="nw">枚方市</span><wbr></span><span class="nobr">北中振3-45-23</span></span></div>
         <div><b><span class="jpw"><span class="nw">時間</span></span></b><span class="nobr">10:00〜15:00</span></div>
         <div><b><span class="jpw"><span class="nw">電話</span></span></b><a href="tel:0120304500" style="font-weight:700">0120-304-500</a></div>
       </div>
@@ -2828,7 +2830,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr"><span class="jpw"><span class="nw">通話</span></span><br><span class="jpw"><span class="nw">無料</span></span></span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><span class="nobr">（土・日・祝日も受付）</span></p>
+      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><wbr><span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -2899,7 +2901,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr"><span class="jpw"><span class="nw">通話</span></span><br><span class="jpw"><span class="nw">無料</span></span></span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><span class="nobr">（土・日・祝日も受付）</span></p>
+      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><wbr><span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -2918,9 +2920,8 @@ footer .logotext small{color:#CBDCC4}
 <div class="wrap"><div class="phead rv" style="max-width:800px;margin:0 auto">
   <div class="no"><i><span class="jpw"><span class="nw">給湯器</span></span></i><span>Case 01</span></div>
   <h1><span class="jpw"><span class="nw">突然お湯が</span><wbr><span class="nw">出なくなった</span><wbr><span class="nw">給湯器。</span></span></h1>
-  <p class="lead" style="font-family:var(--serif);font-size:17px;font-weight:600;line-height:2;letter-spacing:.04em;color:var(--ink);margin-top:16px"><span class="jpw"><span class="nw">
-    
-    </span><wbr><span class="nw">スピード</span><wbr><span class="nw">対応で、</span><wbr><span class="nw">2日後に</span><wbr><span class="nw">安心の</span><wbr><span class="nw">暮らしを</span><wbr><span class="nw">取り戻しました。</span></span></p>
+  <p class="lead" style="font-family:var(--serif);font-size:17px;font-weight:600;line-height:2;letter-spacing:.04em;color:var(--ink);margin-top:16px">
+    <span class="jpw"><span class="nw">スピード</span><wbr><span class="nw">対応で、</span><wbr><span class="nw">2日後に</span><wbr><span class="nw">安心の</span><wbr><span class="nw">暮らしを</span><wbr><span class="nw">取り戻しました。</span></span></p>
 </div></div>
 
 <section style="padding-top:0"><div class="wrap"><div class="detail">
@@ -2960,7 +2961,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr"><span class="jpw"><span class="nw">通話</span></span><br><span class="jpw"><span class="nw">無料</span></span></span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><span class="nobr">（土・日・祝日も受付）</span></p>
+      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><wbr><span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -3016,9 +3017,8 @@ footer .logotext small{color:#CBDCC4}
 <div class="wrap"><div class="phead rv" style="max-width:800px;margin:0 auto">
   <div class="no"><i><span class="jpw"><span class="nw">外壁塗装</span></span></i><span>Case 02</span></div>
   <h1><span class="jpw"><span class="nw">色あせと</span><wbr><span class="nw">コケが</span><wbr><span class="nw">目立ってきた</span><wbr><span class="nw">外壁。</span></span></h1>
-  <p class="lead" style="font-family:var(--serif);font-size:17px;font-weight:600;line-height:2;letter-spacing:.04em;color:var(--ink);margin-top:16px"><span class="jpw"><span class="nw">
-    
-    色</span><wbr><span class="nw">シミュレーションで</span><wbr><span class="nw">仕上がりを</span><wbr><span class="nw">確かめてから、</span><wbr><span class="nw">塗り替えました。</span></span></p>
+  <p class="lead" style="font-family:var(--serif);font-size:17px;font-weight:600;line-height:2;letter-spacing:.04em;color:var(--ink);margin-top:16px">
+    <span class="jpw"><span class="nw">色</span><wbr><span class="nw">シミュレーションで</span><wbr><span class="nw">仕上がりを</span><wbr><span class="nw">確かめてから、</span><wbr><span class="nw">塗り替えました。</span></span></p>
 </div></div>
 
 <section style="padding-top:0"><div class="wrap"><div class="detail">
@@ -3048,7 +3048,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr"><span class="jpw"><span class="nw">通話</span></span><br><span class="jpw"><span class="nw">無料</span></span></span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><span class="nobr">（土・日・祝日も受付）</span></p>
+      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><wbr><span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -3090,9 +3090,8 @@ footer .logotext small{color:#CBDCC4}
 <div class="wrap"><div class="phead rv" style="max-width:800px;margin:0 auto">
   <div class="no"><i><span class="jpw"><span class="nw">リフォーム</span></span></i><span>Case 03</span></div>
   <h1><span class="jpw"><span class="nw">使いにくくなった</span><wbr><span class="nw">古い</span><wbr><span class="nw">キッチン。</span></span></h1>
-  <p class="lead" style="font-family:var(--serif);font-size:17px;font-weight:600;line-height:2;letter-spacing:.04em;color:var(--ink);margin-top:16px"><span class="jpw"><span class="nw">
-    
-    </span><wbr><span class="nw">ショールームで</span><wbr><span class="nw">相談しながら、</span><wbr><span class="nw">明るい</span><wbr><span class="nw">キッチンに</span><wbr><span class="nw">入れ替えました。</span></span></p>
+  <p class="lead" style="font-family:var(--serif);font-size:17px;font-weight:600;line-height:2;letter-spacing:.04em;color:var(--ink);margin-top:16px">
+    <span class="jpw"><span class="nw">ショールームで</span><wbr><span class="nw">相談しながら、</span><wbr><span class="nw">明るい</span><wbr><span class="nw">キッチンに</span><wbr><span class="nw">入れ替えました。</span></span></p>
 </div></div>
 
 <section style="padding-top:0"><div class="wrap"><div class="detail">
@@ -3122,7 +3121,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr"><span class="jpw"><span class="nw">通話</span></span><br><span class="jpw"><span class="nw">無料</span></span></span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><span class="nobr">（土・日・祝日も受付）</span></p>
+      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><wbr><span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -3233,9 +3232,8 @@ footer .logotext small{color:#CBDCC4}
     <h2><span class="jpw"><span class="nw">住まいの</span><wbr><span class="nw">お困りごと</span><wbr><span class="nw">相談会</span></span></h2></div>
     </div>
   <div class="two rv">
-    <div class="tile"><div class="ph" style="height:260px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h3l2-2h6l2 2h3v12H4z"/><circle cx="12" cy="13" r="3.4"/></svg><b><span class="jpw"><span class="nw">相談会の</span><wbr><span class="nw">様子の</span><wbr><span class="nw">写真が</span><wbr><span class="nw">入ります</span></span></b><span class="jpw"><span class="nw">
-      
-      横</span><wbr><span class="nw">900×</span><wbr><span class="nw">560px</span></span><small><span class="jpw"><span class="nw">先方から支給</span><wbr><span class="nw">（当日撮影）</span></span></small></div>
+    <div class="tile"><div class="ph" style="height:260px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h3l2-2h6l2 2h3v12H4z"/><circle cx="12" cy="13" r="3.4"/></svg><b><span class="jpw"><span class="nw">相談会の</span><wbr><span class="nw">様子の</span><wbr><span class="nw">写真が</span><wbr><span class="nw">入ります</span></span></b>
+      <span class="jpw"><span class="nw">横</span><wbr><span class="nw">900×</span><wbr><span class="nw">560px</span></span><small><span class="jpw"><span class="nw">先方から支給</span><wbr><span class="nw">（当日撮影）</span></span></small></div>
       <div class="cap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8h2a2 2 0 0 1 2 2v11l-3.5-3H10a2 2 0 0 1-2-2v-1"/><path d="M15 3H4a2 2 0 0 0-2 2v8l3.5-3H15a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/></svg><span class="jpw"><span class="nw">給湯器・</span><wbr><span class="nw">ガスコンロ・</span><wbr><span class="nw">レンジフード・</span><wbr><span class="nw">外壁塗装</span></span></div></div>
     <div class="tile" style="display:flex;align-items:center;padding:30px 32px">
       <div><p style="margin:0;font-size:14px;line-height:2.15"><span class="snt"><span class="jpw"><span class="nw">来場者全組への</span><wbr><span class="nw">プレゼントや、</span><wbr><span class="nw">先着限定の</span><wbr><span class="nw">特価もご</span><wbr><span class="nw">用意しています。</span></span></span><br><span class="snt"><span class="jpw"><span class="nw">次回の</span><wbr><span class="nw">開催日と</span><wbr><span class="nw">今月の</span><wbr><span class="nw">チラシは、</span><wbr><span class="nw">相談会</span><wbr><span class="nw">ページでご</span><wbr><span class="nw">確認いただけます。</span></span></span></p>
@@ -3248,17 +3246,17 @@ footer .logotext small{color:#CBDCC4}
     <h2><span class="jpw"><span class="nw">アクセス</span></span></h2></div></div>
   <div class="access rv">
     <div><div class="addr">
-      <div><b><span class="jpw"><span class="nw">所在地</span></span></b><span class="nobr">〒573-0064</span><span class="jpw"><span class="nw">  </span><wbr><span class="nw">大阪府枚方市</span></span><span class="nobr">北中振3-45-23</span></div>
-      <div><b><span class="jpw"><span class="nw">最寄駅</span></span></b><span class="jpw"><span class="nw">京阪本線 </span><wbr><span class="nw">光善寺駅</span></span></div>
-      <div><b><span class="jpw"><span class="nw">カーナビ</span></span></b><span class="jpw"><span class="nw">枚方市</span></span><span class="nobr">北中振3-45-23</span></div>
-      <div><b><span class="jpw"><span class="nw">営業時間</span></span></b><span class="nobr">9:00〜19:00</span></div>
+      <div><b><span class="jpw"><span class="nw">所在地</span></span></b><span class="av"><span class="nobr">〒573-0064</span> <span class="jpw"><wbr><span class="nw">大阪府枚方市</span><wbr></span><span class="nobr">北中振3-45-23</span></span></div>
+      <div><b><span class="jpw"><span class="nw">最寄駅</span></span></b><span class="av"><span class="jpw"><span class="nw">京阪本線 </span><wbr><span class="nw">光善寺駅</span></span></span></div>
+      <div><b><span class="jpw"><span class="nw">カーナビ</span></span></b><span class="av"><span class="jpw"><span class="nw">枚方市</span><wbr></span><span class="nobr">北中振3-45-23</span></span></div>
+      <div><b><span class="jpw"><span class="nw">営業時間</span></span></b><span class="av"><span class="nobr">9:00〜19:00</span></span></div>
     </div>
     <div class="parks">
       <span><i>P1</i><span class="jpw"><span class="nw">タイムズ</span><wbr><span class="nw">光善寺駅前第3</span></span></span><span><i>P2</i><span class="jpw"><span class="nw">タイムズ</span><wbr><span class="nw">光善寺駅前西</span></span></span>
       <span><i>P3</i><span class="jpw"><span class="nw">D-</span><wbr><span class="nw">Parking</span><wbr><span class="nw">北中振</span><wbr><span class="nw">3丁目第1</span></span></span><span><i>P4</i><span class="jpw"><span class="nw">エイブルパーキング</span><wbr><span class="nw">北中振3丁目</span></span></span>
     </div></div>
     <div class="tile"><div class="ph" style="height:100%;min-height:300px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><b><span class="jpw"><span class="nw">Google</span><wbr><span class="nw">マップを</span><wbr><span class="nw">埋め込みます</span></span></b>
-      <span class="nobr">〒573-0064</span><span class="jpw"><span class="nw">  </span><wbr><span class="nw">大阪府枚方市</span></span><span class="nobr">北中振3-45-23</span><small><span class="jpw"><span class="nw">実装時に</span><wbr><span class="nw">設定・</span><wbr><span class="nw">素材不要</span></span></small></div></div>
+      <span class="nobr">〒573-0064</span> <span class="jpw"><wbr><span class="nw">大阪府枚方市</span><wbr></span><span class="nobr">北中振3-45-23</span><small><span class="jpw"><span class="nw">実装時に</span><wbr><span class="nw">設定・</span><wbr><span class="nw">素材不要</span></span></small></div></div>
   </div>
 </div></section>
 </div>
@@ -3272,11 +3270,9 @@ footer .logotext small{color:#CBDCC4}
 <section style="padding-top:0"><div class="wrap"><div class="formwrap">
 
   <div class="fnote rv">
-    <p><b style="color:var(--ink)"><span class="jpw"><span class="nw">お急ぎの</span><wbr><span class="nw">場合は、</span><wbr><span class="nw">お電話が</span><wbr><span class="nw">確実です。</span></span></b><br><span class="jpw"><span class="nw">
-      
-      </span><wbr><span class="nw">給湯器の</span><wbr><span class="nw">故障など、</span><wbr><span class="nw">すぐに</span><wbr><span class="nw">対応が</span><wbr><span class="nw">必要な</span><wbr><span class="nw">ご相談は</span><wbr><span class="nw">お電話ください。</span></span><br><span class="jpw"><span class="nw">
-      
-      </span><wbr><span class="nw">給湯器の</span><wbr><span class="nw">品番が</span><wbr><span class="nw">分かる</span><wbr><span class="nw">場合は、</span><wbr><span class="nw">LINEで品番</span><wbr><span class="nw">シールの</span><wbr><span class="nw">写真を</span><wbr><span class="nw">送っていただくだけで</span><wbr><span class="nw">概算の</span><wbr><span class="nw">お見積を</span><wbr><span class="nw">ご案内できます。</span></span></p>
+    <p><b style="color:var(--ink)"><span class="jpw"><span class="nw">お急ぎの</span><wbr><span class="nw">場合は、</span><wbr><span class="nw">お電話が</span><wbr><span class="nw">確実です。</span></span></b><br>
+      <span class="jpw"><span class="nw">給湯器の</span><wbr><span class="nw">故障など、</span><wbr><span class="nw">すぐに</span><wbr><span class="nw">対応が</span><wbr><span class="nw">必要な</span><wbr><span class="nw">ご相談は</span><wbr><span class="nw">お電話ください。</span></span><br>
+      <span class="jpw"><span class="nw">給湯器の</span><wbr><span class="nw">品番が</span><wbr><span class="nw">分かる</span><wbr><span class="nw">場合は、</span><wbr><span class="nw">LINEで品番</span><wbr><span class="nw">シールの</span><wbr><span class="nw">写真を</span><wbr><span class="nw">送っていただくだけで</span><wbr><span class="nw">概算の</span><wbr><span class="nw">お見積を</span><wbr><span class="nw">ご案内できます。</span></span></p>
     <div class="alt">
       <a href="tel:0120304500"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>0120-304-500（<span class="nobr">9:00〜19:00</span>）</a>
       <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.4 9 9 0 0 1-3.8-.8L3 21l1.9-5.6a8.2 8.2 0 0 1-.9-3.9A8.4 8.4 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5z"/></svg><span class="jpw"><span class="nw">LINEで</span><wbr><span class="nw">相談する</span></span></a>
@@ -3324,11 +3320,9 @@ footer .logotext small{color:#CBDCC4}
 <section><div class="wrap"><div class="center rv">
   <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
   <h1><span class="jpw"><span class="nw">お問い合わせ</span></span><br><span class="jpw"><span class="nw">ありがとう</span><wbr><span class="nw">ございました。</span></span></h1>
-  <p class="msg"><span class="jpw"><span class="nw">送信が</span><wbr><span class="nw">完了いたしました。</span></span><br><span class="jpw"><span class="nw">
-    
-    </span><wbr><span class="nw">内容を</span><wbr><span class="nw">確認のうえ、</span><wbr><span class="nw">担当者より</span></span><b style="color:var(--ink)"><span class="jpw"><span class="nw">2営業日以内</span></span></b><span class="jpw"><span class="nw">にご</span><wbr><span class="nw">連絡いたします。</span></span><br><span class="jpw"><span class="nw">
-    
-    </span><wbr><span class="nw">ご記入いただいた</span><wbr><span class="nw">メールアドレス</span><wbr><span class="nw">宛に、</span><wbr><span class="nw">自動返信</span><wbr><span class="nw">メールを</span><wbr><span class="nw">お送りしています。</span></span></p>
+  <p class="msg"><span class="jpw"><span class="nw">送信が</span><wbr><span class="nw">完了いたしました。</span></span><br>
+    <span class="jpw"><span class="nw">内容を</span><wbr><span class="nw">確認のうえ、</span><wbr><span class="nw">担当者より</span></span><b style="color:var(--ink)"><span class="jpw"><span class="nw">2営業日以内</span></span></b><span class="jpw"><span class="nw">にご</span><wbr><span class="nw">連絡いたします。</span></span><br>
+    <span class="jpw"><span class="nw">ご記入いただいた</span><wbr><span class="nw">メールアドレス</span><wbr><span class="nw">宛に、</span><wbr><span class="nw">自動返信</span><wbr><span class="nw">メールを</span><wbr><span class="nw">お送りしています。</span></span></p>
 
   <div class="box">
     <b><span class="jpw"><span class="nw">メールが</span><wbr><span class="nw">届かない場合</span></span></b>
@@ -3391,9 +3385,8 @@ footer .logotext small{color:#CBDCC4}
         <div class="mem-lic"><p class="lb"><span class="jpw"><span class="nw">保有資格</span></span></p><ul><li><span class="jpw"><span class="nw">大型自動車免許</span></span></li><li><span class="jpw"><span class="nw">大型二輪免許</span></span></li><li><span class="jpw"><span class="nw">フォークリフト</span><wbr><span class="nw">免許</span></span></li><li><span class="jpw"><span class="nw">ドローン</span><wbr><span class="nw">操縦技能</span></span></li></ul></div>
       </div>
     </article></div>
-  <p class="sysnote" style="margin-top:34px"><span class="snt"><span class="jpw"><span class="nw">写真・</span><wbr><span class="nw">氏名・</span><wbr><span class="nw">保有資格は、</span></span><span class="nobr">外壁・屋根塗装</span><span class="jpw"><span class="nw">専門店の</span><wbr><span class="nw">サイト</span></span><span class="nobr">（hirakata-toso.jp）の</span><span class="jpw"><span class="nw">
-    
-    </span><wbr><span class="nw">スタッフ</span><wbr><span class="nw">紹介から</span><wbr><span class="nw">引用しています。</span></span></span><span class="snt"><span class="jpw"><span class="nw">ごあいさつの</span><wbr><span class="nw">文章は、</span><wbr><span class="nw">この4名が</span><wbr><span class="nw">ふだんお客様に対してどう</span><wbr><span class="nw">向き</span><wbr><span class="nw">合っているかを</span><wbr><span class="nw">書き起こした</span><wbr><span class="nw">案です。</span></span></span><span class="snt"><span class="jpw"><span class="nw">内容にちがいが</span><wbr><span class="nw">あればお</span><wbr><span class="nw">直ししますので、</span><wbr><span class="nw">ご本人に</span><wbr><span class="nw">ご確認ください。</span></span></span></p>
+  <p class="sysnote" style="margin-top:34px"><span class="snt"><span class="jpw"><span class="nw">写真・</span><wbr><span class="nw">氏名・</span><wbr><span class="nw">保有資格は、</span></span><span class="nobr">外壁・屋根塗装</span><span class="jpw"><span class="nw">専門店の</span><wbr><span class="nw">サイト</span></span><span class="nobr">（hirakata-toso.jp）の</span>
+    <span class="jpw"><span class="nw">スタッフ</span><wbr><span class="nw">紹介から</span><wbr><span class="nw">引用しています。</span></span></span><span class="snt"><span class="jpw"><span class="nw">ごあいさつの</span><wbr><span class="nw">文章は、</span><wbr><span class="nw">この4名が</span><wbr><span class="nw">ふだんお客様に対してどう</span><wbr><span class="nw">向き</span><wbr><span class="nw">合っているかを</span><wbr><span class="nw">書き起こした</span><wbr><span class="nw">案です。</span></span></span><span class="snt"><span class="jpw"><span class="nw">内容にちがいが</span><wbr><span class="nw">あればお</span><wbr><span class="nw">直ししますので、</span><wbr><span class="nw">ご本人に</span><wbr><span class="nw">ご確認ください。</span></span></span></p>
 </div></section>
 
 <div class="band">
@@ -3401,7 +3394,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr"><span class="jpw"><span class="nw">通話</span></span><br><span class="jpw"><span class="nw">無料</span></span></span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><span class="nobr">（土・日・祝日も受付）</span></p>
+      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><wbr><span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -3428,14 +3421,14 @@ footer .logotext small{color:#CBDCC4}
     <h2><span class="jpw"><span class="nw">会社概要</span></span></h2></div></div>
   <div class="spec2 rv">
     <div><b><span class="jpw"><span class="nw">商号</span></span></b><span><span class="jpw"><span class="nw">株式会社</span><wbr><span class="nw">ホームエステ</span></span></span></div>
-    <div><b><span class="jpw"><span class="nw">所在地</span></span></b><span><span class="nobr">〒573-0064</span><span class="jpw"><span class="nw">  </span><wbr><span class="nw">大阪府枚方市</span></span><span class="nobr">北中振3-45-23</span></span></div>
+    <div><b><span class="jpw"><span class="nw">所在地</span></span></b><span><span class="nobr">〒573-0064</span> <span class="jpw"><wbr><span class="nw">大阪府枚方市</span><wbr></span><span class="nobr">北中振3-45-23</span></span></div>
     <div><b><span class="jpw"><span class="nw">代表者</span></span></b><span><span class="tbd"><span class="jpw"><span class="nw">確認中</span></span></span></span></div>
     <div><b><span class="jpw"><span class="nw">設立</span></span></b><span><span class="tbd"><span class="jpw"><span class="nw">確認中</span></span></span></span></div>
     <div><b><span class="jpw"><span class="nw">資本金</span></span></b><span><span class="tbd"><span class="jpw"><span class="nw">確認中</span></span></span></span></div>
-    <div><b><span class="jpw"><span class="nw">電話番号</span></span></b><span><a href="tel:0120304500" style="font-weight:700">0120-304-500</a><span class="jpw"><span class="nw">（受付  </span></span><span class="nobr">9:00〜19:00</span><span class="jpw"><span class="nw">／土・</span><wbr><span class="nw">日・</span><wbr><span class="nw">祝日も</span><wbr><span class="nw">受付）</span></span></span></div>
+    <div><b><span class="jpw"><span class="nw">電話番号</span></span></b><span><a href="tel:0120304500" style="font-weight:700">0120-304-500</a><span class="nobr">（受付 9:00〜19:00／</span><wbr><span class="nobr">土・日・祝日も受付）</span></span></div>
     <div><b><span class="jpw"><span class="nw">定休日</span></span></b><span><span class="tbd"><span class="jpw"><span class="nw">確認中</span></span></span></span></div>
     <div><b><span class="jpw"><span class="nw">建設業許可番号</span></span></b><span><span class="tbd"><span class="jpw"><span class="nw">確認中</span></span></span></span></div>
-    <div><b><span class="jpw"><span class="nw">事業内容</span></span></b><span><span class="jpw"><span class="nw">給湯器・</span><wbr><span class="nw">ガスコンロ・</span><wbr><span class="nw">レンジフードの</span><wbr><span class="nw">販売および</span><wbr><span class="nw">交換工事</span></span><br><span class="nobr">外壁・屋根塗装</span><span class="jpw"><span class="nw">工事</span></span><br><span class="jpw"><span class="nw">住宅</span><wbr><span class="nw">リフォーム工事</span><wbr><span class="nw">（キッチン・</span><wbr><span class="nw">浴室・</span><wbr><span class="nw">洗面化粧台・トイレ・</span><wbr><span class="nw">内装・</span><wbr><span class="nw">外構）</span></span><br><span class="jpw"><span class="nw">抗菌・</span><wbr><span class="nw">防臭</span><wbr><span class="nw">サービス</span></span><br><span class="jpw"><span class="nw">空き家管理</span><wbr><span class="nw">サービス</span></span><br><span class="jpw"><span class="nw">住宅健康診断</span><wbr><span class="nw">「住まいの</span><wbr><span class="nw">主治医」</span></span></span></div>
+    <div><b><span class="jpw"><span class="nw">事業内容</span></span></b><span><span class="jpw"><span class="nw">給湯器・</span><wbr><span class="nw">ガスコンロ・</span><wbr><span class="nw">レンジフードの</span><wbr><span class="nw">販売および</span><wbr><span class="nw">交換工事</span></span><br><span class="nobr">外壁・屋根塗装</span><span class="jpw"><wbr><span class="nw">工事</span></span><br><span class="jpw"><span class="nw">住宅</span><wbr><span class="nw">リフォーム工事</span><wbr><span class="nw">（キッチン・</span><wbr><span class="nw">浴室・</span><wbr><span class="nw">洗面化粧台・トイレ・</span><wbr><span class="nw">内装・</span><wbr><span class="nw">外構）</span></span><br><span class="jpw"><span class="nw">抗菌・</span><wbr><span class="nw">防臭</span><wbr><span class="nw">サービス</span></span><br><span class="jpw"><span class="nw">空き家管理</span><wbr><span class="nw">サービス</span></span><br><span class="jpw"><span class="nw">住宅健康診断</span><wbr><span class="nw">「住まいの</span><wbr><span class="nw">主治医」</span></span></span></div>
     <div><b><span class="jpw"><span class="nw">運営店舗</span></span></b><span><span class="jpw"><span class="nw">正直屋 </span><wbr><span class="nw">枚方店</span></span><br><span class="jpw"><span class="nw">ショールーム＆</span><wbr><span class="nw">セルフカフェ</span><wbr><span class="nw">「かべやねん。」</span></span></span></div>
     <div><b><span class="jpw"><span class="nw">加盟</span></span></b><span><span class="jpw"><span class="nw">給湯器・</span><wbr><span class="nw">ガスコンロ・</span><wbr><span class="nw">レンジフード</span><wbr><span class="nw">交換専門店</span><wbr><span class="nw">「正直屋」</span><wbr><span class="nw">加盟店</span></span></span></div>
     <div><b><span class="jpw"><span class="nw">所属</span><wbr><span class="nw">グループ</span></span></b><span><span class="jpw"><span class="nw">ハウスゲート</span><wbr><span class="nw">グループ</span></span></span></div>
@@ -3462,7 +3455,7 @@ footer .logotext small{color:#CBDCC4}
       <li><b><span class="jpw"><span class="nw">バイクイック</span></span></b><span><span class="jpw"><span class="nw">総合買取事業</span></span></span></li>
     </ul>
   </div>
-  <p class="sysnote" style="margin-top:16px"><span class="jpw"><span class="nw">グループ公式</span><wbr><span class="nw">サイト：</span></span><a href="https://www.gate2001.jp/" target="_blank" rel="noopener noreferrer" style="color:var(--green-ink);font-weight:700">www.gate2001.jp</a><span class="jpw"><span class="nw">　　※</span><wbr><span class="nw">系統図は構成</span><wbr><span class="nw">イメージの</span><wbr><span class="nw">バナーから読み</span><wbr><span class="nw">取ったもので、</span><wbr><span class="nw">正式な</span><wbr><span class="nw">関係性は</span><wbr><span class="nw">要確認です。</span></span></p>
+  <p class="sysnote" style="margin-top:16px"><span class="jpw"><span class="nw">グループ公式</span><wbr><span class="nw">サイト：</span></span><a href="https://www.gate2001.jp/" target="_blank" rel="noopener noreferrer" style="color:var(--green-ink);font-weight:700">www.gate2001.jp</a>　<span class="jpw"><span class="nw">※</span><wbr><span class="nw">系統図は構成</span><wbr><span class="nw">イメージの</span><wbr><span class="nw">バナーから読み</span><wbr><span class="nw">取ったもので、</span><wbr><span class="nw">正式な</span><wbr><span class="nw">関係性は</span><wbr><span class="nw">要確認です。</span></span></p>
 </div></section>
 
 <section style="padding-top:0"><div class="wrap">
@@ -3471,17 +3464,17 @@ footer .logotext small{color:#CBDCC4}
     </div>
   <div class="access rv">
     <div><div class="addr">
-      <div><b><span class="jpw"><span class="nw">所在地</span></span></b><span class="nobr">〒573-0064</span><br><span class="jpw"><span class="nw">大阪府枚方市</span></span><span class="nobr">北中振3-45-23</span></div>
-      <div><b><span class="jpw"><span class="nw">最寄駅</span></span></b><span class="jpw"><span class="nw">京阪本線 </span><wbr><span class="nw">光善寺駅</span></span></div>
-      <div><b><span class="jpw"><span class="nw">カーナビ</span></span></b><span class="jpw"><span class="nw">枚方市</span></span><span class="nobr">北中振3-45-23</span></div>
-      <div><b><span class="jpw"><span class="nw">営業時間</span></span></b><span class="nobr">9:00〜19:00</span><span class="nobr">（土・日・祝日も受付）</span></div>
+      <div><b><span class="jpw"><span class="nw">所在地</span></span></b><span class="av"><span class="nobr">〒573-0064</span><br><span class="jpw"><span class="nw">大阪府枚方市</span><wbr></span><span class="nobr">北中振3-45-23</span></span></div>
+      <div><b><span class="jpw"><span class="nw">最寄駅</span></span></b><span class="av"><span class="jpw"><span class="nw">京阪本線 </span><wbr><span class="nw">光善寺駅</span></span></span></div>
+      <div><b><span class="jpw"><span class="nw">カーナビ</span></span></b><span class="av"><span class="jpw"><span class="nw">枚方市</span><wbr></span><span class="nobr">北中振3-45-23</span></span></div>
+      <div><b><span class="jpw"><span class="nw">営業時間</span></span></b><span class="av"><span class="nobr">9:00〜19:00</span><wbr><span class="nobr">（土・日・祝日も受付）</span></span></div>
     </div>
     <div class="parks">
       <span><i>P1</i><span class="jpw"><span class="nw">タイムズ</span><wbr><span class="nw">光善寺駅前第3</span></span></span><span><i>P2</i><span class="jpw"><span class="nw">タイムズ</span><wbr><span class="nw">光善寺駅前西</span></span></span>
       <span><i>P3</i><span class="jpw"><span class="nw">D-</span><wbr><span class="nw">Parking</span><wbr><span class="nw">北中振</span><wbr><span class="nw">3丁目第1</span></span></span><span><i>P4</i><span class="jpw"><span class="nw">エイブルパーキング</span><wbr><span class="nw">北中振3丁目</span></span></span>
     </div></div>
     <div class="tile"><div class="ph" style="height:100%;min-height:300px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><b><span class="jpw"><span class="nw">Google</span><wbr><span class="nw">マップを</span><wbr><span class="nw">埋め込みます</span></span></b>
-      <span class="nobr">〒573-0064</span><span class="jpw"><span class="nw">  </span><wbr><span class="nw">大阪府枚方市</span></span><span class="nobr">北中振3-45-23</span><small><span class="jpw"><span class="nw">実装時に</span><wbr><span class="nw">設定・</span><wbr><span class="nw">素材不要</span></span></small></div></div>
+      <span class="nobr">〒573-0064</span> <span class="jpw"><wbr><span class="nw">大阪府枚方市</span><wbr></span><span class="nobr">北中振3-45-23</span><small><span class="jpw"><span class="nw">実装時に</span><wbr><span class="nw">設定・</span><wbr><span class="nw">素材不要</span></span></small></div></div>
   </div>
 </div></section>
 </div>
@@ -3495,9 +3488,8 @@ footer .logotext small{color:#CBDCC4}
 <section style="padding-top:0"><div class="wrap"><div class="legal">
   <div class="fnote rv" style="border-color:#EBD9C0;background:#FDF8F1">
     <p style="display:flex;gap:12px;align-items:flex-start"><span style="color:var(--orange-deep);flex:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4.5M12 17h.01"/><path d="M10.3 3.9 1.9 18.3A2 2 0 0 0 3.6 21.3h16.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg></span>
-      <span><b style="color:var(--ink)"><span class="jpw"><span class="nw">本</span><wbr><span class="nw">ページは</span><wbr><span class="nw">雛形です。</span></span></b><br><span class="jpw"><span class="nw">
-      
-      </span><wbr><span class="nw">公開前に、</span><wbr><span class="nw">実際の運用</span><wbr><span class="nw">（取得する</span><wbr><span class="nw">情報の</span><wbr><span class="nw">範囲、</span><wbr><span class="nw">委託先の</span><wbr><span class="nw">有無、</span><wbr><span class="nw">アクセス解析</span><wbr><span class="nw">ツールの</span><wbr><span class="nw">使用状況など）に</span><wbr><span class="nw">合わせて</span><wbr><span class="nw">内容を</span><wbr><span class="nw">ご確認ください。</span><wbr><span class="nw">事業者情報も</span><wbr><span class="nw">確定値への</span><wbr><span class="nw">差し替えが</span><wbr><span class="nw">必要です。</span></span></span></p>
+      <span><b style="color:var(--ink)"><span class="jpw"><span class="nw">本</span><wbr><span class="nw">ページは</span><wbr><span class="nw">雛形です。</span></span></b><br>
+      <span class="jpw"><span class="nw">公開前に、</span><wbr><span class="nw">実際の運用</span><wbr><span class="nw">（取得する</span><wbr><span class="nw">情報の</span><wbr><span class="nw">範囲、</span><wbr><span class="nw">委託先の</span><wbr><span class="nw">有無、</span><wbr><span class="nw">アクセス解析</span><wbr><span class="nw">ツールの</span><wbr><span class="nw">使用状況など）に</span><wbr><span class="nw">合わせて</span><wbr><span class="nw">内容を</span><wbr><span class="nw">ご確認ください。</span><wbr><span class="nw">事業者情報も</span><wbr><span class="nw">確定値への</span><wbr><span class="nw">差し替えが</span><wbr><span class="nw">必要です。</span></span></span></p>
   </div><section class="rv"><h2><em>01</em><span class="jpw"><span class="nw">個人情報の定義</span></span></h2><p><span class="jpw"><span class="nw">本方針における「</span><wbr><span class="nw">個人情報」とは、</span><wbr><span class="nw">個人情報の</span><wbr><span class="nw">保護に関する</span><wbr><span class="nw">法律に</span><wbr><span class="nw">定める</span><wbr><span class="nw">個人情報を</span><wbr><span class="nw">指し、</span><wbr><span class="nw">生存する</span><wbr><span class="nw">個人に関する</span><wbr><span class="nw">情報であって、</span><wbr><span class="nw">氏名、</span><wbr><span class="nw">生年月日、</span><wbr><span class="nw">住所、</span><wbr><span class="nw">電話番号、</span><wbr><span class="nw">メールアドレスなどにより</span><wbr><span class="nw">特定の</span><wbr><span class="nw">個人を</span><wbr><span class="nw">識別できる</span><wbr><span class="nw">情報をいいます。</span></span></p></section>
 <section class="rv"><h2><em>02</em><span class="jpw"><span class="nw">個人情報の取得</span></span></h2><p><span class="jpw"><span class="nw">当社は、</span><wbr><span class="nw">以下の</span><wbr><span class="nw">場合に</span><wbr><span class="nw">個人情報を</span><wbr><span class="nw">取得いたします。</span></span></p>
     <ul><li><span class="jpw"><span class="nw">お問い合わせ</span><wbr><span class="nw">フォーム、</span><wbr><span class="nw">電話、</span><wbr><span class="nw">メール、</span><wbr><span class="nw">LINE</span><wbr><span class="nw">等による</span><wbr><span class="nw">お問い合わせの際</span></span></li>
@@ -3523,8 +3515,8 @@ footer .logotext small{color:#CBDCC4}
 <section class="rv"><h2><em>08</em><span class="jpw"><span class="nw">開示・</span><wbr><span class="nw">訂正・</span><wbr><span class="nw">削除等の</span><wbr><span class="nw">ご請求</span></span></h2><p><span class="jpw"><span class="nw">お客様</span><wbr><span class="nw">ご本人から、</span><wbr><span class="nw">個人情報の</span><wbr><span class="nw">開示、</span><wbr><span class="nw">訂正、</span><wbr><span class="nw">追加、</span><wbr><span class="nw">削除、</span><wbr><span class="nw">利用停止の</span><wbr><span class="nw">ご請求があった</span><wbr><span class="nw">場合には、</span><wbr><span class="nw">ご本人で</span><wbr><span class="nw">あることを</span><wbr><span class="nw nwl">確認させていただいたうえで、</span><wbr><span class="nw">法令に従い</span><wbr><span class="nw">速やかに</span><wbr><span class="nw">対応いたします。</span></span></p></section>
 <section class="rv"><h2><em>09</em><span class="jpw"><span class="nw">お問い合わせ窓口</span></span></h2><p><span class="jpw"><span class="nw">個人情報の</span><wbr><span class="nw">取り扱いに関する</span><wbr><span class="nw">お問い合わせは、</span><wbr><span class="nw">下記まで</span><wbr><span class="nw">ご連絡ください。</span></span></p>
     <ul><li><span class="jpw"><span class="nw">株式会社</span><wbr><span class="nw">ホームエステ</span></span></li>
-    <li><span class="nobr">〒573-0064</span><span class="jpw"><span class="nw">  </span><wbr><span class="nw">大阪府枚方市</span></span><span class="nobr">北中振3-45-23</span></li>
-    <li><span class="jpw"><span class="nw">電話：</span><wbr><span class="nw">0120-</span><wbr><span class="nw">304-</span><wbr><span class="nw">500</span><wbr><span class="nw">（受付時間  </span></span><span class="nobr">9:00〜19:00</span>）</li></ul></section>
+    <li><span class="nobr">〒573-0064</span> <span class="jpw"><span class="nw">大阪府枚方市</span></span><span class="nobr">北中振3-45-23</span></li>
+    <li><span class="jpw"><span class="nw">電話：</span><wbr><span class="nw">0120-</span><wbr><span class="nw">304-</span><wbr><span class="nw">500</span><wbr><span class="nw">（受付時間</span></span> <span class="nobr">9:00〜19:00</span>）</li></ul></section>
 <section class="rv"><h2><em>10</em><span class="jpw"><span class="nw">本方針の変更</span></span></h2><p><span class="snt"><span class="jpw"><span class="nw">当社は、</span><wbr><span class="nw">法令の</span><wbr><span class="nw">改正や</span><wbr><span class="nw">事業内容の</span><wbr><span class="nw">変更等に</span><wbr><span class="nw">応じて、</span><wbr><span class="nw">本方針を</span><wbr><span class="nw">変更することが</span><wbr><span class="nw">あります。</span></span></span><span class="snt"><span class="jpw"><span class="nw">変更後の</span><wbr><span class="nw">本方針は、当</span><wbr><span class="nw">ウェブサイトに</span><wbr><span class="nw">掲載した</span><wbr><span class="nw">時点から</span><wbr><span class="nw">効力を</span><wbr><span class="nw">生じるものとします。</span></span></span></p></section>
   <p class="end"><span class="snt"><span class="jpw"><span class="nw">制定日：　　</span><wbr><span class="nw">年　　</span><wbr><span class="nw">月　　日</span></span></span><br><span class="snt"><span class="jpw"><span class="nw">株式会社</span><wbr><span class="nw">ホームエステ</span></span></span></p>
 </div></div></section>
@@ -3544,7 +3536,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr"><span class="jpw"><span class="nw">通話</span></span><br><span class="jpw"><span class="nw">無料</span></span></span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><span class="nobr">（土・日・祝日も受付）</span></p>
+      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><wbr><span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -3566,7 +3558,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr"><span class="jpw"><span class="nw">通話</span></span><br><span class="jpw"><span class="nw">無料</span></span></span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><span class="nobr">（土・日・祝日も受付）</span></p>
+      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><wbr><span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -3588,7 +3580,7 @@ footer .logotext small{color:#CBDCC4}
     <div class="l rv">
       <h2><span class="jpw"><span class="nw">お気軽に</span><wbr><span class="nw">ご相談ください。</span></span></h2>
       <a class="tel" href="tel:0120304500"><span class="fr"><span class="jpw"><span class="nw">通話</span></span><br><span class="jpw"><span class="nw">無料</span></span></span><b>0120-304-500</b></a>
-      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><span class="nobr">（土・日・祝日も受付）</span></p>
+      <p class="hours"><span class="jpw"><span class="nw">営業時間／</span></span><span class="nobr">9:00〜19:00</span><wbr><span class="nobr">（土・日・祝日も受付）</span></p>
     </div>
     <div class="sep" aria-hidden="true"></div>
     <div class="r rv">
@@ -3648,7 +3640,7 @@ footer .logotext small{color:#CBDCC4}
       <div><h4><span class="jpw"><span class="nw">サービス</span></span></h4><ul>
         <li><a href="https://xn--m7rz27cmsk.xn--u9j0hkb2esdt17v84rsmbu13e6dj12t9w6c.com/osaka/" target="_blank" rel="noopener noreferrer"><span class="jpw"><span class="nw">給湯器</span><wbr><span class="nw">（正直屋 </span><wbr><span class="nw">枚方店）</span></span></a></li>
         <li><a href="https://yamatoya-ecocute.com/" target="_blank" rel="noopener noreferrer"><span class="jpw"><span class="nw">エコキュート</span><wbr><span class="nw">（やまと屋）</span></span></a></li>
-        <li><a href="https://hirakata-toso.jp/" target="_blank" rel="noopener noreferrer"><span class="nobr">外壁・屋根塗装</span><span class="jpw"><span class="nw">専門店</span></span></a></li>
+        <li><a href="https://hirakata-toso.jp/" target="_blank" rel="noopener noreferrer"><span class="nobr">外壁・屋根塗装</span><span class="jpw"><wbr><span class="nw">専門店</span></span></a></li>
         <li><a href="#/reform"><span class="jpw"><span class="nw">リフォーム</span></span></a></li>
         <li><a href="https://lafuado.net/" target="_blank" rel="noopener noreferrer"><span class="jpw"><span class="nw">抗菌・</span><wbr><span class="nw">防臭</span><wbr><span class="nw">（ラーフエイド）</span></span></a></li>
         <li><a href="https://akiya-gate.com/" target="_blank" rel="noopener noreferrer"><span class="jpw"><span class="nw">空き家管理</span></span></a></li></ul></div>
