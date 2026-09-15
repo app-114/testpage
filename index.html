@@ -1757,8 +1757,6 @@ body{line-break:strict}
 /* 駐車場カード：文節ごとの span に枠と余白が乗って二重の箱になっていた */
 .parks .jpw,.parks .nw{border:0!important;padding:0!important;background:none!important;
   border-radius:0!important;display:inline!important;box-shadow:none!important}
-.parks .park{cursor:default}
-.parks .park:hover{border-color:var(--hair);transform:none;box-shadow:none}
 .parks .park .pg{display:none}
 
 /* 白いボタン（.btn）に左右の余白が無く、文字とアイコンが端に触れていた */
@@ -1786,6 +1784,16 @@ body{line-break:strict}
    文節の包み（.jpw）に .row .tx span の小さく薄い指定を拾って灰色の小文字になっていた */
 .row .tx .jpw,.row .tx .nw{display:inline!important;font-size:inherit!important;color:inherit!important;
   letter-spacing:inherit!important;margin:0!important;font-weight:inherit!important}
+
+/* 駐車場カードは押せる。右上に小さな外部リンクの印だけ付ける */
+.parks a.park{position:relative;cursor:pointer;color:inherit;padding-right:40px}
+.parks a.park::after{content:"";position:absolute;top:14px;right:14px;width:16px;height:16px;
+  background:currentColor;color:var(--green-ink);opacity:.7;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17 17 7M9 7h8v8'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17 17 7M9 7h8v8'/%3E%3C/svg%3E") center/contain no-repeat}
+.parks a.park:hover{border-color:var(--green);transform:translateY(-2px);box-shadow:var(--sh-hov)}
+.parks a.park:hover::after{opacity:1}
+.parks a.park:focus-visible{outline:3px solid var(--green);outline-offset:2px}
 
 /* ===== ブランドロゴ（原画をSVGで再現） ===== */
 .logo{gap:11px;align-items:center}
@@ -2628,7 +2636,7 @@ footer .logotext small{color:#CBDCC4}
         <div><b>時間</b>10:00〜15:00</div>
         <div><b>電話</b><a href="tel:0120304500" style="font-weight:700">0120-304-500</a></div>
       </div>
-      <div class="parks"><div class="park"><i>P1</i><span class="pn"><span class="jpw"><span class="nw">タイムズ</span><wbr><span class="nw">光善寺駅前第3</span></span></span></div><div class="park"><i>P2</i><span class="pn"><span class="jpw"><span class="nw">タイムズ</span><wbr><span class="nw">光善寺駅前西</span></span></span></div><div class="park"><i>P3</i><span class="pn"><span class="jpw"><span class="nw">D-</span><wbr><span class="nw">Parking</span><wbr><span class="nw">北中振</span><wbr><span class="nw">3丁目第1</span></span></span></div><div class="park"><i>P4</i><span class="pn"><span class="jpw"><span class="nw">エイブルパーキング</span><wbr><span class="nw">北中振3丁目</span></span></span></div></div>
+      <div class="parks"><a class="park" href="https://www.google.com/maps/search/?api=1&query=%E3%82%BF%E3%82%A4%E3%83%A0%E3%82%BA%E5%85%89%E5%96%84%E5%AF%BA%E9%A7%85%E5%89%8D%E7%AC%AC3%20%E6%9E%9A%E6%96%B9%E5%B8%82%E5%8C%97%E4%B8%AD%E6%8C%AF" target="_blank" rel="noopener noreferrer" aria-label="タイムズ光善寺駅前第3をGoogleマップで見る"><i>P1</i><span class="pn"><span class="jpw"><span class="nw">タイムズ</span><wbr><span class="nw">光善寺駅前第3</span></span></span></a><a class="park" href="https://www.google.com/maps/search/?api=1&query=%E3%82%BF%E3%82%A4%E3%83%A0%E3%82%BA%E5%85%89%E5%96%84%E5%AF%BA%E9%A7%85%E5%89%8D%E8%A5%BF%20%E6%9E%9A%E6%96%B9%E5%B8%82%E5%8C%97%E4%B8%AD%E6%8C%AF" target="_blank" rel="noopener noreferrer" aria-label="タイムズ光善寺駅前西をGoogleマップで見る"><i>P2</i><span class="pn"><span class="jpw"><span class="nw">タイムズ</span><wbr><span class="nw">光善寺駅前西</span></span></span></a><a class="park" href="https://www.google.com/maps/search/?api=1&query=D-Parking%E5%8C%97%E4%B8%AD%E6%8C%AF3%E4%B8%81%E7%9B%AE%E7%AC%AC1%20%E6%9E%9A%E6%96%B9%E5%B8%82%E5%8C%97%E4%B8%AD%E6%8C%AF" target="_blank" rel="noopener noreferrer" aria-label="D-Parking北中振3丁目第1をGoogleマップで見る"><i>P3</i><span class="pn"><span class="jpw"><span class="nw">D-</span><wbr><span class="nw">Parking</span><wbr><span class="nw">北中振</span><wbr><span class="nw">3丁目第1</span></span></span></a><a class="park" href="https://www.google.com/maps/search/?api=1&query=%E3%82%A8%E3%82%A4%E3%83%96%E3%83%AB%E3%83%91%E3%83%BC%E3%82%AD%E3%83%B3%E3%82%B0%E5%8C%97%E4%B8%AD%E6%8C%AF3%E4%B8%81%E7%9B%AE%20%E6%9E%9A%E6%96%B9%E5%B8%82%E5%8C%97%E4%B8%AD%E6%8C%AF" target="_blank" rel="noopener noreferrer" aria-label="エイブルパーキング北中振3丁目をGoogleマップで見る"><i>P4</i><span class="pn"><span class="jpw"><span class="nw">エイブルパーキング</span><wbr><span class="nw">北中振3丁目</span></span></span></a></div>
     </div>
     <div class="tile map-tile"><iframe class="gmap" src="https://maps.google.com/maps?q=%E6%AD%A3%E7%9B%B4%E5%B1%8B%20%E6%9E%9A%E6%96%B9%E5%BA%97&z=17&hl=ja&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="正直屋 枚方店／ショールーム＆セルフカフェ かべやねん。の地図"></iframe></div>
   </div>
