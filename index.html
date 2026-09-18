@@ -1941,6 +1941,16 @@ a[href^="tel:"]{white-space:nowrap}
 .parks-lb{margin:14px 0 8px;font-size:0.8125rem;font-weight:700;color:var(--muted);letter-spacing:.03em}
 .addr b small{display:block;font-size:0.6875rem;font-weight:700;color:var(--muted);letter-spacing:.05em;margin-top:2px}
 
+/* ---- 取扱いメーカー：ロゴを使わず、名前の文字組みで見せる ---- */
+.makers{border-radius:12px;border-color:var(--hair-2);background:var(--hair-2)}
+.makers div{min-height:112px;padding:20px 14px;background:linear-gradient(#fff,#FCFDFB)}
+.makers div .mk{display:flex;flex-direction:column;align-items:center;gap:10px}
+.makers div .mk b{font-family:var(--disp);font-weight:800;letter-spacing:.07em;line-height:1.35;
+  font-size:clamp(1.0625rem,3.6vw,1.25rem);color:var(--ink);white-space:nowrap}
+.makers div .mk i{display:block;width:28px;height:2px;border-radius:1px;background:var(--green);opacity:.45}
+@media(min-width:768px){.makers div{min-height:128px}}
+@media(max-width:360px){.makers div .mk b{font-size:1rem;letter-spacing:.04em}}
+
 /* ===== ブランドロゴ（原画をSVGで再現） ===== */
 .logo{gap:11px;align-items:center}
 .logomark{display:none}
@@ -2458,7 +2468,7 @@ footer .logotext small{color:#CBDCC4}
 
 <section style="padding-top:0"><div class="wrap"><div class="shead rv"><div class="l"><div class="no"><i>04</i><span>Makers</span></div>
       <h2><span class="jpw"><span class="nw">取扱い</span><wbr><span class="nw">メーカー</span></span></h2></div></div>
-      <div class="makers rv"><div>Takara standard<small>LOGO</small></div><div>LIXIL<small>LOGO</small></div><div><span class="jpw"><span class="nw">クリナップ</span></span><small>LOGO</small></div><div>Panasonic<small>LOGO</small></div><div>TOTO<small>LOGO</small></div><div>TOCLAS<small>LOGO</small></div></div>
+      <div class="makers rv"><div><span class="mk"><b>Takara standard</b><i aria-hidden="true"></i></span></div><div><span class="mk"><b>LIXIL</b><i aria-hidden="true"></i></span></div><div><span class="mk"><b><span class="jpw"><span class="nw">クリナップ</span></span></b><i aria-hidden="true"></i></span></div><div><span class="mk"><b>Panasonic</b><i aria-hidden="true"></i></span></div><div><span class="mk"><b>TOTO</b><i aria-hidden="true"></i></span></div><div><span class="mk"><b>TOCLAS</b><i aria-hidden="true"></i></span></div></div>
       </div></section>
 
 <div class="band">
@@ -2513,7 +2523,7 @@ footer .logotext small{color:#CBDCC4}
 
 <section style="padding-top:0"><div class="wrap"><div class="shead rv"><div class="l"><div class="no"><i>04</i><span>Makers</span></div>
       <h2><span class="jpw"><span class="nw">取扱い</span><wbr><span class="nw">メーカー</span></span></h2></div></div>
-      <div class="makers rv"><div>Takara standard<small>LOGO</small></div><div>LIXIL<small>LOGO</small></div><div><span class="jpw"><span class="nw">クリナップ</span></span><small>LOGO</small></div><div>Panasonic<small>LOGO</small></div><div>TOTO<small>LOGO</small></div><div>TOCLAS<small>LOGO</small></div></div>
+      <div class="makers rv"><div><span class="mk"><b>Takara standard</b><i aria-hidden="true"></i></span></div><div><span class="mk"><b>LIXIL</b><i aria-hidden="true"></i></span></div><div><span class="mk"><b><span class="jpw"><span class="nw">クリナップ</span></span></b><i aria-hidden="true"></i></span></div><div><span class="mk"><b>Panasonic</b><i aria-hidden="true"></i></span></div><div><span class="mk"><b>TOTO</b><i aria-hidden="true"></i></span></div><div><span class="mk"><b>TOCLAS</b><i aria-hidden="true"></i></span></div></div>
       </div></section>
 
 <div class="band">
@@ -2568,7 +2578,7 @@ footer .logotext small{color:#CBDCC4}
 
 <section style="padding-top:0"><div class="wrap"><div class="shead rv"><div class="l"><div class="no"><i>04</i><span>Makers</span></div>
       <h2><span class="jpw"><span class="nw">取扱い</span><wbr><span class="nw">メーカー</span></span></h2></div></div>
-      <div class="makers rv"><div>Takara standard<small>LOGO</small></div><div>LIXIL<small>LOGO</small></div><div><span class="jpw"><span class="nw">クリナップ</span></span><small>LOGO</small></div><div>Panasonic<small>LOGO</small></div><div>TOTO<small>LOGO</small></div><div>TOCLAS<small>LOGO</small></div></div>
+      <div class="makers rv"><div><span class="mk"><b>Takara standard</b><i aria-hidden="true"></i></span></div><div><span class="mk"><b>LIXIL</b><i aria-hidden="true"></i></span></div><div><span class="mk"><b><span class="jpw"><span class="nw">クリナップ</span></span></b><i aria-hidden="true"></i></span></div><div><span class="mk"><b>Panasonic</b><i aria-hidden="true"></i></span></div><div><span class="mk"><b>TOTO</b><i aria-hidden="true"></i></span></div><div><span class="mk"><b>TOCLAS</b><i aria-hidden="true"></i></span></div></div>
       </div></section>
 
 <div class="band">
@@ -2623,7 +2633,7 @@ footer .logotext small{color:#CBDCC4}
 
 <section style="padding-top:0"><div class="wrap"><div class="shead rv"><div class="l"><div class="no"><i>04</i><span>Makers</span></div>
       <h2><span class="jpw"><span class="nw">取扱い</span><wbr><span class="nw">メーカー</span></span></h2></div></div>
-      <div class="makers rv"><div>TOTO<small>LOGO</small></div><div>LIXIL<small>LOGO</small></div><div>Panasonic<small>LOGO</small></div></div>
+      <div class="makers rv"><div><span class="mk"><b>TOTO</b><i aria-hidden="true"></i></span></div><div><span class="mk"><b>LIXIL</b><i aria-hidden="true"></i></span></div><div><span class="mk"><b>Panasonic</b><i aria-hidden="true"></i></span></div></div>
       </div></section>
 
 <div class="band">
