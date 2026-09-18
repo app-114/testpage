@@ -3694,6 +3694,7 @@ footer .logotext small{color:#CBDCC4}
     Object.keys(pages).forEach(function(k){ pages[k].classList.toggle('active', k===route); });
     var p = pages[route];
     hydrate(p);
+    if(window.__cmsText) window.__cmsText(p, route);
     document.title = (route==='/' ? '' : p.dataset.title + '｜') + SITE;
     p.querySelectorAll('.rv,.stagger').forEach(function(el){ el.classList.remove('on'); observe(el); });
     if(anchor){
@@ -4247,6 +4248,62 @@ footer .logotext small{color:#CBDCC4}
       cmsWrap(el);
     }
   }
+
+  /* ---- 管理画面「ページの文字」で直した文字を当てる ----
+     元の文字が一致した要素だけを差し替える。直していない項目は何もしない。 */
+  var CMS_TX = {};
+  var CMS_TX_SKIP = '.sr-only,.benefit,.sched,.eventinfo,.flyers,.ext,.case-scroll,.caselist,'
+    + '.post-body,.newslist,.tabs,.gnav,.drawer,.spbar,.imgzoom,#cms-news-top,.crumb,.ft-state,.parks';
+  function cmsTxSlug(route){
+    var s = String(route == null ? '/' : route).replace(/^\//, '').replace(/\/$/, '');
+    return s ? s.replace(/\//g, '-') : 'top';
+  }
+  function cmsTxNorm(s){ return String(s == null ? '' : s).replace(/\s+/g, ''); }
+  /* 文字だけの要素か（中に画像・リンク・別の箱があるものは触らない） */
+  function cmsTxPlain(el){
+    var ok = true;
+    [].forEach.call(el.children, function(c){
+      var tag = c.tagName.toLowerCase();
+      if(tag === 'br') return;
+      if(tag === 'span' && /(^|\s)(nw|jpw|nobr|snt)(\s|$)/.test(c.className || '')) return;
+      ok = false;
+    });
+    return ok;
+  }
+  function cmsTxApply(root, d){
+    if(!root || !d || !Array.isArray(d.items)) return;
+    var map = {}, any = false;
+    d.items.forEach(function(it){
+      if(!it || !it.original || it.text == null) return;
+      if(cmsTxNorm(it.text) === cmsTxNorm(it.original)) return;   /* 直していない */
+      map[cmsTxNorm(it.original)] = String(it.text);
+      any = true;
+    });
+    if(!any) return;
+    root.querySelectorAll('h1,h2,h3,h4,p,li,b,small').forEach(function(el){
+      if(el.closest(CMS_TX_SKIP)) return;
+      if(!cmsTxPlain(el)) return;
+      var t = map[cmsTxNorm(el.textContent)];
+      if(t == null) return;
+      el.innerHTML = cmsBr(t);
+    });
+  }
+  function cmsTxFor(slug, roots){
+    function run(d){ if(d) roots.forEach(function(r){ if(r) cmsTxApply(r, d); }); }
+    if(CMS_TX[slug] !== undefined){ run(CMS_TX[slug]); return; }
+    CMS_TX[slug] = null;
+    var p = cmsGet('text/' + slug + '.json');
+    if(p) p.then(function(d){ CMS_TX[slug] = d; run(d); });
+  }
+  window.__cmsText = function(pg, route){
+    cmsTxFor(cmsTxSlug(route), [pg]);
+    cmsTxFor('common', [document.querySelector('header'), document.querySelector('footer')]);
+  };
+  /* 最初の表示はこのスクリプトより前に終わっているので、いま出ているページにも当てる */
+  (function(){
+    var a = document.querySelector('.page.active');
+    if(a) window.__cmsText(a, a.id.slice(1));
+  })();
 
   (function(){ var p = cmsLoad(); if(p) p.then(cmsRender); })();
 })();

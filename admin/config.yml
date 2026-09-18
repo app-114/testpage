@@ -260,3 +260,412 @@ collections:
                 options:
                   - { label: 白, value: plain }
                   - { label: 青, value: blue }
+
+  # ---------------------------------------------------------------- ページの文字（自動生成）
+  # build_text.py が作り直します。手で書き換えても、次のビルドで戻ります。
+  - name: pagetext
+    label: ページの文字
+    description: サイトに出ている文字をそのまま直せます。直したい文をひらいて、文字を書き換えて保存してください。空にすると元の文字に戻ります。
+    editor:
+      preview: false
+    files:
+      - name: text-top
+        label: トップ（24か所）
+        file: content/text/top.json
+        fields:
+          - label: このページの文字
+            name: items
+            widget: list
+            summary: "{{fields.where}}｜{{fields.text}}"
+            add_to_top: false
+            allow_add: false
+            collapsed: true
+            fields:
+              - { label: 表示する文字, name: text, widget: text, hint: サイトに出る文字です。改行すると、そのまま改行されます。 }
+              - { label: 場所, name: where, widget: hidden }
+              - { label: 元の文字, name: original, widget: hidden }
+              - { label: 目印, name: key, widget: hidden }
+      - name: text-common
+        label: 共通（ヘッダー・フッター）（6か所）
+        file: content/text/common.json
+        fields:
+          - label: このページの文字
+            name: items
+            widget: list
+            summary: "{{fields.where}}｜{{fields.text}}"
+            add_to_top: false
+            allow_add: false
+            collapsed: true
+            fields:
+              - { label: 表示する文字, name: text, widget: text, hint: サイトに出る文字です。改行すると、そのまま改行されます。 }
+              - { label: 場所, name: where, widget: hidden }
+              - { label: 元の文字, name: original, widget: hidden }
+              - { label: 目印, name: key, widget: hidden }
+      - name: text-404
+        label: ページが見つかりません（3か所）
+        file: content/text/404.json
+        fields:
+          - label: このページの文字
+            name: items
+            widget: list
+            summary: "{{fields.where}}｜{{fields.text}}"
+            add_to_top: false
+            allow_add: false
+            collapsed: true
+            fields:
+              - { label: 表示する文字, name: text, widget: text, hint: サイトに出る文字です。改行すると、そのまま改行されます。 }
+              - { label: 場所, name: where, widget: hidden }
+              - { label: 元の文字, name: original, widget: hidden }
+              - { label: 目印, name: key, widget: hidden }
+      - name: text-bath
+        label: 浴室（21か所）
+        file: content/text/bath.json
+        fields:
+          - label: このページの文字
+            name: items
+            widget: list
+            summary: "{{fields.where}}｜{{fields.text}}"
+            add_to_top: false
+            allow_add: false
+            collapsed: true
+            fields:
+              - { label: 表示する文字, name: text, widget: text, hint: サイトに出る文字です。改行すると、そのまま改行されます。 }
+              - { label: 場所, name: where, widget: hidden }
+              - { label: 元の文字, name: original, widget: hidden }
+              - { label: 目印, name: key, widget: hidden }
+      - name: text-case
+        label: 住まいのお困りごと解決事例（8か所）
+        file: content/text/case.json
+        fields:
+          - label: このページの文字
+            name: items
+            widget: list
+            summary: "{{fields.where}}｜{{fields.text}}"
+            add_to_top: false
+            allow_add: false
+            collapsed: true
+            fields:
+              - { label: 表示する文字, name: text, widget: text, hint: サイトに出る文字です。改行すると、そのまま改行されます。 }
+              - { label: 場所, name: where, widget: hidden }
+              - { label: 元の文字, name: original, widget: hidden }
+              - { label: 目印, name: key, widget: hidden }
+      - name: text-case-01
+        label: 解決事例 詳細（21か所）
+        file: content/text/case-01.json
+        fields:
+          - label: このページの文字
+            name: items
+            widget: list
+            summary: "{{fields.where}}｜{{fields.text}}"
+            add_to_top: false
+            allow_add: false
+            collapsed: true
+            fields:
+              - { label: 表示する文字, name: text, widget: text, hint: サイトに出る文字です。改行すると、そのまま改行されます。 }
+              - { label: 場所, name: where, widget: hidden }
+              - { label: 元の文字, name: original, widget: hidden }
+              - { label: 目印, name: key, widget: hidden }
+      - name: text-case-02
+        label: 解決事例 詳細（16か所）
+        file: content/text/case-02.json
+        fields:
+          - label: このページの文字
+            name: items
+            widget: list
+            summary: "{{fields.where}}｜{{fields.text}}"
+            add_to_top: false
+            allow_add: false
+            collapsed: true
+            fields:
+              - { label: 表示する文字, name: text, widget: text, hint: サイトに出る文字です。改行すると、そのまま改行されます。 }
+              - { label: 場所, name: where, widget: hidden }
+              - { label: 元の文字, name: original, widget: hidden }
+              - { label: 目印, name: key, widget: hidden }
+      - name: text-case-03
+        label: 解決事例 詳細（15か所）
+        file: content/text/case-03.json
+        fields:
+          - label: このページの文字
+            name: items
+            widget: list
+            summary: "{{fields.where}}｜{{fields.text}}"
+            add_to_top: false
+            allow_add: false
+            collapsed: true
+            fields:
+              - { label: 表示する文字, name: text, widget: text, hint: サイトに出る文字です。改行すると、そのまま改行されます。 }
+              - { label: 場所, name: where, widget: hidden }
+              - { label: 元の文字, name: original, widget: hidden }
+              - { label: 目印, name: key, widget: hidden }
+      - name: text-case-_
+        label: 解決事例（4か所）
+        file: content/text/case-_.json
+        fields:
+          - label: このページの文字
+            name: items
+            widget: list
+            summary: "{{fields.where}}｜{{fields.text}}"
+            add_to_top: false
+            allow_add: false
+            collapsed: true
+            fields:
+              - { label: 表示する文字, name: text, widget: text, hint: サイトに出る文字です。改行すると、そのまま改行されます。 }
+              - { label: 場所, name: where, widget: hidden }
+              - { label: 元の文字, name: original, widget: hidden }
+              - { label: 目印, name: key, widget: hidden }
+      - name: text-company
+        label: 会社案内（32か所）
+        file: content/text/company.json
+        fields:
+          - label: このページの文字
+            name: items
+            widget: list
+            summary: "{{fields.where}}｜{{fields.text}}"
+            add_to_top: false
+            allow_add: false
+            collapsed: true
+            fields:
+              - { label: 表示する文字, name: text, widget: text, hint: サイトに出る文字です。改行すると、そのまま改行されます。 }
+              - { label: 場所, name: where, widget: hidden }
+              - { label: 元の文字, name: original, widget: hidden }
+              - { label: 目印, name: key, widget: hidden }
+      - name: text-contact
+        label: お問い合わせ（8か所）
+        file: content/text/contact.json
+        fields:
+          - label: このページの文字
+            name: items
+            widget: list
+            summary: "{{fields.where}}｜{{fields.text}}"
+            add_to_top: false
+            allow_add: false
+            collapsed: true
+            fields:
+              - { label: 表示する文字, name: text, widget: text, hint: サイトに出る文字です。改行すると、そのまま改行されます。 }
+              - { label: 場所, name: where, widget: hidden }
+              - { label: 元の文字, name: original, widget: hidden }
+              - { label: 目印, name: key, widget: hidden }
+      - name: text-exterior
+        label: 外構工事（19か所）
+        file: content/text/exterior.json
+        fields:
+          - label: このページの文字
+            name: items
+            widget: list
+            summary: "{{fields.where}}｜{{fields.text}}"
+            add_to_top: false
+            allow_add: false
+            collapsed: true
+            fields:
+              - { label: 表示する文字, name: text, widget: text, hint: サイトに出る文字です。改行すると、そのまま改行されます。 }
+              - { label: 場所, name: where, widget: hidden }
+              - { label: 元の文字, name: original, widget: hidden }
+              - { label: 目印, name: key, widget: hidden }
+      - name: text-interior
+        label: 内装工事（19か所）
+        file: content/text/interior.json
+        fields:
+          - label: このページの文字
+            name: items
+            widget: list
+            summary: "{{fields.where}}｜{{fields.text}}"
+            add_to_top: false
+            allow_add: false
+            collapsed: true
+            fields:
+              - { label: 表示する文字, name: text, widget: text, hint: サイトに出る文字です。改行すると、そのまま改行されます。 }
+              - { label: 場所, name: where, widget: hidden }
+              - { label: 元の文字, name: original, widget: hidden }
+              - { label: 目印, name: key, widget: hidden }
+      - name: text-kabeyanen
+        label: かべやねん。（18か所）
+        file: content/text/kabeyanen.json
+        fields:
+          - label: このページの文字
+            name: items
+            widget: list
+            summary: "{{fields.where}}｜{{fields.text}}"
+            add_to_top: false
+            allow_add: false
+            collapsed: true
+            fields:
+              - { label: 表示する文字, name: text, widget: text, hint: サイトに出る文字です。改行すると、そのまま改行されます。 }
+              - { label: 場所, name: where, widget: hidden }
+              - { label: 元の文字, name: original, widget: hidden }
+              - { label: 目印, name: key, widget: hidden }
+      - name: text-kitchen
+        label: キッチン（21か所）
+        file: content/text/kitchen.json
+        fields:
+          - label: このページの文字
+            name: items
+            widget: list
+            summary: "{{fields.where}}｜{{fields.text}}"
+            add_to_top: false
+            allow_add: false
+            collapsed: true
+            fields:
+              - { label: 表示する文字, name: text, widget: text, hint: サイトに出る文字です。改行すると、そのまま改行されます。 }
+              - { label: 場所, name: where, widget: hidden }
+              - { label: 元の文字, name: original, widget: hidden }
+              - { label: 目印, name: key, widget: hidden }
+      - name: text-news
+        label: お知らせ・コラム（6か所）
+        file: content/text/news.json
+        fields:
+          - label: このページの文字
+            name: items
+            widget: list
+            summary: "{{fields.where}}｜{{fields.text}}"
+            add_to_top: false
+            allow_add: false
+            collapsed: true
+            fields:
+              - { label: 表示する文字, name: text, widget: text, hint: サイトに出る文字です。改行すると、そのまま改行されます。 }
+              - { label: 場所, name: where, widget: hidden }
+              - { label: 元の文字, name: original, widget: hidden }
+              - { label: 目印, name: key, widget: hidden }
+      - name: text-news-_
+        label: お知らせ・コラム（4か所）
+        file: content/text/news-_.json
+        fields:
+          - label: このページの文字
+            name: items
+            widget: list
+            summary: "{{fields.where}}｜{{fields.text}}"
+            add_to_top: false
+            allow_add: false
+            collapsed: true
+            fields:
+              - { label: 表示する文字, name: text, widget: text, hint: サイトに出る文字です。改行すると、そのまま改行されます。 }
+              - { label: 場所, name: where, widget: hidden }
+              - { label: 元の文字, name: original, widget: hidden }
+              - { label: 目印, name: key, widget: hidden }
+      - name: text-privacy
+        label: プライバシーポリシー（32か所）
+        file: content/text/privacy.json
+        fields:
+          - label: このページの文字
+            name: items
+            widget: list
+            summary: "{{fields.where}}｜{{fields.text}}"
+            add_to_top: false
+            allow_add: false
+            collapsed: true
+            fields:
+              - { label: 表示する文字, name: text, widget: text, hint: サイトに出る文字です。改行すると、そのまま改行されます。 }
+              - { label: 場所, name: where, widget: hidden }
+              - { label: 元の文字, name: original, widget: hidden }
+              - { label: 目印, name: key, widget: hidden }
+      - name: text-reform
+        label: リフォーム一覧（13か所）
+        file: content/text/reform.json
+        fields:
+          - label: このページの文字
+            name: items
+            widget: list
+            summary: "{{fields.where}}｜{{fields.text}}"
+            add_to_top: false
+            allow_add: false
+            collapsed: true
+            fields:
+              - { label: 表示する文字, name: text, widget: text, hint: サイトに出る文字です。改行すると、そのまま改行されます。 }
+              - { label: 場所, name: where, widget: hidden }
+              - { label: 元の文字, name: original, widget: hidden }
+              - { label: 目印, name: key, widget: hidden }
+      - name: text-sign
+        label: 住まいのサインチェック（26か所）
+        file: content/text/sign.json
+        fields:
+          - label: このページの文字
+            name: items
+            widget: list
+            summary: "{{fields.where}}｜{{fields.text}}"
+            add_to_top: false
+            allow_add: false
+            collapsed: true
+            fields:
+              - { label: 表示する文字, name: text, widget: text, hint: サイトに出る文字です。改行すると、そのまま改行されます。 }
+              - { label: 場所, name: where, widget: hidden }
+              - { label: 元の文字, name: original, widget: hidden }
+              - { label: 目印, name: key, widget: hidden }
+      - name: text-soudankai
+        label: 住まいのお困りごと相談会（20か所）
+        file: content/text/soudankai.json
+        fields:
+          - label: このページの文字
+            name: items
+            widget: list
+            summary: "{{fields.where}}｜{{fields.text}}"
+            add_to_top: false
+            allow_add: false
+            collapsed: true
+            fields:
+              - { label: 表示する文字, name: text, widget: text, hint: サイトに出る文字です。改行すると、そのまま改行されます。 }
+              - { label: 場所, name: where, widget: hidden }
+              - { label: 元の文字, name: original, widget: hidden }
+              - { label: 目印, name: key, widget: hidden }
+      - name: text-staff
+        label: サポートスタッフ（28か所）
+        file: content/text/staff.json
+        fields:
+          - label: このページの文字
+            name: items
+            widget: list
+            summary: "{{fields.where}}｜{{fields.text}}"
+            add_to_top: false
+            allow_add: false
+            collapsed: true
+            fields:
+              - { label: 表示する文字, name: text, widget: text, hint: サイトに出る文字です。改行すると、そのまま改行されます。 }
+              - { label: 場所, name: where, widget: hidden }
+              - { label: 元の文字, name: original, widget: hidden }
+              - { label: 目印, name: key, widget: hidden }
+      - name: text-thanks
+        label: 送信完了（6か所）
+        file: content/text/thanks.json
+        fields:
+          - label: このページの文字
+            name: items
+            widget: list
+            summary: "{{fields.where}}｜{{fields.text}}"
+            add_to_top: false
+            allow_add: false
+            collapsed: true
+            fields:
+              - { label: 表示する文字, name: text, widget: text, hint: サイトに出る文字です。改行すると、そのまま改行されます。 }
+              - { label: 場所, name: where, widget: hidden }
+              - { label: 元の文字, name: original, widget: hidden }
+              - { label: 目印, name: key, widget: hidden }
+      - name: text-toilet
+        label: トイレ（20か所）
+        file: content/text/toilet.json
+        fields:
+          - label: このページの文字
+            name: items
+            widget: list
+            summary: "{{fields.where}}｜{{fields.text}}"
+            add_to_top: false
+            allow_add: false
+            collapsed: true
+            fields:
+              - { label: 表示する文字, name: text, widget: text, hint: サイトに出る文字です。改行すると、そのまま改行されます。 }
+              - { label: 場所, name: where, widget: hidden }
+              - { label: 元の文字, name: original, widget: hidden }
+              - { label: 目印, name: key, widget: hidden }
+      - name: text-washstand
+        label: 洗面化粧台（21か所）
+        file: content/text/washstand.json
+        fields:
+          - label: このページの文字
+            name: items
+            widget: list
+            summary: "{{fields.where}}｜{{fields.text}}"
+            add_to_top: false
+            allow_add: false
+            collapsed: true
+            fields:
+              - { label: 表示する文字, name: text, widget: text, hint: サイトに出る文字です。改行すると、そのまま改行されます。 }
+              - { label: 場所, name: where, widget: hidden }
+              - { label: 元の文字, name: original, widget: hidden }
+              - { label: 目印, name: key, widget: hidden }
