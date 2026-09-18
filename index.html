@@ -1937,6 +1937,10 @@ a[href^="tel:"]{white-space:nowrap}
 .imgbn:hover{transform:translateY(-3px);box-shadow:var(--sh-hov)}
 .tile>.imgbn{flex:1 1 auto;align-self:stretch}
 
+/* アクセス欄：駐車場が「どこの周辺か」を示す小見出し。本社は無人のため、営業所と取り違えないようにする */
+.parks-lb{margin:14px 0 8px;font-size:0.8125rem;font-weight:700;color:var(--muted);letter-spacing:.03em}
+.addr b small{display:block;font-size:0.6875rem;font-weight:700;color:var(--muted);letter-spacing:.05em;margin-top:2px}
+
 /* ===== ブランドロゴ（原画をSVGで再現） ===== */
 .logo{gap:11px;align-items:center}
 .logomark{display:none}
@@ -3450,12 +3454,13 @@ footer .logotext small{color:#CBDCC4}
     </div>
   <div class="access rv">
     <div><div class="addr">
-      <div><b><span class="jpw"><span class="nw">所在地</span></span></b><span class="av"><span class="nobr">〒573-0064</span><br><span class="jpw"><span class="nw">大阪府枚方市</span><wbr></span><span class="nobr">北中振3-45-23</span></span></div>
-      <div><b><span class="jpw"><span class="nw">営業所</span></span></b><span class="av">〒573-0033<br><span class="jpw"><span class="nw">大阪府枚方市岡南町</span><wbr><span class="nw">11-</span><wbr><span class="nw">19 </span><wbr><span class="nw">ハウスゲートビル</span><wbr><span class="nw">2F</span></span><br><span class="jpw"><span class="nw">（京阪本線 </span><wbr><span class="nw">枚方市駅 徒歩</span><wbr><span class="nw">5分）</span></span></span></div>
-      <div><b><span class="jpw"><span class="nw">最寄駅</span></span></b><span class="av"><span class="jpw"><span class="nw">京阪本線 </span><wbr><span class="nw">光善寺駅</span></span></span></div>
-      <div><b><span class="jpw"><span class="nw">カーナビ</span></span></b><span class="av"><span class="jpw"><span class="nw">枚方市</span><wbr></span><span class="nobr">北中振3-45-23</span></span></div>
+      <div><b><span class="jpw"><span class="nw">所在地</span></span><small><span class="jpw"><span class="nw">本社</span></span></small></b><span class="av"><span class="nobr">〒573-0064</span><br><span class="jpw"><span class="nw">大阪府枚方市</span><wbr></span><span class="nobr">北中振3-45-23</span></span></div>
+      <div><b><span class="jpw"><span class="nw">営業所</span></span></b><span class="av">〒573-0033<br><span class="jpw"><span class="nw">大阪府枚方市岡南町</span><wbr><span class="nw">11-</span><wbr><span class="nw">19 </span><wbr><span class="nw">ハウスゲートビル</span><wbr><span class="nw">2F</span></span></span></div>
+      <div><b><span class="jpw"><span class="nw">最寄駅</span></span></b><span class="av"><span class="jpw"><span class="nw">本社：</span><wbr><span class="nw">京阪本線 </span><wbr><span class="nw">光善寺駅</span></span><br><span class="jpw"><span class="nw">営業所：</span><wbr><span class="nw">京阪本線 </span><wbr><span class="nw">枚方市駅 </span><wbr><span class="nw">徒歩5分</span></span></span></div>
+      <div><b><span class="jpw"><span class="nw">カーナビ</span></span></b><span class="av"><span class="jpw"><span class="nw">本社：</span><wbr><span class="nw">枚方市</span><wbr></span><span class="nobr">北中振3-45-23</span><br><span class="jpw"><span class="nw">営業所：</span><wbr><span class="nw">枚方市岡南町</span><wbr><span class="nw">11-19</span></span></span></div>
       <div><b><span class="jpw"><span class="nw">営業時間</span></span></b><span class="av"><span class="nobr">9:00〜19:00</span><wbr><span class="nobr">（土・日・祝日も受付）</span></span></div>
     </div>
+    <p class="parks-lb"><span class="jpw"><span class="nw">本社・ショールーム</span><wbr><span class="nw">周辺の</span><wbr><span class="nw">コインパーキング</span></span></p>
     <div class="parks">
       <span><i>P1</i><span class="jpw"><span class="nw">タイムズ</span><wbr><span class="nw">光善寺駅前第3</span></span></span><span><i>P2</i><span class="jpw"><span class="nw">タイムズ</span><wbr><span class="nw">光善寺駅前西</span></span></span>
       <span><i>P3</i><span class="jpw"><span class="nw">D-</span><wbr><span class="nw">Parking</span><wbr><span class="nw">北中振</span><wbr><span class="nw">3丁目第1</span></span></span><span><i>P4</i><span class="jpw"><span class="nw">エイブルパーキング</span><wbr><span class="nw">北中振3丁目</span></span></span>
