@@ -2028,6 +2028,11 @@ footer .logotext small{color:#CBDCC4}
 .cms-missing{padding:80px 0;text-align:center}
 .cms-missing h1{font-family:var(--serif);font-weight:600;font-size:1.75rem;margin:0 0 16px}
 .cms-missing a{color:var(--green-ink);font-weight:700}
+/* お問い合わせフォーム：迷惑送信よけの欄は画面に出さない／送信結果の案内 */
+.hp{position:absolute!important;width:1px!important;height:1px!important;margin:-1px!important;padding:0!important;border:0!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;clip-path:inset(50%)!important;white-space:nowrap!important}
+.form-msg{margin:14px 0 0;padding:12px 16px;border-radius:10px;background:#EEF4EA;color:var(--green-ink);font-weight:700;line-height:1.8}
+.form-msg.bad{background:#FDF3EC;color:var(--orange-deep)}
+.submit button:disabled{opacity:.6;cursor:wait}
 </style>
 </head>
 <body>
@@ -3283,7 +3288,7 @@ footer .logotext small{color:#CBDCC4}
     </div>
   </div>
 
-  <form class="rv" onsubmit="return false">
+  <form class="rv" id="contact-form">
     <div class="field"><span class="lb"><span class="jpw"><span class="nw">お名前</span></span><span class="req"><span class="jpw"><span class="nw">必須</span></span></span></span><input type="text" name="name" autocomplete="name" placeholder="山田 太郎" required></div>
 <div class="field"><span class="lb"><span class="jpw"><span class="nw">フリガナ</span></span><span class="opt"><span class="jpw"><span class="nw">任意</span></span></span></span><input type="text" name="kana" placeholder="ヤマダ タロウ"></div>
 <div class="field"><span class="lb"><span class="jpw"><span class="nw">電話番号</span></span><span class="req"><span class="jpw"><span class="nw">必須</span></span></span></span><p class="hint2"><span class="jpw"><span class="nw">日中つながりやすい</span><wbr><span class="nw">番号を</span><wbr><span class="nw">ご記入ください。</span></span></p><input type="tel" name="tel" inputmode="numeric" autocomplete="tel" placeholder="072-000-0000" required></div>
@@ -3306,6 +3311,7 @@ footer .logotext small{color:#CBDCC4}
 <div class="field"><span class="lb"><span class="jpw"><span class="nw">写真の添付</span></span><span class="opt"><span class="jpw"><span class="nw">任意</span></span></span></span><div class="filebox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.5 12.9 20.6a5 5 0 0 1-7.1-7.1l8.5-8.5a3.4 3.4 0 0 1 4.8 4.8l-8.5 8.5a1.7 1.7 0 0 1-2.4-2.4l7.8-7.8"/></svg>
       <p><span class="snt"><span class="jpw"><span class="nw">設備の品番</span><wbr><span class="nw">シールや、</span><wbr><span class="nw">気になる</span><wbr><span class="nw">箇所の</span><wbr><span class="nw">写真を</span><wbr><span class="nw">添付できます。</span></span></span><br><span class="snt"><span class="jpw"><span class="nw">写真があると、</span><wbr><span class="nw">より</span><wbr><span class="nw">正確な</span><wbr><span class="nw">ご案内が</span><wbr><span class="nw">できます。</span></span></span><span class="snt"><span class="jpw"><span class="nw">（3枚まで／1枚</span><wbr><span class="nw">10MBまで）</span></span></span></p>
       <input type="file" name="photo" accept="image/*" capture="environment" multiple></div></div>
+    <div class="hp" aria-hidden="true"><label><span class="jpw"><span class="nw">この欄は</span><wbr><span class="nw">空のままにして</span><wbr><span class="nw">ください</span></span><input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
 
     <label class="agree"><input type="checkbox" name="agree" required>
       <span><a href="#/privacy"><span class="jpw"><span class="nw">プライバシー</span><wbr><span class="nw">ポリシー</span></span></a><span class="jpw"><span class="nw">に</span><wbr><span class="nw">同意のうえ</span><wbr><span class="nw">送信します。</span><wbr><span class="nw">
@@ -3313,7 +3319,9 @@ footer .logotext small{color:#CBDCC4}
 
     <div class="submit">
       <button type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></svg><span class="jpw"><span class="nw">この内容で</span><wbr><span class="nw">送信する</span></span></button>
-      <p><span class="snt"><span class="jpw"><span class="nw">送信後、</span><wbr><span class="nw">確認画面は</span><wbr><span class="nw">表示されず</span><wbr><span class="nw">直接送信されます。</span></span></span><br><span class="snt"><span class="jpw"><span class="nw">※ 本</span><wbr><span class="nw">ページは</span><wbr><span class="nw">叩き台のため、</span><wbr><span class="nw">実際には</span><wbr><span class="nw">送信されません。</span></span></span></p>
+      <p><span class="jpw"><span class="nw">送信後、</span><wbr><span class="nw">確認画面は</span><wbr><span class="nw">表示されず</span><wbr><span class="nw">直接送信されます。</span></span><span class="demo-only"><br>
+        <span class="jpw"><span class="nw">※ </span><wbr><span class="nw">本</span><wbr><span class="nw">ページは</span><wbr><span class="nw">確認用のため、</span><wbr><span class="nw">実際には</span><wbr><span class="nw">送信されません。</span></span></span></p>
+      <p class="form-msg" role="status" aria-live="polite" hidden></p>
     </div>
   </form>
 
@@ -3945,6 +3953,8 @@ footer .logotext small{color:#CBDCC4}
      content/ の JSON を読み、中身があれば静的な表示を差し替える。読めなければ静的なまま。
      start() より前に呼ばれてもよいように、読み込みは初回に呼ばれたときに始める。 */
   var CMS_P = null;
+  /* 管理画面の中身（content/・uploads/）の置き場所。確認用サイトでは同じ場所、本番（さくら）では GitHub 側を読む */
+  var CMS_BASE = '';
   var CMS_CAT = {kyutoki:'給湯器',eco:'エコキュート',gaiheki:'外壁・屋根',water:'水まわりリフォーム',
                  interior:'内装',exterior:'外構',other:'その他'};
   function cmsEsc(s){
@@ -3990,14 +4000,14 @@ footer .logotext small{color:#CBDCC4}
     if(!p) return '';
     if(/^https?:\/\//i.test(p)) return p;
     if(/^[a-z][a-z0-9+.-]*:/i.test(p)) return '';          // javascript: などは使わない
-    return p.charAt(0)==='#' ? p : p.replace(/^\/+/,'');     // /uploads/… → uploads/…（サイトの置き場所に合わせる）
+    return p.charAt(0)==='#' ? p : CMS_BASE + p.replace(/^\/+/,'');     // /uploads/… → uploads/…（サイトの置き場所に合わせる）
   }
   function cmsDate(d){
     var m = /^(\d{4})-(\d{1,2})-(\d{1,2})/.exec(String(d||''));
     return m ? m[1]+'.'+('0'+m[2]).slice(-2)+'.'+('0'+m[3]).slice(-2) : '';
   }
   function cmsGet(path){
-    return fetch('content/'+path,{cache:'no-cache'})
+    return fetch(CMS_BASE+'content/'+path,{cache:'no-cache'})
       .then(function(r){ return r.ok ? r.json() : null; })
       .catch(function(){ return null; });
   }
@@ -4306,6 +4316,53 @@ footer .logotext small{color:#CBDCC4}
   })();
 
   (function(){ var p = cmsLoad(); if(p) p.then(cmsRender); })();
+
+  /* ---- お問い合わせフォームの送信 ----
+     FORM_ENDPOINT が空のとき（確認用サイト）は送らずに案内だけ出す。本番（さくら）は contact.php に送る */
+  var FORM_ENDPOINT = '';
+  (function(){
+    var f = document.getElementById('contact-form'); if(!f) return;
+    var msg = f.querySelector('.form-msg'), btn = f.querySelector('button[type="submit"]');
+    var TEL = 'お電話（0120-304-500）';
+    function say(s, bad){ if(!msg) return; msg.hidden = false; msg.textContent = s; msg.classList.toggle('bad', !!bad); }
+    /* 写真は長辺1600pxのJPEGに縮めてから送る（スマホの写真は大きく、送信に失敗しやすい） */
+    function shrink(file){
+      return new Promise(function(res){
+        if(!/^image\//.test(file.type) || !window.createImageBitmap || !window.File){ res(file); return; }
+        createImageBitmap(file).then(function(bm){
+          var s = Math.min(1, 1600 / Math.max(bm.width, bm.height));
+          var c = document.createElement('canvas');
+          c.width = Math.round(bm.width * s); c.height = Math.round(bm.height * s);
+          c.getContext('2d').drawImage(bm, 0, 0, c.width, c.height);
+          c.toBlob(function(b){
+            res(b ? new File([b], String(file.name || 'photo').replace(/\.[^.]+$/, '') + '.jpg', {type:'image/jpeg'}) : file);
+          }, 'image/jpeg', 0.85);
+        }).catch(function(){ res(file); });
+      });
+    }
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(!FORM_ENDPOINT){ say('確認用のサイトのため、送信は行われません。本番のサイトでは、このまま送信されます。'); return; }
+      var fi = f.querySelector('input[type="file"]');
+      var files = fi && fi.files ? [].slice.call(fi.files) : [];
+      if(files.length > 3){ say('写真は3枚までにしてください。', true); return; }
+      if(btn) btn.disabled = true;
+      say('送信しています…');
+      Promise.all(files.map(shrink)).then(function(list){
+        var fd = new FormData(f);
+        fd.delete('photo');
+        list.forEach(function(x){ fd.append('photo[]', x, x.name || 'photo.jpg'); });
+        return fetch(FORM_ENDPOINT, {method:'POST', body:fd, headers:{'Accept':'application/json'}});
+      }).then(function(r){
+        return r.json().catch(function(){ return {ok:false}; });
+      }).then(function(j){
+        if(j && j.ok){ f.reset(); if(msg) msg.hidden = true; location.hash = '#/thanks'; }
+        else say((j && j.error) || ('送信できませんでした。お手数ですが、' + TEL + 'でご連絡ください。'), true);
+      }).catch(function(){
+        say('送信できませんでした。通信状況をご確認のうえもう一度お試しいただくか、' + TEL + 'でご連絡ください。', true);
+      }).then(function(){ if(btn) btn.disabled = false; });
+    });
+  })();
 })();
 </script>
 

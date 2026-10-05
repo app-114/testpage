@@ -430,7 +430,7 @@ collections:
               - { label: 元の文字, name: original, widget: hidden }
               - { label: 目印, name: key, widget: hidden }
       - name: text-contact
-        label: お問い合わせ（8か所）
+        label: お問い合わせ（7か所）
         file: content/text/contact.json
         fields:
           - label: このページの文字
