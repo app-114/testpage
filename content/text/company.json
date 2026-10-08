@@ -31,22 +31,10 @@
    "text": "所在地"
   },
   {
-   "key": "b811d466d5",
-   "where": "太字",
-   "original": "代表者",
-   "text": "代表者"
-  },
-  {
    "key": "19a43118ff",
    "where": "太字",
    "original": "設立",
    "text": "設立"
-  },
-  {
-   "key": "b7a66f5cf6",
-   "where": "太字",
-   "original": "資本金",
-   "text": "資本金"
   },
   {
    "key": "9e6668e479",
@@ -59,12 +47,6 @@
    "where": "太字",
    "original": "定休日",
    "text": "定休日"
-  },
-  {
-   "key": "77ff39dd7a",
-   "where": "太字",
-   "original": "建設業許可番号",
-   "text": "建設業許可番号"
   },
   {
    "key": "4dfb1a75e4",
