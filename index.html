@@ -2762,9 +2762,9 @@ html.he-nocase li:has(> a[href="#/case"]),html.he-nocase li:has(> a[href="#case"
     <div><b><span class="jpw"><span class="nw">対象</span></span></b><span><span class="nw">給湯器・</span><wbr><span class="nw">ガスコンロ・</span><wbr><span class="nw">レンジフード・</span><wbr><span class="nw">外壁塗装</span></span></div>
   </div>
   <div class="flyers rv">
-    <figure><button type="button" class="zoomable" aria-label="チラシ 表を拡大表示"><img data-ik="ie330e7411" data-i="17" alt="第8回 住まいのお困りごと相談会のチラシ 表" loading="lazy"></button>
+    <figure><button type="button" class="zoomable" aria-label="チラシ 表を拡大表示"><img data-i="17" alt="第10回 住まいのお困りごと相談会のチラシ 表" loading="lazy"></button>
       <figcaption><span class="jpw"><span class="nw">第</span><wbr><span class="nw">10回 </span><wbr><span class="nw">チラシ </span><wbr><span class="nw">表 ─ </span><wbr><span class="nw">タップで</span><wbr><span class="nw">拡大表示</span></span></figcaption></figure>
-    <figure><button type="button" class="zoomable" aria-label="チラシ 裏を拡大表示"><img data-ik="id2d7bad0d" data-i="18" alt="チラシ 裏（正直屋が安い理由・アクセス）" loading="lazy"></button>
+    <figure><button type="button" class="zoomable" aria-label="チラシ 裏を拡大表示"><img data-i="18" alt="チラシ 裏（正直屋が安い理由・アクセス）" loading="lazy"></button>
       <figcaption><span class="jpw"><span class="nw">チラシ </span><wbr><span class="nw">裏 ─ </span><wbr><span class="nw">タップで</span><wbr><span class="nw">拡大表示</span></span></figcaption></figure>
   </div>
   </div></section>
@@ -3395,7 +3395,8 @@ html.he-nocase li:has(> a[href="#/case"]),html.he-nocase li:has(> a[href="#case"
     if(/\/_$/.test(route)) route = '/404';
     if(!pages[route]){
       var dm = /^\/(news|case)\/([A-Za-z0-9_-]+)$/.exec(route);
-      if(dm && pages['/'+dm[1]+'/_']){ cmsDetail(dm[1], dm[2]); route = '/'+dm[1]+'/_'; }
+      /* 直リンク（共有されたURL）で開いたときは、まだ設定を読み込み中なので、読み込み後に記事を探す */
+      if(dm && pages['/'+dm[1]+'/_']){ setTimeout(function(){ cmsDetail(dm[1], dm[2]); }, 0); route = '/'+dm[1]+'/_'; }
       else route = '/';
     }
     Object.keys(pages).forEach(function(k){ pages[k].classList.toggle('active', k===route); });
@@ -3706,7 +3707,7 @@ html.he-nocase li:has(> a[href="#/case"]),html.he-nocase li:has(> a[href="#case"
     return m ? m[1]+'.'+('0'+m[2]).slice(-2)+'.'+('0'+m[3]).slice(-2) : '';
   }
   function cmsGet(path){
-    return fetch(CMS_BASE+'content/'+path,{cache:'no-cache'})
+    return fetch((typeof CMS_BASE === 'string' ? CMS_BASE : '')+'content/'+path,{cache:'no-cache'})
       .then(function(r){ return r.ok ? r.json() : null; })
       .catch(function(){ return null; });
   }
@@ -3931,23 +3932,32 @@ html.he-nocase li:has(> a[href="#/case"]),html.he-nocase li:has(> a[href="#case"
         var btn = f.querySelector('.zoomable'); if(btn) btn.setAttribute('aria-label','チラシ '+side[i]+'を拡大表示');
         var cap = f.querySelector('figcaption'); if(cap) cap.textContent = no+'チラシ '+side[i]+' ─ タップで拡大表示';
       });
-      if(Array.isArray(s.benefits) && s.benefits.length && (el = sp.querySelector('.benefit'))){
-        el.innerHTML = s.benefits.map(function(x){
+      /* 編集画面で「サイトに出さない」にした特典・月は出さない。終わった月も出さない */
+      var benefits = (Array.isArray(s.benefits) ? s.benefits : []).filter(function(x){ return x && !x.hidden; });
+      var today = (function(){ var d = new Date(); return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2); })();
+      var sched = (Array.isArray(s.schedule) ? s.schedule : []).filter(function(x){
+        if(!x || x.hidden) return false;
+        var last = String(x.date2 || x.date1 || '');
+        return !(/^\d{4}-\d{2}-\d{2}$/.test(last) && last < today);
+      });
+      if(benefits.length && (el = sp.querySelector('.benefit'))){
+        el.innerHTML = benefits.map(function(x){
           return '<div>'+(x.badge ? '<small>'+cmsEsc(x.badge)+'</small>' : '')+
             '<b>'+cmsPhrase(x.title)+(x.highlight ? '<br><span class="price">'+cmsEsc(x.highlight)+'</span>' : '')+'</b>'+
             (x.body ? '<p>'+cmsBr(x.body)+'</p>' : '')+'</div>';
         }).join('');
         cmsWrap(el);
       }
-      if(Array.isArray(s.schedule) && s.schedule.length && (el = sp.querySelector('.sched'))){
-        el.innerHTML = s.schedule.map(function(x){
+      if(Array.isArray(s.schedule) && (el = sp.querySelector('.sched'))){
+        el.innerHTML = sched.map(function(x){
           return '<div><b>'+cmsEsc(x.month)+'</b><span>'+cmsEsc(x.days)+'</span>'+(x.note ? '<em>'+cmsEsc(x.note)+'</em>' : '')+'</div>';
         }).join('');
       }
     }
 
-    if(d.banners && d.banners.length && top && (el = top.querySelector('.ext'))){
-      el.innerHTML = d.banners.map(function(b){
+    var bnrs = (d.banners || []).filter(function(b){ return b && !b.hidden; });
+    if(bnrs.length && top && (el = top.querySelector('.ext'))){
+      el.innerHTML = bnrs.map(function(b){
         var u = String(b.url||'').trim(), ext = /^https?:\/\//i.test(u);
         var href = ext ? u : (/^#\//.test(u) ? u : '#');
         var attrs = 'href="'+cmsEsc(href)+'"'+(ext ? ' target="_blank" rel="noopener noreferrer"' : '');
